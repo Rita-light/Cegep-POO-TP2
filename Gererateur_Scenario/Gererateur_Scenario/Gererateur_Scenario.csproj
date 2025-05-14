@@ -43,23 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aeronef.cs" />
-    <Compile Include="AeronefEvenement.cs" />
-    <Compile Include="AeronefTransport.cs" />
-    <Compile Include="Aeroport.cs" />
-    <Compile Include="AvionPassager.cs" />
-    <Compile Include="AvionCargaison.cs" />
-    <Compile Include="AeronefUrgence.cs" />
-    <Compile Include="AvionSecours.cs" />
-    <Compile Include="ControleurGenerateur.cs" />
-    <Compile Include="Evenement.cs" />
-    <Compile Include="FabriqueAeronef.cs" />
-    <Compile Include="GestionnaireScenario.cs" />
-    <Compile Include="Helicoptere.cs" />
+    <Compile Include="Controle\ControleurGenerateur.cs" />
+    <Compile Include="Modele\Aeronef.cs" />
+    <Compile Include="Modele\AeronefEvenement.cs" />
+    <Compile Include="Modele\AeronefTransport.cs" />
+    <Compile Include="Modele\AeronefUrgence.cs" />
+    <Compile Include="Modele\Aeroport.cs" />
+    <Compile Include="Modele\AvionCargaison.cs" />
+    <Compile Include="Modele\AvionCiterne4.cs" />
+    <Compile Include="Modele\AvionPassager.cs" />
+    <Compile Include="Modele\AvionSecours.cs" />
+    <Compile Include="Modele\Evenement.cs" />
+    <Compile Include="Modele\FabriqueAeronef.cs" />
+    <Compile Include="Modele\GestionnaireScenario.cs" />
+    <Compile Include="Modele\Helicoptere.cs" />
+    <Compile Include="Modele\Scenario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenario.cs" />
     <Compile Include="TypeEvenement.cs" />
+    <Compile Include="Vue\FormAjouterAeronef.cs" />
+    <Compile Include="Vue\FormAjouterAeroport.cs" />
+    <Compile Include="Vue\FormGenerateurScenario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

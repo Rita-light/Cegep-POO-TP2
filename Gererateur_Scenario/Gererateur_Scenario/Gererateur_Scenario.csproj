@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,29 +46,50 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controle\ControleurGenerateur.cs" />
+    <Compile Include="IObservateur.cs" />
+    <Compile Include="ISujet.cs" />
     <Compile Include="Modele\Aeronef.cs" />
-    <Compile Include="Modele\AeronefEvenement.cs" />
     <Compile Include="Modele\AeronefTransport.cs" />
     <Compile Include="Modele\AeronefUrgence.cs" />
     <Compile Include="Modele\Aeroport.cs" />
     <Compile Include="Modele\AvionCargaison.cs" />
-    <Compile Include="Modele\AvionCiterne4.cs" />
+    <Compile Include="Modele\AvionCiterne.cs" />
     <Compile Include="Modele\AvionPassager.cs" />
     <Compile Include="Modele\AvionSecours.cs" />
     <Compile Include="Modele\Evenement.cs" />
     <Compile Include="Modele\FabriqueAeronef.cs" />
+    <Compile Include="Modele\GestionnaireFichierXML.cs" />
     <Compile Include="Modele\GestionnaireScenario.cs" />
     <Compile Include="Modele\Helicoptere.cs" />
     <Compile Include="Modele\Scenario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypeAeronef.cs" />
     <Compile Include="TypeEvenement.cs" />
-    <Compile Include="Vue\FormAjouterAeronef.cs" />
-    <Compile Include="Vue\FormAjouterAeroport.cs" />
-    <Compile Include="Vue\FormGenerateurScenario.cs" />
+    <Compile Include="Vue\FormAeronef.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\FormAeronef.Designer.cs">
+      <DependentUpon>FormAeronef.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormAeroport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\FormAeroport.Designer.cs">
+      <DependentUpon>FormAeroport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vue\FormGenerateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vue\FormGenerateur.Designer.cs">
+      <DependentUpon>FormGenerateur.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

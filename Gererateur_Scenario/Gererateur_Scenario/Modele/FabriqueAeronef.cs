@@ -9,4 +9,14 @@ namespace Gererateur_Scenario
     class FabriqueAeronef
     {
     }
+    /*
+     * private static FabriqueAeronef instance;
+
+    public static FabriqueAeronef Instance => instance ??= new FabriqueAeronef();
+
+    public Aeronef CreerAeronef(string type, string nom, double vitesse, double tempsEntretien, double capacite, double embarquement, double debarquement)
+    {
+        return null;
+    }
+     */
 }

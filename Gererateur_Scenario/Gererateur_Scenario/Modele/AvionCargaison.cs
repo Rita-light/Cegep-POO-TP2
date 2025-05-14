@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-    class AvionCargaison
+    public class AvionCargaison : AeronefTransport
     {
     }
 }

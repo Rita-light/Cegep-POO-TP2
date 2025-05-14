@@ -8,5 +8,11 @@ namespace Gererateur_Scenario
 {
     class GestionnaireScenario
     {
+        private static GestionnaireScenario _instance;
+        private Scenario m_scenario;
+
+        //public static GestionnaireScenario Instance => _instance ??= new GestionnaireScenario();
+        public Scenario GetScenarioActuel() => m_scenario;
+        public void NouveauScenario() {}
     }
 }

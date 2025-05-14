@@ -1,6 +1,6 @@
 ﻿namespace Gererateur_Scenario
 {
-    public class AvionCiterne4
+    public class AvionCiterne : AeronefUrgence
     {
         
     }

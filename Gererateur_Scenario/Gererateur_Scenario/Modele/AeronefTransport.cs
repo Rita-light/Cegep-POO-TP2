@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-    class AeronefTransport
+    public abstract class AeronefTransport : Aeronef
     {
+        public double Capacite { get; set; }
+        public double TempsEmbarquement { get; set; }
+        public double TempsDebarquement { get; set; }
     }
+
 }

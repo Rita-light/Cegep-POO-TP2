@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-    class Scenario
+    public class Scenario
     {
         private List<Aeroport> aeroports;
         private List<Evenement> evenements;
-
+        private List<IObservateur> m_observateurs ;
+        
+        
         public List<Aeroport> Aeroports
         {
             get { return aeroports; }
@@ -59,12 +61,16 @@ namespace Gererateur_Scenario
         {
             return evenements;
         }
-        public void ImporterScenario(string cheminFichier)
+        /*public void ImporterScenario(string cheminFichier)
         {
         }
         public void ExporterScenario(string cheminFichier)
         {
-        }
+        }*/
+        
+        public void Attacher(IObservateur obs) => m_observateurs.Add(obs);
+        public void Detacher(IObservateur obs) => m_observateurs.Remove(obs);
+        public void Notifier() {}
 
 
 

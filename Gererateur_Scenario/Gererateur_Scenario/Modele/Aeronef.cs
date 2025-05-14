@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-    class Aeronef
+    public class Aeronef
     {
+        protected string Nom;
+        protected double Vitesse;
+        protected double TempsEntretien;
+
+        public TypeAeronef type { get; set; }
     }
 }

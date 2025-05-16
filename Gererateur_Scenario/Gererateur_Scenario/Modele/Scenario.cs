@@ -9,9 +9,8 @@ namespace Gererateur_Scenario
     public class Scenario
     {
         public List<Aeroport> aeroports { get; set; }
-        public List<Evenement> evenements { get; set; }
+        public List<FrequenceEvenement> frequenceEvenements { get; set; } = new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
-
 
         public void AjouterAeroport(Aeroport aeroport)
         {
@@ -24,24 +23,9 @@ namespace Gererateur_Scenario
         public void ModifierAeroport(Aeroport aeroport)
         {
         }
-        public void AjouterEvenement(Evenement evenement)
-        {
-            evenements.Add(evenement);
-        }
-        public void SupprimerEvenement(Evenement evenement)
-        {
-            evenements.Remove(evenement);
-        }
-        public void ModifierEvenement(Evenement evenement)
-        {
-        }
         public List<Aeroport> GetAeroports()
         {
             return aeroports;
-        }
-        public List<Evenement> GetEvenements()
-        {
-            return evenements;
         }
         /*public void ImporterScenario(string cheminFichier)
         {
@@ -49,7 +33,7 @@ namespace Gererateur_Scenario
         public void ExporterScenario(string cheminFichier)
         {
         }*/
-        
+
         public void Attacher(IObservateur obs) => m_observateurs.Add(obs);
         public void Detacher(IObservateur obs) => m_observateurs.Remove(obs);
         public void Notifier()
@@ -59,7 +43,7 @@ namespace Gererateur_Scenario
                 obs.MettreAJour();
             }
         }
-        
+
         public List<string> ObtenirListeAeroports()
         {
             List<string> liste = new List<string>();
@@ -71,7 +55,7 @@ namespace Gererateur_Scenario
 
             return liste;
         }
-        
+
         public List<string> ObtenirListeAeronefs(string nomAeroport)
         {
             foreach (var aeroport in aeroports)

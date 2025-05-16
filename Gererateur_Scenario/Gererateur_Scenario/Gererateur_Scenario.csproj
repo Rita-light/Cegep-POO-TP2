@@ -56,7 +56,7 @@
     <Compile Include="Modele\AvionCiterne.cs" />
     <Compile Include="Modele\AvionPassager.cs" />
     <Compile Include="Modele\AvionSecours.cs" />
-    <Compile Include="Modele\Evenement.cs" />
+    <Compile Include="Modele\FrequenceEvenement.cs" />
     <Compile Include="Modele\FabriqueAeronef.cs" />
     <Compile Include="Modele\GestionnaireFichierXML.cs" />
     <Compile Include="Modele\GestionnaireScenario.cs" />

@@ -52,8 +52,38 @@ namespace Gererateur_Scenario
         
         public void Attacher(IObservateur obs) => m_observateurs.Add(obs);
         public void Detacher(IObservateur obs) => m_observateurs.Remove(obs);
-        public void Notifier() {}
+        public void Notifier()
+        {
+            foreach (IObservateur obs in m_observateurs)
+            {
+                obs.MettreAJour();
+            }
+        }
+        
+        public List<string> ObtenirListeAeroports()
+        {
+            List<string> liste = new List<string>();
 
+            foreach (var aeroport in aeroports)
+            {
+                liste.Add(aeroport.Serialiser());
+            }
+
+            return liste;
+        }
+        
+        public List<string> ObtenirListeAeronefs(string nomAeroport)
+        {
+            foreach (var aeroport in aeroports)
+            {
+                if (aeroport.Nom == nomAeroport)
+                {
+                    return aeroport.ObtenirListeAeronefs();
+                }
+            }
+
+            return new List<string>();
+        }
 
 
     }

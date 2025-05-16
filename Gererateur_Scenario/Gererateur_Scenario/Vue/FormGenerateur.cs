@@ -21,7 +21,7 @@ namespace Gererateur_Scenario.Vue
         }
         
         public void AfficherScenario() { }
-        public void MettreAJourVue() { }
+       
         public void AfficherAeroports() { }
         public void AfficherAeronefs() { }
         public void AfficherEvenements() { }
@@ -41,6 +41,42 @@ namespace Gererateur_Scenario.Vue
         private void ImporterScenario_Click(object sender, EventArgs e) { }
         private void ExporterScenario_Click(object sender, EventArgs e) { }
 
-        public void MettreAJour() { }
+        public void MettreAJour()
+        {
+            MettreAJourVue();
+        }
+
+        public void MettreAJourVue()
+        {
+            AfficherAeroports();
+            AfficherAeronefs();
+            AfficherEvenements();
+        }
+
+        private void btnCharger_Click(object sender, EventArgs e)
+        {
+            // 1. Boîte de dialogue pour sélectionner un fichier XML
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Fichiers XML (*.xml)|*.xml";
+            openFileDialog.Title = "Importer un scénario";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string cheminFichier = openFileDialog.FileName;
+
+                try
+                {
+                    // 2. Appel au contrôleur pour charger le scénario
+                    m_controleur.ChargerScenario(cheminFichier);
+
+                    // 3. Mise à jour de la vue après chargement réussi
+                    MettreAJourVue();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erreur lors de l'importation du scénario : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

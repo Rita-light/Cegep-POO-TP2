@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 
 namespace Gererateur_Scenario.Controle
@@ -7,7 +8,21 @@ namespace Gererateur_Scenario.Controle
     {
         private GestionnaireScenario m_gestionnaire;
 
-        public void ChargerScenario() {}
+        public void ChargerScenario(string cheminFichier)
+        {
+            // 1. Utilisation de GestionnaireFichierXML pour lire le fichier
+            Scenario scenario = GestionnaireFichierXML.Importer(cheminFichier);
+
+            // 2. Mise à jour du scénario actuel dans le singleton GestionnaireScenario
+            GestionnaireScenario.Instance.SetScenarioActuel(scenario);
+
+            // 3. Attacher FormGenerateur comme observateur
+            scenario.Attacher((IObservateur)Application.OpenForms["FormGenerateur"]);
+
+            // 4. Notifier l'observateur
+            scenario.Notifier();
+        }
+
         public void GenererScenario() {}
         public void ExporterScenario() {}
         
@@ -18,7 +33,7 @@ namespace Gererateur_Scenario.Controle
         public void SupprimerAeroport(object args) {}
         
         public void AjouterAeronef(object args) {
-        Aeroport aeroport = GestionnaireScenario.Instance.GetScenarioActuel().GetAeroports()[0];
+            Aeroport aeroport = GestionnaireScenario.Instance.GetScenarioActuel().GetAeroports()[0];
             if (aeroport != null)
             {
                 Aeronef aeronef = new Aeronef();
@@ -37,9 +52,17 @@ namespace Gererateur_Scenario.Controle
         
         public void ChangerFrequence(object args) {}
         
-        public List<Aeroport> GetAeroports() => null;
-        public List<Evenement> GetEvenements() => null;
+        public List<string> ObtenirListeAeroports()
+        {
+            return m_gestionnaire.ObtenirListeAeroports();
+        }
         
+        public List<string> ObtenirListeAeronefs(string nomAeroport)
+        {
+            return m_gestionnaire.ObtenirListeAeronefs(nomAeroport);
+        }
+
+
         public void EnregistrerObservateur(IObservateur obs) {}
     }
 }

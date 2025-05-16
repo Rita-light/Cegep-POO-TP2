@@ -8,10 +8,24 @@ namespace Gererateur_Scenario
 {
     public class Aeronef
     {
-        protected string Nom;
+        private string Nom;
         protected double Vitesse;
+        protected double tempsEmbarquement;
+        protected double tempsDembarquement;
         protected double TempsEntretien;
 
         public TypeAeronef type { get; set; }
+        
+        public override string ToString()
+        {
+            return $"{Nom} - Type: {type}, Vitesse: {Vitesse}, tempsEmbarquement: {tempsEmbarquement}, tempsDembarquement: {tempsDembarquement}, TempsEntretien : {TempsEntretien}";
+        }
+        
+        public string Serialiser()
+        {
+            return $"{Nom}|{type}|{Vitesse}|{tempsEmbarquement}|{tempsDembarquement}|{TempsEntretien}";
+        }
+
     }
+    
 }

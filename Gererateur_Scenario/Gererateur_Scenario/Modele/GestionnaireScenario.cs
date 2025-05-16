@@ -10,7 +10,7 @@ namespace Gererateur_Scenario
     {
         private static GestionnaireScenario _instance;
         private static readonly object _lock = new object();
-        private Scenario scenarioActuel = new Scenario();
+        private Scenario scenarioActuel ;
 
         private GestionnaireScenario() { }
         public static GestionnaireScenario Instance
@@ -28,5 +28,27 @@ namespace Gererateur_Scenario
             }
         }
         public Scenario GetScenarioActuel() =>scenarioActuel;
+        
+        public void SetScenarioActuel(Scenario scenario)
+        {
+            scenarioActuel = scenario;
+        }
+        
+        public void NouveauScenario()
+        {
+            scenarioActuel = new Scenario();
+        }
+        
+        public List<string> ObtenirListeAeroports()
+        {
+            return scenarioActuel.ObtenirListeAeroports();
+        }
+        
+        public List<string> ObtenirListeAeronefs(string nomAeroport)
+        {
+            return scenarioActuel.ObtenirListeAeronefs(nomAeroport);
+        }
+
+
     }
 }

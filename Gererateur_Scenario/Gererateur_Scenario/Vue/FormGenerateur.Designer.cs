@@ -35,12 +35,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.nomAeroport = new System.Windows.Forms.TextBox();
+            this.position_x = new System.Windows.Forms.TextBox();
+            this.position_y = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.minPassager = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.btnAeroport = new System.Windows.Forms.Button();
             this.listAeronef = new System.Windows.Forms.ListBox();
@@ -116,26 +116,26 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "maxCargaisons : ";
             // 
-            // textBox1
+            // nomAeroport
             // 
-            this.textBox1.Location = new System.Drawing.Point(77, 201);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(127, 22);
-            this.textBox1.TabIndex = 7;
+            this.nomAeroport.Location = new System.Drawing.Point(77, 201);
+            this.nomAeroport.Name = "nomAeroport";
+            this.nomAeroport.Size = new System.Drawing.Size(127, 22);
+            this.nomAeroport.TabIndex = 7;
             // 
-            // textBox2
+            // position_x
             // 
-            this.textBox2.Location = new System.Drawing.Point(284, 202);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(39, 22);
-            this.textBox2.TabIndex = 8;
+            this.position_x.Location = new System.Drawing.Point(284, 202);
+            this.position_x.Name = "position_x";
+            this.position_x.Size = new System.Drawing.Size(39, 22);
+            this.position_x.TabIndex = 8;
             // 
-            // textBox3
+            // position_y
             // 
-            this.textBox3.Location = new System.Drawing.Point(329, 202);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(39, 22);
-            this.textBox3.TabIndex = 9;
+            this.position_y.Location = new System.Drawing.Point(329, 202);
+            this.position_y.Name = "position_y";
+            this.position_y.Size = new System.Drawing.Size(39, 22);
+            this.position_y.TabIndex = 9;
             // 
             // textBox4
             // 
@@ -151,12 +151,12 @@
             this.textBox5.Size = new System.Drawing.Size(56, 22);
             this.textBox5.TabIndex = 11;
             // 
-            // textBox6
+            // minPassager
             // 
-            this.textBox6.Location = new System.Drawing.Point(489, 203);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(56, 22);
-            this.textBox6.TabIndex = 12;
+            this.minPassager.Location = new System.Drawing.Point(489, 203);
+            this.minPassager.Name = "minPassager";
+            this.minPassager.Size = new System.Drawing.Size(56, 22);
+            this.minPassager.TabIndex = 12;
             // 
             // textBox7
             // 
@@ -275,6 +275,7 @@
             this.btnCharger.TabIndex = 27;
             this.btnCharger.Text = "Charger Scenario";
             this.btnCharger.UseVisualStyleBackColor = true;
+            this.btnCharger.Click += new System.EventHandler(this.btnCharger_Click);
             // 
             // btnEnregistrer
             // 
@@ -307,12 +308,12 @@
             this.Controls.Add(this.listAeronef);
             this.Controls.Add(this.btnAeroport);
             this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.minPassager);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.position_y);
+            this.Controls.Add(this.position_x);
+            this.Controls.Add(this.nomAeroport);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -354,12 +355,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox nomAeroport;
+        private System.Windows.Forms.TextBox position_x;
+        private System.Windows.Forms.TextBox position_y;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox minPassager;
 
         private System.Windows.Forms.ListBox listAeroport;
 

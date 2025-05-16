@@ -8,28 +8,10 @@ namespace Gererateur_Scenario
 {
     public class Scenario
     {
-        private List<Aeroport> aeroports;
-        private List<Evenement> evenements;
-        private List<IObservateur> m_observateurs ;
-        
-        
-        public List<Aeroport> Aeroports
-        {
-            get { return aeroports; }
-            set { aeroports = value; }
-        }
+        public List<Aeroport> aeroports { get; set; }
+        public List<Evenement> evenements { get; set; }
+        private List<IObservateur> m_observateurs = new List<IObservateur>();
 
-        public List<Evenement> Evenements
-        {
-            get { return evenements; }
-            set { evenements = value; }
-        }
-        
-        public Scenario()
-        {
-            aeroports = new List<Aeroport>();
-            evenements = new List<Evenement>();
-        }
 
         public void AjouterAeroport(Aeroport aeroport)
         {

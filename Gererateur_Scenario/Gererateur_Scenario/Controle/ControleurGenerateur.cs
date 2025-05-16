@@ -11,11 +11,23 @@ namespace Gererateur_Scenario.Controle
         public void GenererScenario() {}
         public void ExporterScenario() {}
         
-        public void AjouterAeroport(object args) {}
+        public void AjouterAeroport(object args) {
+        
+        }
         public void ModifierAeroport(object args) {}
         public void SupprimerAeroport(object args) {}
         
-        public void AjouterAeronef(object args) {}
+        public void AjouterAeronef(object args) {
+        Aeroport aeroport = GestionnaireScenario.Instance.GetScenarioActuel().GetAeroports()[0];
+            if (aeroport != null)
+            {
+                Aeronef aeronef = new Aeronef();
+                aeroport.AjouterAeronef();
+            }
+            else {
+                // Gérer le cas où l'aéroport est null
+            }
+        }
         public void ModifierAeronef(object args) {}
         public void SupprimerAeronef(object args) {}
         

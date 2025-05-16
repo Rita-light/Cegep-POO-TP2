@@ -5,3 +5,10 @@ C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scen
 C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererateur_Scenario.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererateur_Scenario.exe
 C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererateur_Scenario.pdb
+C:\Users\bibia\Desktop\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\Gererateur_Scenario.exe.config
+C:\Users\bibia\Desktop\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\Gererateur_Scenario.exe
+C:\Users\bibia\Desktop\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\Gererateur_Scenario.pdb
+C:\Users\bibia\Desktop\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererateur_Scenario.csproj.AssemblyReference.cache
+C:\Users\bibia\Desktop\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererateur_Scenario.csproj.CoreCompileInputs.cache
+C:\Users\bibia\Desktop\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererateur_Scenario.exe
+C:\Users\bibia\Desktop\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererateur_Scenario.pdb

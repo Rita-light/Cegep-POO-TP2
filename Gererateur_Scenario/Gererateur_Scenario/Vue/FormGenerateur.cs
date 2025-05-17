@@ -27,7 +27,6 @@ namespace Gererateur_Scenario.Vue
             m_controleur.EnregistrerObservateur(this);
         }
         
-        
         private void btnAeroport_Click(object sender, EventArgs e)
         {
             string nom = nomAeroport.Text.Trim();
@@ -122,22 +121,7 @@ namespace Gererateur_Scenario.Vue
             }
         }
         public void AfficherAeronefs() { }
-        public void AfficherEvenements() { }
-
-        private void ModifierAeroport_Click(object sender, EventArgs e) { }
-        private void SupprimerAeroport_Click(object sender, EventArgs e) { }
-
-        private void AjouterAeronef_Click(object sender, EventArgs e) { }
-        private void ModifierAeronef_Click(object sender, EventArgs e) { }
-        private void SupprimerAeronef_Click(object sender, EventArgs e) { }
-
-        private void AjouterEvenement_Click(object sender, EventArgs e) { }
-        private void ModifierEvenement_Click(object sender, EventArgs e) { }
-        private void SupprimerEvenement_Click(object sender, EventArgs e) { }
-
-        private void ImporterScenario_Click(object sender, EventArgs e) { }
-        private void ExporterScenario_Click(object sender, EventArgs e) { }
-
+       
         public void MettreAJour()
         {
             Console.WriteLine("Debut mise à jour");
@@ -148,7 +132,6 @@ namespace Gererateur_Scenario.Vue
         {
             AfficherAeroports();
             AfficherAeronefs();
-            AfficherEvenements();
         }
 
         private void btnCharger_Click(object sender, EventArgs e)
@@ -230,24 +213,16 @@ namespace Gererateur_Scenario.Vue
                 }
             
                 // --- Vérification de l'unicité du nom ---
-                
-                // --- Vérification de l'unicité du nom de l'aéroport (hors cas où le nom reste inchangé) ---
                 foreach (string item in listAeroport.Items)
                 {
-                    // Récupération du nom sans les parenthèses (ex: "Paris (48.8, 2.3)" → "Paris")
                     string nomItem = item.Split('(')[0].Trim();
 
-                    // Si un aéroport porte déjà le nom qu'on essaie d'utiliser (et que ce n'est pas le même qu'avant)
                     if (nomItem.Equals(nom, StringComparison.OrdinalIgnoreCase) && !nom.Equals(ancienNom, StringComparison.OrdinalIgnoreCase))
                     {
                         MessageBox.Show("Un aéroport avec ce nom existe déjà.", "Doublon", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
-
-
-            
-            
                 
                 // Vérifier si les champs numériques sont valides
                 if (!int.TryParse(data["MinPassagers"], out int minPassagers) ||
@@ -315,6 +290,30 @@ namespace Gererateur_Scenario.Vue
             maxPassager.Text = parties[4];
             minCargaison.Text = parties[5];
             maxCargaison.Text = parties[6];
+        }
+        
+        private void SupprimerAeroport_Click_1(object sender, EventArgs e)
+        {
+            if (listAeroport.SelectedItem != null)
+            {
+                string item = listAeroport.SelectedItem.ToString();
+                string nomAeroport = item.Split('(')[0].Trim(); 
+                DialogResult result = MessageBox.Show(
+                    $"Voulez-vous vraiment supprimer l’aéroport « {nomAeroport} » ?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    m_controleur.SupprimerAeroport(nomAeroport);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport à supprimer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

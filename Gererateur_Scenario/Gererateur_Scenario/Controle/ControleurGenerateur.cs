@@ -117,8 +117,12 @@ namespace Gererateur_Scenario.Controle
             scenario.ModifierAeroport(ancienNom ,nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
 
         }
-        public void SupprimerAeroport(object args) {}
-        
+        public void SupprimerAeroport(string nom)
+        {
+            var scenario = m_gestionnaire.GetScenario();
+            scenario.SupprimerAeroport(nom);
+        }
+
         public void AjouterAeronef(object args) {
             Aeroport aeroport = m_gestionnaire.GetScenario().GetAeroports()[0];
             if (aeroport != null)

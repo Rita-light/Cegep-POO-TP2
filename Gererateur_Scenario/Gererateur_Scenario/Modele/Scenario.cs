@@ -105,6 +105,16 @@ namespace Gererateur_Scenario
         }
 
 
+        public void SupprimerAeroport(string nom)
+        {
+            var aeroport = aeroports.FirstOrDefault(a => a.Nom.Equals(nom, StringComparison.OrdinalIgnoreCase));
+            if (aeroport != null)
+            {
+                aeroports.Remove(aeroport);
+                Notifier(); 
+            }
+        }
+
 
     }
 }

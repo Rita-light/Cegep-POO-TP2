@@ -58,6 +58,7 @@
             this.btnCharger = new System.Windows.Forms.Button();
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.modifierAeroport = new System.Windows.Forms.Button();
+            this.SupprimerAeroport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listAeroport
@@ -300,12 +301,23 @@
             this.modifierAeroport.UseVisualStyleBackColor = true;
             this.modifierAeroport.Click += new System.EventHandler(this.modifierAeroport_Click);
             // 
+            // SupprimerAeroport
+            // 
+            this.SupprimerAeroport.Location = new System.Drawing.Point(718, 251);
+            this.SupprimerAeroport.Name = "SupprimerAeroport";
+            this.SupprimerAeroport.Size = new System.Drawing.Size(146, 23);
+            this.SupprimerAeroport.TabIndex = 30;
+            this.SupprimerAeroport.Text = "Supprimer Aéroport";
+            this.SupprimerAeroport.UseVisualStyleBackColor = true;
+            this.SupprimerAeroport.Click += new System.EventHandler(this.SupprimerAeroport_Click_1);
+            // 
             // FormGenerateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1110, 672);
+            this.Controls.Add(this.SupprimerAeroport);
             this.Controls.Add(this.modifierAeroport);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.btnCharger);
@@ -341,6 +353,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button SupprimerAeroport;
 
         private System.Windows.Forms.Button modifierAeroport;
 

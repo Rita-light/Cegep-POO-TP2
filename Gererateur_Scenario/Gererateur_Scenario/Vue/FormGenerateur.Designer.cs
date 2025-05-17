@@ -57,6 +57,7 @@
             this.btnAeronef = new System.Windows.Forms.Button();
             this.btnCharger = new System.Windows.Forms.Button();
             this.btnEnregistrer = new System.Windows.Forms.Button();
+<<<<<<< Updated upstream
             this.modifierAeroport = new System.Windows.Forms.Button();
             this.SupprimerAeroport = new System.Windows.Forms.Button();
             this.nouveauScenario = new System.Windows.Forms.Button();
@@ -64,6 +65,12 @@
             this.label15 = new System.Windows.Forms.Label();
             this.capacite = new System.Windows.Forms.TextBox();
             this.type = new System.Windows.Forms.ComboBox();
+=======
+            this.capacite = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.type = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+>>>>>>> Stashed changes
             this.SuspendLayout();
             // 
             // listAeroport
@@ -188,10 +195,17 @@
             // 
             // btnAjouterAeroport
             // 
+<<<<<<< Updated upstream
             this.btnAjouterAeroport.Location = new System.Drawing.Point(10, 203);
             this.btnAjouterAeroport.Margin = new System.Windows.Forms.Padding(2);
             this.btnAjouterAeroport.Name = "btnAjouterAeroport";
             this.btnAjouterAeroport.Size = new System.Drawing.Size(290, 27);
+=======
+            this.btnAjouterAeroport.Location = new System.Drawing.Point(10, 199);
+            this.btnAjouterAeroport.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAjouterAeroport.Name = "btnAjouterAeroport";
+            this.btnAjouterAeroport.Size = new System.Drawing.Size(813, 19);
+>>>>>>> Stashed changes
             this.btnAjouterAeroport.TabIndex = 14;
             this.btnAjouterAeroport.Text = "Ajouter Aéroport";
             this.btnAjouterAeroport.UseVisualStyleBackColor = true;
@@ -200,7 +214,11 @@
             // listAeronef
             // 
             this.listAeronef.FormattingEnabled = true;
+<<<<<<< Updated upstream
             this.listAeronef.Location = new System.Drawing.Point(10, 250);
+=======
+            this.listAeronef.Location = new System.Drawing.Point(10, 239);
+>>>>>>> Stashed changes
             this.listAeronef.Margin = new System.Windows.Forms.Padding(2);
             this.listAeronef.Name = "listAeronef";
             this.listAeronef.Size = new System.Drawing.Size(814, 134);
@@ -217,7 +235,11 @@
             // 
             // label8
             // 
+<<<<<<< Updated upstream
             this.label8.Location = new System.Drawing.Point(153, 393);
+=======
+            this.label8.Location = new System.Drawing.Point(178, 391);
+>>>>>>> Stashed changes
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(56, 19);
@@ -226,7 +248,11 @@
             // 
             // label9
             // 
+<<<<<<< Updated upstream
             this.label9.Location = new System.Drawing.Point(268, 391);
+=======
+            this.label9.Location = new System.Drawing.Point(297, 390);
+>>>>>>> Stashed changes
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(122, 19);
@@ -235,7 +261,11 @@
             // 
             // label10
             // 
+<<<<<<< Updated upstream
             this.label10.Location = new System.Drawing.Point(445, 392);
+=======
+            this.label10.Location = new System.Drawing.Point(479, 392);
+>>>>>>> Stashed changes
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(118, 19);
@@ -244,7 +274,11 @@
             // 
             // label11
             // 
+<<<<<<< Updated upstream
             this.label11.Location = new System.Drawing.Point(625, 393);
+=======
+            this.label11.Location = new System.Drawing.Point(682, 392);
+>>>>>>> Stashed changes
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(91, 19);
@@ -253,60 +287,109 @@
             // 
             // nomAeronef
             // 
+<<<<<<< Updated upstream
             this.nomAeronef.Location = new System.Drawing.Point(48, 390);
             this.nomAeronef.Margin = new System.Windows.Forms.Padding(2);
             this.nomAeronef.Name = "nomAeronef";
             this.nomAeronef.Size = new System.Drawing.Size(84, 20);
+=======
+            this.nomAeronef.Location = new System.Drawing.Point(58, 391);
+            this.nomAeronef.Margin = new System.Windows.Forms.Padding(2);
+            this.nomAeronef.Name = "nomAeronef";
+            this.nomAeronef.Size = new System.Drawing.Size(110, 20);
+>>>>>>> Stashed changes
             this.nomAeronef.TabIndex = 21;
             // 
             // vitesse
             // 
+<<<<<<< Updated upstream
             this.vitesse.Location = new System.Drawing.Point(213, 389);
             this.vitesse.Margin = new System.Windows.Forms.Padding(2);
             this.vitesse.Name = "vitesse";
             this.vitesse.Size = new System.Drawing.Size(35, 20);
+=======
+            this.vitesse.Location = new System.Drawing.Point(239, 391);
+            this.vitesse.Margin = new System.Windows.Forms.Padding(2);
+            this.vitesse.Name = "vitesse";
+            this.vitesse.Size = new System.Drawing.Size(45, 20);
+>>>>>>> Stashed changes
             this.vitesse.TabIndex = 22;
             // 
             // tempsEmbarquement
             // 
+<<<<<<< Updated upstream
             this.tempsEmbarquement.Location = new System.Drawing.Point(394, 388);
             this.tempsEmbarquement.Margin = new System.Windows.Forms.Padding(2);
             this.tempsEmbarquement.Name = "tempsEmbarquement";
             this.tempsEmbarquement.Size = new System.Drawing.Size(32, 20);
+=======
+            this.tempsEmbarquement.Location = new System.Drawing.Point(424, 392);
+            this.tempsEmbarquement.Margin = new System.Windows.Forms.Padding(2);
+            this.tempsEmbarquement.Name = "tempsEmbarquement";
+            this.tempsEmbarquement.Size = new System.Drawing.Size(42, 20);
+>>>>>>> Stashed changes
             this.tempsEmbarquement.TabIndex = 23;
             // 
             // tempsDebarquement
             // 
+<<<<<<< Updated upstream
             this.tempsDebarquement.Location = new System.Drawing.Point(567, 388);
             this.tempsDebarquement.Margin = new System.Windows.Forms.Padding(2);
             this.tempsDebarquement.Name = "tempsDebarquement";
             this.tempsDebarquement.Size = new System.Drawing.Size(32, 20);
+=======
+            this.tempsDebarquement.Location = new System.Drawing.Point(617, 389);
+            this.tempsDebarquement.Margin = new System.Windows.Forms.Padding(2);
+            this.tempsDebarquement.Name = "tempsDebarquement";
+            this.tempsDebarquement.Size = new System.Drawing.Size(42, 20);
+>>>>>>> Stashed changes
             this.tempsDebarquement.TabIndex = 24;
             // 
             // tempsEntretien
             // 
+<<<<<<< Updated upstream
             this.tempsEntretien.Location = new System.Drawing.Point(720, 389);
             this.tempsEntretien.Margin = new System.Windows.Forms.Padding(2);
             this.tempsEntretien.Name = "tempsEntretien";
             this.tempsEntretien.Size = new System.Drawing.Size(36, 20);
+=======
+            this.tempsEntretien.Location = new System.Drawing.Point(777, 389);
+            this.tempsEntretien.Margin = new System.Windows.Forms.Padding(2);
+            this.tempsEntretien.Name = "tempsEntretien";
+            this.tempsEntretien.Size = new System.Drawing.Size(47, 20);
+>>>>>>> Stashed changes
             this.tempsEntretien.TabIndex = 25;
             // 
             // btnAeronef
             // 
+<<<<<<< Updated upstream
             this.btnAeronef.Location = new System.Drawing.Point(13, 477);
             this.btnAeronef.Margin = new System.Windows.Forms.Padding(2);
             this.btnAeronef.Name = "btnAeronef";
             this.btnAeronef.Size = new System.Drawing.Size(811, 28);
+=======
+            this.btnAeronef.Location = new System.Drawing.Point(10, 468);
+            this.btnAeronef.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAeronef.Name = "btnAeronef";
+            this.btnAeronef.Size = new System.Drawing.Size(813, 19);
+>>>>>>> Stashed changes
             this.btnAeronef.TabIndex = 26;
             this.btnAeronef.Text = "Ajouter Aéronef";
             this.btnAeronef.UseVisualStyleBackColor = true;
             // 
             // btnCharger
             // 
+<<<<<<< Updated upstream
             this.btnCharger.Location = new System.Drawing.Point(13, 508);
             this.btnCharger.Margin = new System.Windows.Forms.Padding(2);
             this.btnCharger.Name = "btnCharger";
             this.btnCharger.Size = new System.Drawing.Size(242, 27);
+=======
+            this.btnCharger.Location = new System.Drawing.Point(10, 509);
+            this.btnCharger.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCharger.Name = "btnCharger";
+            this.btnCharger.Size = new System.Drawing.Size(405, 20);
+>>>>>>> Stashed changes
             this.btnCharger.TabIndex = 27;
             this.btnCharger.Text = "Charger Scenario";
             this.btnCharger.UseVisualStyleBackColor = true;
@@ -314,10 +397,17 @@
             // 
             // btnEnregistrer
             // 
+<<<<<<< Updated upstream
             this.btnEnregistrer.Location = new System.Drawing.Point(520, 509);
             this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(2);
             this.btnEnregistrer.Name = "btnEnregistrer";
             this.btnEnregistrer.Size = new System.Drawing.Size(302, 26);
+=======
+            this.btnEnregistrer.Location = new System.Drawing.Point(418, 509);
+            this.btnEnregistrer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(405, 20);
+>>>>>>> Stashed changes
             this.btnEnregistrer.TabIndex = 28;
             this.btnEnregistrer.Text = "Générer Scenario";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
@@ -396,12 +486,52 @@
             this.type.Size = new System.Drawing.Size(121, 21);
             this.type.TabIndex = 36;
             // 
+            // capacite
+            // 
+            this.capacite.Location = new System.Drawing.Point(262, 428);
+            this.capacite.Name = "capacite";
+            this.capacite.Size = new System.Drawing.Size(100, 20);
+            this.capacite.TabIndex = 30;
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(11, 431);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(44, 19);
+            this.label12.TabIndex = 31;
+            this.label12.Text = "Type:";
+            // 
+            // type
+            // 
+            this.type.FormattingEnabled = true;
+            this.type.Items.AddRange(new object[] {
+            "Passager",
+            "Cargo",
+            "Secours",
+            "Citerne",
+            "Helicoptere"});
+            this.type.Location = new System.Drawing.Point(58, 427);
+            this.type.Name = "type";
+            this.type.Size = new System.Drawing.Size(121, 21);
+            this.type.TabIndex = 29;
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(201, 431);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(56, 19);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "Capacite:";
+            // 
             // FormGenerateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(832, 546);
+<<<<<<< Updated upstream
             this.Controls.Add(this.type);
             this.Controls.Add(this.capacite);
             this.Controls.Add(this.label15);
@@ -409,6 +539,12 @@
             this.Controls.Add(this.nouveauScenario);
             this.Controls.Add(this.SupprimerAeroport);
             this.Controls.Add(this.modifierAeroport);
+=======
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.capacite);
+            this.Controls.Add(this.type);
+>>>>>>> Stashed changes
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.btnCharger);
             this.Controls.Add(this.btnAeronef);
@@ -491,9 +627,16 @@
 
         #endregion
 
+<<<<<<< Updated upstream
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox capacite;
         private System.Windows.Forms.ComboBox type;
+=======
+        private System.Windows.Forms.TextBox capacite;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox type;
+        private System.Windows.Forms.Label label13;
+>>>>>>> Stashed changes
     }
 }

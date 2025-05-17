@@ -8,6 +8,7 @@ namespace Gererateur_Scenario.Controle
 {
     public class ControleurGenerateur
     {
+        private Aeroport m_aeroport;
         private GestionnaireScenario m_gestionnaire;
         private FormGenerateur formGenerateur;
 
@@ -169,6 +170,7 @@ namespace Gererateur_Scenario.Controle
                 throw new ArgumentException($"Aéroport '{aeroportStr}' introuvable.");
             }
 
+<<<<<<< Updated upstream
             aeroport.AjouterAeronef(
                 nom,
                 type,
@@ -185,6 +187,10 @@ namespace Gererateur_Scenario.Controle
             EnregistrerObservateur(formGenerateur);
             m_gestionnaire.GetScenario().Notifier(); 
         }     
+=======
+            aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
+        }
+>>>>>>> Stashed changes
 
         public void ModifierAeronef(object args) {}
         public void SupprimerAeronef(object args) {}

@@ -12,6 +12,7 @@ namespace Gererateur_Scenario
         public List<FrequenceEvenement> frequenceEvenements { get; set; } = new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
+<<<<<<< Updated upstream
         public Scenario()
         {
             aeroports = new List<Aeroport>();
@@ -23,15 +24,24 @@ namespace Gererateur_Scenario
         {
             aeroports.Add(aeroport);
         }
+=======
+>>>>>>> Stashed changes
         public void SupprimerAeroport(Aeroport aeroport)
         {
             aeroports.Remove(aeroport);
         }
+<<<<<<< Updated upstream
         
         public List<Aeroport> GetAeroports()
         {
             return aeroports;
         }
+=======
+        public void ModifierAeroport(Aeroport aeroport)
+        {
+        }
+        
+>>>>>>> Stashed changes
         /*public void ImporterScenario(string cheminFichier)
         {
         }
@@ -123,6 +133,14 @@ namespace Gererateur_Scenario
             }
         }
 
+        public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
+        {
+            if (string.IsNullOrEmpty(nomAeroport))
+            {
+                return null;
+            }
+            return aeroports.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
+        }
 
     }
 }

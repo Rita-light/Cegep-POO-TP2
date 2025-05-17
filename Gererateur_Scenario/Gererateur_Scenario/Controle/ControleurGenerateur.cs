@@ -10,11 +10,10 @@ namespace Gererateur_Scenario.Controle
         private GestionnaireScenario m_gestionnaire;
         private FormGenerateur formGenerateur;
 
-        public ControleurGenerateur()
+        public ControleurGenerateur(FormGenerateur formGenerateur)
         {
             m_gestionnaire = GestionnaireScenario.Instance;
-            formGenerateur = new FormGenerateur();
-            
+            this.formGenerateur = formGenerateur;
         }
         
         public void DemarrerApplication()

@@ -46,7 +46,7 @@ namespace Gererateur_Scenario
         {
             foreach (IObservateur obs in m_observateurs)
             {
-               // obs.MettreAJour();
+                obs.MettreAJour();
             }
         }
         

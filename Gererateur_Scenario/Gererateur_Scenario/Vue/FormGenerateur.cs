@@ -18,7 +18,13 @@ namespace Gererateur_Scenario.Vue
         public FormGenerateur()
         {
             InitializeComponent();
-            m_controleur = new ControleurGenerateur();
+            //m_controleur = new ControleurGenerateur();
+            //m_controleur.EnregistrerObservateur(this);
+        }
+        
+        public void SetControleur(ControleurGenerateur controleur)
+        {
+            m_controleur = controleur;
             m_controleur.EnregistrerObservateur(this);
         }
         

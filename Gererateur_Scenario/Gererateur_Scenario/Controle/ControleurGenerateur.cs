@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
+using Gererateur_Scenario.Vue;
 
 
 namespace Gererateur_Scenario.Controle
@@ -7,6 +8,42 @@ namespace Gererateur_Scenario.Controle
     public class ControleurGenerateur
     {
         private GestionnaireScenario m_gestionnaire;
+        private FormGenerateur formGenerateur;
+
+        public ControleurGenerateur()
+        {
+            m_gestionnaire = GestionnaireScenario.Instance;
+            formGenerateur = new FormGenerateur();
+            
+        }
+        
+        public void DemarrerApplication()
+        {
+            // Affiche la fenêtre principale
+            Application.Run(formGenerateur);
+        }
+        
+        public void EnregistrerObservateur(IObservateur obs)
+        {
+            m_gestionnaire.GetScenario().Attacher(obs);
+        }
+
+        
+        public void AjouterAeroport(Dictionary<string, string> data)
+        {
+            string nom = data["Nom"];
+            double latitude = double.Parse(data["Latitude"]);
+            double longitude = double.Parse(data["Longitude"]);
+            int minPassagers = int.Parse(data["MinPassagers"]);
+            int maxPassagers = int.Parse(data["MaxPassagers"]);
+            double minCargaisons = double.Parse(data["MinCargaisons"]);
+            double maxCargaisons = double.Parse(data["MaxCargaisons"]);
+            
+            var position = new Position(latitude, longitude);
+            var scenario = m_gestionnaire.GetScenario();
+            scenario.AjouterAeroport(nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
+        }
+
 
         public void ChargerScenario(string cheminFichier)
         {
@@ -14,7 +51,7 @@ namespace Gererateur_Scenario.Controle
             Scenario scenario = GestionnaireFichierXML.Importer(cheminFichier);
 
             // 2. Mise à jour du scénario actuel dans le singleton GestionnaireScenario
-            GestionnaireScenario.Instance.SetScenarioActuel(scenario);
+            m_gestionnaire.SetScenarioActuel(scenario);
 
             // 3. Attacher FormGenerateur comme observateur
             scenario.Attacher((IObservateur)Application.OpenForms["FormGenerateur"]);
@@ -26,14 +63,12 @@ namespace Gererateur_Scenario.Controle
         public void GenererScenario() {}
         public void ExporterScenario() {}
         
-        public void AjouterAeroport(object args) {
         
-        }
         public void ModifierAeroport(object args) {}
         public void SupprimerAeroport(object args) {}
         
         public void AjouterAeronef(object args) {
-            Aeroport aeroport = GestionnaireScenario.Instance.GetScenarioActuel().GetAeroports()[0];
+            Aeroport aeroport = m_gestionnaire.GetScenario().GetAeroports()[0];
             if (aeroport != null)
             {
                 Aeronef aeronef = new Aeronef();
@@ -61,8 +96,6 @@ namespace Gererateur_Scenario.Controle
         {
             return m_gestionnaire.ObtenirListeAeronefs(nomAeroport);
         }
-
-
-        public void EnregistrerObservateur(IObservateur obs) {}
+        
     }
 }

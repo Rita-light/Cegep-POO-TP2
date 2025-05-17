@@ -34,15 +34,29 @@ namespace Gererateur_Scenario
         {
         }*/
 
-        public void Attacher(IObservateur obs) => m_observateurs.Add(obs);
+        public void Attacher(IObservateur obs)
+        {
+            if (!m_observateurs.Contains(obs))
+            {
+                m_observateurs.Add(obs);
+            }
+        }
         public void Detacher(IObservateur obs) => m_observateurs.Remove(obs);
         public void Notifier()
         {
             foreach (IObservateur obs in m_observateurs)
             {
-                obs.MettreAJour();
+               // obs.MettreAJour();
             }
         }
+        
+        public void AjouterAeroport(string nom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
+        {
+            var aeroport = new Aeroport(nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
+            aeroports.Add(aeroport);
+            Notifier();
+        }
+
 
         public List<string> ObtenirListeAeroports()
         {

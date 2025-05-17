@@ -10,9 +10,12 @@ namespace Gererateur_Scenario
     {
         private static GestionnaireScenario _instance;
         private static readonly object _lock = new object();
-        private Scenario m_scenario = new Scenario();
+        private Scenario m_scenario  ;
 
-        private GestionnaireScenario() { }
+        private GestionnaireScenario()
+        {
+            m_scenario = new Scenario();
+        }
         public static GestionnaireScenario Instance
         {
             get

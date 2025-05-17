@@ -18,6 +18,25 @@ namespace Gererateur_Scenario.Vue
         public FormGenerateur()
         {
             InitializeComponent();
+            m_controleur = new ControleurGenerateur();
+            m_controleur.EnregistrerObservateur(this);
+        }
+        
+        
+        private void btnAeroport_Click(object sender, EventArgs e)
+        {
+            var data = new Dictionary<string, string>()
+            {
+                { "Nom", nomAeroport.Text },
+                { "Latitude", position_latitude.Text },
+                { "Longitude", position_longitude.Text },
+                { "MinPassagers", minPassager.Text },
+                { "MaxPassagers", maxPassager.Text },
+                { "MinCargaisons", minCargaison.Text },
+                { "MaxCargaisons", maxCargaison.Text }
+            };
+
+            m_controleur.AjouterAeroport(data);
         }
         
         public void AfficherScenario() { }
@@ -26,7 +45,6 @@ namespace Gererateur_Scenario.Vue
         public void AfficherAeronefs() { }
         public void AfficherEvenements() { }
 
-        private void AjouterAeroport_Click(object sender, EventArgs e) { }
         private void ModifierAeroport_Click(object sender, EventArgs e) { }
         private void SupprimerAeroport_Click(object sender, EventArgs e) { }
 
@@ -78,5 +96,6 @@ namespace Gererateur_Scenario.Vue
                 }
             }
         }
+        
     }
 }

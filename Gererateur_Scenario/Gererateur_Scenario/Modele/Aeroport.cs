@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-    public abstract class Aeroport
+    public class Aeroport
     {
         public string Nom { get; set; }
         public Position Position { get; set; }
@@ -15,6 +15,17 @@ namespace Gererateur_Scenario
         public double MinCargaisons { get; set; }
         public double MaxCargaisons { get; set; }
         private List<Aeronef> Aeronefs { get; } 
+        
+        public Aeroport(string nom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
+        {
+            Nom = nom;
+            Position = position;
+            MinPassagers = minPassagers;
+            MaxPassagers = maxPassagers;
+            MinCargaisons = minCargaisons;
+            MaxCargaisons = maxCargaisons;
+            Aeronefs = new List<Aeronef>();
+        }
 
         public void AjouterAeronef() { }
         public void ModifierAeronef() { }

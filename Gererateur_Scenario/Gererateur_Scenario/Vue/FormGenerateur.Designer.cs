@@ -36,13 +36,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.nomAeroport = new System.Windows.Forms.TextBox();
-            this.position_x = new System.Windows.Forms.TextBox();
-            this.position_y = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.position_latitude = new System.Windows.Forms.TextBox();
+            this.position_longitude = new System.Windows.Forms.TextBox();
+            this.maxPassager = new System.Windows.Forms.TextBox();
+            this.minCargaison = new System.Windows.Forms.TextBox();
             this.minPassager = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.btnAeroport = new System.Windows.Forms.Button();
+            this.maxCargaison = new System.Windows.Forms.TextBox();
+            this.btnAjouterAeroport = new System.Windows.Forms.Button();
             this.listAeronef = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -123,33 +123,33 @@
             this.nomAeroport.Size = new System.Drawing.Size(127, 22);
             this.nomAeroport.TabIndex = 7;
             // 
-            // position_x
+            // position_latitude
             // 
-            this.position_x.Location = new System.Drawing.Point(284, 202);
-            this.position_x.Name = "position_x";
-            this.position_x.Size = new System.Drawing.Size(39, 22);
-            this.position_x.TabIndex = 8;
+            this.position_latitude.Location = new System.Drawing.Point(284, 202);
+            this.position_latitude.Name = "position_latitude";
+            this.position_latitude.Size = new System.Drawing.Size(39, 22);
+            this.position_latitude.TabIndex = 8;
             // 
-            // position_y
+            // position_longitude
             // 
-            this.position_y.Location = new System.Drawing.Point(329, 202);
-            this.position_y.Name = "position_y";
-            this.position_y.Size = new System.Drawing.Size(39, 22);
-            this.position_y.TabIndex = 9;
+            this.position_longitude.Location = new System.Drawing.Point(329, 202);
+            this.position_longitude.Name = "position_longitude";
+            this.position_longitude.Size = new System.Drawing.Size(39, 22);
+            this.position_longitude.TabIndex = 9;
             // 
-            // textBox4
+            // maxPassager
             // 
-            this.textBox4.Location = new System.Drawing.Point(677, 205);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(56, 22);
-            this.textBox4.TabIndex = 10;
+            this.maxPassager.Location = new System.Drawing.Point(677, 205);
+            this.maxPassager.Name = "maxPassager";
+            this.maxPassager.Size = new System.Drawing.Size(56, 22);
+            this.maxPassager.TabIndex = 10;
             // 
-            // textBox5
+            // minCargaison
             // 
-            this.textBox5.Location = new System.Drawing.Point(851, 205);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(56, 22);
-            this.textBox5.TabIndex = 11;
+            this.minCargaison.Location = new System.Drawing.Point(851, 205);
+            this.minCargaison.Name = "minCargaison";
+            this.minCargaison.Size = new System.Drawing.Size(56, 22);
+            this.minCargaison.TabIndex = 11;
             // 
             // minPassager
             // 
@@ -158,21 +158,22 @@
             this.minPassager.Size = new System.Drawing.Size(56, 22);
             this.minPassager.TabIndex = 12;
             // 
-            // textBox7
+            // maxCargaison
             // 
-            this.textBox7.Location = new System.Drawing.Point(1041, 204);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(56, 22);
-            this.textBox7.TabIndex = 13;
+            this.maxCargaison.Location = new System.Drawing.Point(1041, 204);
+            this.maxCargaison.Name = "maxCargaison";
+            this.maxCargaison.Size = new System.Drawing.Size(56, 22);
+            this.maxCargaison.TabIndex = 13;
             // 
-            // btnAeroport
+            // btnAjouterAeroport
             // 
-            this.btnAeroport.Location = new System.Drawing.Point(13, 245);
-            this.btnAeroport.Name = "btnAeroport";
-            this.btnAeroport.Size = new System.Drawing.Size(1084, 23);
-            this.btnAeroport.TabIndex = 14;
-            this.btnAeroport.Text = "Ajoutee Aéroport";
-            this.btnAeroport.UseVisualStyleBackColor = true;
+            this.btnAjouterAeroport.Location = new System.Drawing.Point(13, 245);
+            this.btnAjouterAeroport.Name = "btnAjouterAeroport";
+            this.btnAjouterAeroport.Size = new System.Drawing.Size(1084, 23);
+            this.btnAjouterAeroport.TabIndex = 14;
+            this.btnAjouterAeroport.Text = "Ajouter Aéroport";
+            this.btnAjouterAeroport.UseVisualStyleBackColor = true;
+            this.btnAjouterAeroport.Click += new System.EventHandler(this.btnAeroport_Click);
             // 
             // listAeronef
             // 
@@ -306,13 +307,13 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.listAeronef);
-            this.Controls.Add(this.btnAeroport);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.btnAjouterAeroport);
+            this.Controls.Add(this.maxCargaison);
             this.Controls.Add(this.minPassager);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.position_y);
-            this.Controls.Add(this.position_x);
+            this.Controls.Add(this.minCargaison);
+            this.Controls.Add(this.maxPassager);
+            this.Controls.Add(this.position_longitude);
+            this.Controls.Add(this.position_latitude);
             this.Controls.Add(this.nomAeroport);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -345,9 +346,9 @@
 
         private System.Windows.Forms.ListBox listAeronef;
 
-        private System.Windows.Forms.Button btnAeroport;
+        private System.Windows.Forms.Button btnAjouterAeroport;
 
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox maxCargaison;
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -356,10 +357,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox nomAeroport;
-        private System.Windows.Forms.TextBox position_x;
-        private System.Windows.Forms.TextBox position_y;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox position_latitude;
+        private System.Windows.Forms.TextBox position_longitude;
+        private System.Windows.Forms.TextBox maxPassager;
+        private System.Windows.Forms.TextBox minCargaison;
         private System.Windows.Forms.TextBox minPassager;
 
         private System.Windows.Forms.ListBox listAeroport;

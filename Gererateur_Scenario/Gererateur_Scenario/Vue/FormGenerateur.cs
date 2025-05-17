@@ -18,8 +18,6 @@ namespace Gererateur_Scenario.Vue
         public FormGenerateur()
         {
             InitializeComponent();
-            //m_controleur = new ControleurGenerateur();
-            //m_controleur.EnregistrerObservateur(this);
         }
         
         public void SetControleur(ControleurGenerateur controleur)
@@ -31,23 +29,99 @@ namespace Gererateur_Scenario.Vue
         
         private void btnAeroport_Click(object sender, EventArgs e)
         {
+            string nom = nomAeroport.Text.Trim();
             var data = new Dictionary<string, string>()
             {
-                { "Nom", nomAeroport.Text },
-                { "Latitude", position_latitude.Text },
-                { "Longitude", position_longitude.Text },
-                { "MinPassagers", minPassager.Text },
-                { "MaxPassagers", maxPassager.Text },
-                { "MinCargaisons", minCargaison.Text },
-                { "MaxCargaisons", maxCargaison.Text }
+                { "Nom", nomAeroport.Text.Trim() },
+                { "Latitude", position_latitude.Text.Trim() },
+                { "Longitude", position_longitude.Text.Trim() },
+                { "MinPassagers", minPassager.Text.Trim() },
+                { "MaxPassagers", maxPassager.Text.Trim() },
+                { "MinCargaisons", minCargaison.Text.Trim() },
+                { "MaxCargaisons", maxCargaison.Text.Trim() }
             };
+            
+            // --- Vérification si le nom est vide ---
+            if (string.IsNullOrWhiteSpace(nom))
+            {
+                MessageBox.Show("Le nom de l'aéroport est requis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            // --- Vérification de l'unicité du nom ---
+            foreach (string item in listAeroport.Items)
+            {
+                if (item.StartsWith(nom + " ("))
+                {
+                    MessageBox.Show("Un aéroport avec ce nom existe déjà.", "Doublon", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+            
+            
+            
+            // Vérifier si les champs numériques sont valides
+            if (!int.TryParse(data["MinPassagers"], out int minPassagers) ||
+                !int.TryParse(data["MaxPassagers"], out int maxPassagers) ||
+                !double.TryParse(data["MinCargaisons"], out double minCargaisons) ||
+                !double.TryParse(data["MaxCargaisons"], out double maxCargaisons) ||
+                !double.TryParse(data["Latitude"], out double latitude) ||
+                !double.TryParse(data["Longitude"], out double longitude))
+            {
+                MessageBox.Show("Veuillez entrer des valeurs valides pour tous les champs numériques.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            // Vérifier que Max > Min pour les passagers et cargaisons
+            if (maxPassagers <= minPassagers)
+            {
+                MessageBox.Show("Le nombre maximal de passagers doit être supérieur au nombre minimal.", "Erreur logique", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (maxCargaisons <= minCargaisons)
+            {
+                MessageBox.Show("La cargaison maximale doit être supérieure à la cargaison minimale.", "Erreur logique", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            
 
             m_controleur.AjouterAeroport(data);
         }
         
         public void AfficherScenario() { }
-       
-        public void AfficherAeroports() { }
+
+        public void AfficherAeroports()
+        {
+            listAeroport.Items.Clear();
+            List<String> aeroport = m_controleur.ObtenirListeAeroports();
+            
+            // Afficher dans la listview
+            foreach (var ligne in aeroport)
+            {
+                string[] parties = ligne.Split('|');
+                
+                string nom = parties[0];
+                double latitude = double.Parse(parties[1]);
+                double longitude = double.Parse(parties[2]);
+                int minPassagers = int.Parse(parties[3]);
+                int maxPassagers = int.Parse(parties[4]);
+                double minCargaisons = double.Parse(parties[5]);
+                double maxCargaisons = double.Parse(parties[6]);
+                
+                    // Direction (Nord/Sud, Est/Ouest)
+                string latDirection = latitude >= 0 ? "N" : "S";
+                string longDirection = longitude >= 0 ? "E" : "O";
+
+                string texteAffichage = $"{nom} ({Position.ConvertirEnDMS(latitude, true)}, {Position.ConvertirEnDMS(longitude, false)}) " +
+                                        $"MinPassagers : {minPassagers}, MaxPassagers : {maxPassagers}, " +
+                                        $"MinCargaisons : {minCargaisons}, MaxCargaisons : {maxCargaisons}";
+
+                listAeroport.Items.Add(texteAffichage);
+            }
+        }
         public void AfficherAeronefs() { }
         public void AfficherEvenements() { }
 
@@ -67,6 +141,7 @@ namespace Gererateur_Scenario.Vue
 
         public void MettreAJour()
         {
+            Console.WriteLine("Debut mise à jour");
             MettreAJourVue();
         }
 

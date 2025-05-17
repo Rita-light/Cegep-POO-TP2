@@ -38,7 +38,7 @@ namespace Gererateur_Scenario
         }
         public string Serialiser()
         {
-            return $"{Nom}|{Position.ToString()},|{MinPassagers}|{MaxPassagers}|{MinCargaisons}|{MaxCargaisons}";
+            return $"{Nom}|{Position.ToString()}|{MinPassagers}|{MaxPassagers}|{MinCargaisons}|{MaxCargaisons}";
         }
         
         public List<string> ObtenirListeAeronefs()

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using Gererateur_Scenario.Vue;
 
@@ -16,11 +17,6 @@ namespace Gererateur_Scenario.Controle
             this.formGenerateur = formGenerateur;
         }
         
-        public void DemarrerApplication()
-        {
-            // Affiche la fenêtre principale
-            Application.Run(formGenerateur);
-        }
         
         public void EnregistrerObservateur(IObservateur obs)
         {

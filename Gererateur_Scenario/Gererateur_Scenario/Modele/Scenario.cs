@@ -12,6 +12,13 @@ namespace Gererateur_Scenario
         public List<FrequenceEvenement> frequenceEvenements { get; set; } = new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
+        public Scenario()
+        {
+            aeroports = new List<Aeroport>();
+            frequenceEvenements = new List<FrequenceEvenement>();
+            m_observateurs = new List<IObservateur>();
+        }
+        
         public void AjouterAeroport(Aeroport aeroport)
         {
             aeroports.Add(aeroport);

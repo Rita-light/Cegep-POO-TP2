@@ -286,6 +286,7 @@
             this.btnEnregistrer.TabIndex = 28;
             this.btnEnregistrer.Text = "Générer Scenario";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // FormGenerateur
             // 

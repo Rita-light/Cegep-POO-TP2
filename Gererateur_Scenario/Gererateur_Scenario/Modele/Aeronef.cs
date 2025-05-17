@@ -13,8 +13,9 @@ namespace Gererateur_Scenario
         protected double tempsEmbarquement;
         protected double tempsDembarquement;
         protected double TempsEntretien;
-
         public TypeAeronef type { get; set; }
+        
+        public Aeronef(){ }
         
         public override string ToString()
         {

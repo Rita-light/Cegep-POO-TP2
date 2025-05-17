@@ -7,6 +7,7 @@ namespace Gererateur_Scenario
         public double Latitude { get; set; }
         public double Longitude { get; set; }
 
+        public Position(){ }
         public Position(double latitude, double longitude)
         {
             Latitude = latitude;

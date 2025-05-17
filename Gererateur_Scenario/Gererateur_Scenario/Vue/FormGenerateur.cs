@@ -177,6 +177,23 @@ namespace Gererateur_Scenario.Vue
                 }
             }
         }
-        
+
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {
+            //m_controleur.GenererScenario();
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                saveDialog.Filter = "Fichier XML (*.xml)|*.xml";
+                saveDialog.Title = "Enregistrer le scénario";
+                saveDialog.FileName = "Scenario.xml";
+
+                if (saveDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string cheminFichier = saveDialog.FileName;
+                    m_controleur.GenererScenario(cheminFichier); // <-- chemin fourni à la couche contrôle
+                    MessageBox.Show("Scénario enregistré avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }

@@ -42,21 +42,63 @@ namespace Gererateur_Scenario.Controle
 
         public void ChargerScenario(string cheminFichier)
         {
-            // 1. Utilisation de GestionnaireFichierXML pour lire le fichier
-            Scenario scenario = GestionnaireFichierXML.Importer(cheminFichier);
+            // Récupérer le scénario actuel
+            Scenario scenarioActuel = m_gestionnaire.GetScenario();
 
-            // 2. Mise à jour du scénario actuel dans le singleton GestionnaireScenario
-            m_gestionnaire.SetScenarioActuel(scenario);
+            // Si un scénario est déjà chargé
+            if (scenarioActuel != null)
+            {
+                // Demander à l'utilisateur s'il souhaite enregistrer le scénario actuel
+                DialogResult resultat = MessageBox.Show(
+                    "Un scénario est déjà actif. Voulez-vous l'enregistrer avant de charger un nouveau scénario ?",
+                    "Enregistrement du scénario",
+                    MessageBoxButtons.YesNoCancel,
+                    MessageBoxIcon.Question
+                );
 
-            // 3. Attacher FormGenerateur comme observateur
-            scenario.Attacher((IObservateur)Application.OpenForms["FormGenerateur"]);
+                if (resultat == DialogResult.Yes)
+                {
+                    // Ouvrir une boîte de dialogue pour sélectionner où enregistrer le fichier
+                    using (SaveFileDialog saveDialog = new SaveFileDialog())
+                    {
+                        saveDialog.Filter = "Fichier XML (*.xml)|*.xml";
+                        saveDialog.Title = "Enregistrer le scénario";
 
-            // 4. Notifier l'observateur
-            scenario.Notifier();
+                        if (saveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            GestionnaireFichierXML.Exporter(scenarioActuel, saveDialog.FileName);
+                        }
+                        else
+                        {
+                            // Si l'utilisateur annule l'enregistrement, on arrête le chargement
+                            return;
+                        }
+                    }
+                }
+                else if (resultat == DialogResult.Cancel)
+                {
+                    // Si l'utilisateur annule l'action, on ne fait rien
+                    return;
+                }
+                // Si l'utilisateur clique sur No, on continue sans sauvegarder
+            }
+
+            // Charger le nouveau scénario
+            Scenario nouveauScenario = GestionnaireFichierXML.Importer(cheminFichier);
+
+            // Mettre à jour le gestionnaire avec le nouveau scénario
+            m_gestionnaire.SetScenarioActuel(nouveauScenario);
+
+            // Notifier l'observateur
+            nouveauScenario.Notifier();
         }
 
-        public void GenererScenario() {}
-        public void ExporterScenario() {}
+
+        public void GenererScenario(String cheminFichier)
+        {
+            var scenario = m_gestionnaire.GetScenario();
+            GestionnaireFichierXML.Exporter(scenario, cheminFichier);
+        }
         
         
         public void ModifierAeroport(object args) {}

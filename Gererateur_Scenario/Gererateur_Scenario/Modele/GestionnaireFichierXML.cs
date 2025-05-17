@@ -13,6 +13,14 @@ namespace Gererateur_Scenario
                 return (Scenario)serializer.Deserialize(fs);
             }
         }
-        public static void Exporter(Scenario scenario, string xmlPath) { }
+
+        public static void Exporter(Scenario scenario, string cheminFichier)
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Scenario));
+            using (StreamWriter writer = new StreamWriter(cheminFichier))
+            {
+                serializer.Serialize(writer, scenario);
+            }
+        }
     }
 }

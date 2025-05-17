@@ -6,25 +6,28 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-    public class Aeronef
+    public abstract class Aeronef
     {
-        private string Nom;
-        protected double Vitesse;
-        protected double tempsEmbarquement;
-        protected double tempsDembarquement;
-        protected double TempsEntretien;
+        public string Nom;
+        public double Vitesse;
+        public double TempsEntretien;
         public TypeAeronef type { get; set; }
-        
-        public Aeronef(){ }
-        
+
+        protected Aeronef(string nom, double vitesse, double tempsEntretien)
+        {
+            Nom = nom;
+            Vitesse = vitesse;
+            TempsEntretien = tempsEntretien;
+        }
+
         public override string ToString()
         {
-            return $"{Nom} - Type: {type}, Vitesse: {Vitesse}, tempsEmbarquement: {tempsEmbarquement}, tempsDembarquement: {tempsDembarquement}, TempsEntretien : {TempsEntretien}";
+            return $"{Nom} - Type: {type}, Vitesse: {Vitesse}, TempsEntretien : {TempsEntretien}";
         }
         
-        public string Serialiser()
+        public virtual string Serialiser()
         {
-            return $"{Nom}|{type}|{Vitesse}|{tempsEmbarquement}|{tempsDembarquement}|{TempsEntretien}";
+            return $"{Nom}|{type}|{Vitesse}|{TempsEntretien}";
         }
 
     }

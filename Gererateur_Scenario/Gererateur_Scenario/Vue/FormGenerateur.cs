@@ -20,7 +20,7 @@ namespace Gererateur_Scenario.Vue
         {
             InitializeComponent();
         }
-        
+
         public void SetControleur(ControleurGenerateur controleur)
         {
             m_controleur = controleur;
@@ -58,9 +58,6 @@ namespace Gererateur_Scenario.Vue
                 }
             }
 
-            
-            
-            
             // Vérifier si les champs numériques sont valides
             if (!int.TryParse(data["MinPassagers"], out int minPassagers) ||
                 !int.TryParse(data["MaxPassagers"], out int maxPassagers) ||
@@ -90,6 +87,49 @@ namespace Gererateur_Scenario.Vue
 
             m_controleur.AjouterAeroport(data);
         }
+
+        public void AfficherAeronefs() { }
+
+        private void AjouterAeronef_Click(object sender, EventArgs e)
+        {
+            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
+            if (aeroportSelectionne == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var data = new Dictionary<string, string>()
+            {
+                { "Nom", nomAeronef.Text.Trim() },
+                { "Type", type.Text.Trim() },
+                { "Vitesse", vitesse.Text.Trim() },
+                { "TempsEmbarquement", tempsEmbarquement.Text.Trim() },
+                { "TempsDebarquement", tempsDebarquement.Text.Trim() },
+                { "Capacite", capacite.Text.Trim() },
+                { "TempsEntretien", tempsEntretien.Text.Trim() },
+                { "Aeroport", aeroportSelectionne.Nom } 
+            };
+
+            try
+            {
+                m_controleur.AjouterAeronef(data);
+                MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+
+        private void ModifierAeronef_Click(object sender, EventArgs e) { }
+        private void SupprimerAeronef_Click(object sender, EventArgs e) { }
         
         public void AfficherAeroports()
         {
@@ -120,7 +160,6 @@ namespace Gererateur_Scenario.Vue
                 listAeroport.Items.Add(texteAffichage);
             }
         }
-        public void AfficherAeronefs() { }
        
         public void MettreAJour()
         {
@@ -343,3 +382,4 @@ namespace Gererateur_Scenario.Vue
         }
     }
 }
+           

@@ -8,15 +8,42 @@ namespace Gererateur_Scenario
 {
     class FabriqueAeronef
     {
+        private static FabriqueAeronef instance;
+        private static readonly object padlock = new object();
+        public static FabriqueAeronef Instance
+        {
+            get
+            {
+                lock (padlock)
+                {
+                    if (instance == null)
+                    {
+                        instance = new FabriqueAeronef();
+                    }
+                    return instance;
+                }
+            }
+        }
+        private FabriqueAeronef() { }
+        public Aeronef CreerAeronef(string nom, string type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
+        {
+            type = type.ToLower();
+            switch (type)
+            {
+                case "passager":
+                    return new AvionPassager(nom, vitesse, tempsEntretien, (int)capacite, tempsEmbarquement, tempsDebarquement);
+                case "cargo":
+                    return new AvionCargaison(nom, vitesse, tempsEntretien, capacite, tempsEmbarquement, tempsDebarquement);
+                case "secours":
+                    return new AvionSecours(nom, vitesse, tempsEntretien);
+                case "citerne":
+                    return new AvionCiterne(nom, vitesse, tempsEntretien);
+                case "helicoptere":
+                    return new Helicoptere(nom, vitesse, tempsEntretien);
+                default:
+                    throw new ArgumentException("Type d'aéronef inconnu");
+            }
+        }
     }
-    /*
-     * private static FabriqueAeronef instance;
-
-    public static FabriqueAeronef Instance => instance ??= new FabriqueAeronef();
-
-    public Aeronef CreerAeronef(string type, string nom, double vitesse, double tempsEntretien, double capacite, double embarquement, double debarquement)
-    {
-        return null;
-    }
-     */
 }
+    

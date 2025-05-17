@@ -8,5 +8,18 @@ namespace Gererateur_Scenario
 {
     public class AvionSecours : AeronefUrgence
     {
+        public AvionSecours(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
+        {
+        }
+
+        public override string ToString()
+        {
+            return $"{Nom} - Type: {type}, Vitesse: {Vitesse}, TempsEntretien : {TempsEntretien}";
+        }
+
+        public override string Serialiser()
+        {
+            return $"{Nom}|{type}|{Vitesse}|{TempsEntretien}";
+        }
     }
 }

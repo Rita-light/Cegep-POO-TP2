@@ -2,6 +2,18 @@
 {
     public class AvionCiterne : AeronefUrgence
     {
-        
+        public AvionCiterne(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
+        {
+        }
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}";
+        }
+
+        public override string Serialiser()
+        {
+            return $"{base.Serialiser()}";
+        }
     }
 }

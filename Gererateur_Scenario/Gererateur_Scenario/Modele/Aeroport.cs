@@ -14,11 +14,10 @@ namespace Gererateur_Scenario
         public int MaxPassagers { get; set; }
         public double MinCargaisons { get; set; }
         public double MaxCargaisons { get; set; }
-        private List<Aeronef> Aeronefs { get; } 
-        
-        public Aeroport() 
-        {
-        }
+        private List<Aeronef> Aeronefs { get; }
+        private List<IObservateur> m_observateurs = new List<IObservateur>();
+
+
         public Aeroport(string nom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             Nom = nom;
@@ -30,7 +29,27 @@ namespace Gererateur_Scenario
             Aeronefs = new List<Aeronef>();
         }
 
-        public void AjouterAeronef() { }
+        public void Attacher(IObservateur obs)
+        {
+            if (!m_observateurs.Contains(obs))
+            {
+                m_observateurs.Add(obs);
+            }
+        }
+        public void Detacher(IObservateur obs) => m_observateurs.Remove(obs);
+        public void Notifier()
+        {
+            foreach (IObservateur obs in m_observateurs)
+            {
+                obs.MettreAJour();
+            }
+        }
+        public void AjouterAeronef(string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
+        {
+            Aeronef aeronef = FabriqueAeronef.Instance.CreerAeronef(nom, type.ToString(), vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
+            Aeronefs.Add(aeronef);
+            Notifier();
+        }
         public void ModifierAeronef() { }
         public void SupprimerAeronef() { }
         public List<Aeronef> GetAeronefs() => Aeronefs;

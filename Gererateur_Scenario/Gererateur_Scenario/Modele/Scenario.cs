@@ -87,7 +87,15 @@ namespace Gererateur_Scenario
 
             return new List<string>();
         }
-        
+        public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
+        {
+            if (string.IsNullOrEmpty(nomAeroport))
+            {
+                return null;
+            }
+            return aeroports.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
+        }
+
         public void ModifierAeroport(string ancienNom, string nouveauNom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             var aeroport = aeroports.FirstOrDefault(a => a.Nom == ancienNom);

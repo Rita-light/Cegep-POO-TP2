@@ -52,6 +52,11 @@ namespace Gererateur_Scenario
             return m_scenario.ObtenirListeAeronefs(nomAeroport);
         }
 
+        public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
+        {
+            return m_scenario.ObtenirAeroportSelectionne(nomAeroport);
+        }
+
         public void ChangerFrequence(TypeEvenement type, string frequenceTextBox)
         {
             //Si la string entrée par l'utilisateur dans le textbox n'est pas convertible en double ou si elle est négative, on lève une exception

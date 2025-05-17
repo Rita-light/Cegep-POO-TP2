@@ -6,7 +6,19 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-   public class AeronefUrgence : Aeronef
+   public abstract class AeronefUrgence : Aeronef
     {
+        protected AeronefUrgence(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
+        {
+        }
+
+        public override string ToString()
+        {
+            return $"{Nom} - Type: {type}, Vitesse: {Vitesse}, TempsEntretien : {TempsEntretien}";
+        }
+        public override string Serialiser()
+        {
+            return $"{Nom}|{type}|{Vitesse}|{TempsEntretien}";
+        }
     }
 }

@@ -59,6 +59,7 @@
             this.btnEnregistrer = new System.Windows.Forms.Button();
             this.modifierAeroport = new System.Windows.Forms.Button();
             this.SupprimerAeroport = new System.Windows.Forms.Button();
+            this.nouveauScenario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listAeroport
@@ -275,7 +276,7 @@
             // 
             this.btnCharger.Location = new System.Drawing.Point(13, 626);
             this.btnCharger.Name = "btnCharger";
-            this.btnCharger.Size = new System.Drawing.Size(540, 25);
+            this.btnCharger.Size = new System.Drawing.Size(323, 25);
             this.btnCharger.TabIndex = 27;
             this.btnCharger.Text = "Charger Scenario";
             this.btnCharger.UseVisualStyleBackColor = true;
@@ -283,9 +284,9 @@
             // 
             // btnEnregistrer
             // 
-            this.btnEnregistrer.Location = new System.Drawing.Point(557, 626);
+            this.btnEnregistrer.Location = new System.Drawing.Point(694, 626);
             this.btnEnregistrer.Name = "btnEnregistrer";
-            this.btnEnregistrer.Size = new System.Drawing.Size(540, 25);
+            this.btnEnregistrer.Size = new System.Drawing.Size(403, 25);
             this.btnEnregistrer.TabIndex = 28;
             this.btnEnregistrer.Text = "Générer Scenario";
             this.btnEnregistrer.UseVisualStyleBackColor = true;
@@ -311,12 +312,23 @@
             this.SupprimerAeroport.UseVisualStyleBackColor = true;
             this.SupprimerAeroport.Click += new System.EventHandler(this.SupprimerAeroport_Click_1);
             // 
+            // nouveauScenario
+            // 
+            this.nouveauScenario.Location = new System.Drawing.Point(413, 627);
+            this.nouveauScenario.Name = "nouveauScenario";
+            this.nouveauScenario.Size = new System.Drawing.Size(228, 23);
+            this.nouveauScenario.TabIndex = 31;
+            this.nouveauScenario.Text = "Nouveau Scenario";
+            this.nouveauScenario.UseVisualStyleBackColor = true;
+            this.nouveauScenario.Click += new System.EventHandler(this.nouveauScenario_Click);
+            // 
             // FormGenerateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1110, 672);
+            this.Controls.Add(this.nouveauScenario);
             this.Controls.Add(this.SupprimerAeroport);
             this.Controls.Add(this.modifierAeroport);
             this.Controls.Add(this.btnEnregistrer);
@@ -353,6 +365,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button nouveauScenario;
 
         private System.Windows.Forms.Button SupprimerAeroport;
 

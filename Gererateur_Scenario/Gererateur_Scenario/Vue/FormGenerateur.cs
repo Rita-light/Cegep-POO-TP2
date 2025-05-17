@@ -132,6 +132,7 @@ namespace Gererateur_Scenario.Vue
         {
             AfficherAeroports();
             AfficherAeronefs();
+            ReinitialiserTextBox();
         }
 
         private void btnCharger_Click(object sender, EventArgs e)
@@ -313,6 +314,31 @@ namespace Gererateur_Scenario.Vue
             else
             {
                 MessageBox.Show("Veuillez sélectionner un aéroport à supprimer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void nouveauScenario_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Voulez-vous vraiment commencer un nouveau scénario ? Toutes les données non sauvegardées seront perdues.",
+                "Confirmation",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                m_controleur.CommencerNouveauScenario();
+            }
+        }
+        
+        private void ReinitialiserTextBox()
+        {
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox textBox)
+                {
+                    textBox.Clear();
+                }
             }
         }
     }

@@ -122,6 +122,14 @@ namespace Gererateur_Scenario.Controle
             var scenario = m_gestionnaire.GetScenario();
             scenario.SupprimerAeroport(nom);
         }
+        
+        public void CommencerNouveauScenario()
+        {
+            m_gestionnaire.NouveauScenario();
+            EnregistrerObservateur(formGenerateur);
+            m_gestionnaire.GetScenario().Notifier(); 
+        }
+
 
         public void AjouterAeronef(object args) {
             Aeroport aeroport = m_gestionnaire.GetScenario().GetAeroports()[0];

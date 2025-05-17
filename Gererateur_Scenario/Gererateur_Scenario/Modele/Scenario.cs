@@ -27,9 +27,7 @@ namespace Gererateur_Scenario
         {
             aeroports.Remove(aeroport);
         }
-        public void ModifierAeroport(Aeroport aeroport)
-        {
-        }
+        
         public List<Aeroport> GetAeroports()
         {
             return aeroports;
@@ -89,6 +87,23 @@ namespace Gererateur_Scenario
 
             return new List<string>();
         }
+        
+        public void ModifierAeroport(string ancienNom, string nouveauNom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
+        {
+            var aeroport = aeroports.FirstOrDefault(a => a.Nom == ancienNom);
+            if (aeroport == null)
+                throw new ArgumentException("Aéroport non trouvé : " + ancienNom);
+            
+            aeroport.Nom = nouveauNom;
+            aeroport.Position = position;
+            aeroport.MinPassagers = minPassagers;
+            aeroport.MaxPassagers = maxPassagers;
+            aeroport.MinCargaisons = minCargaisons;
+            aeroport.MaxCargaisons = maxCargaisons;
+
+            Notifier();
+        }
+
 
 
     }

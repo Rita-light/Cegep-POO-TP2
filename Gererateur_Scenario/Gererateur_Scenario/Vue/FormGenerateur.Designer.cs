@@ -57,6 +57,7 @@
             this.btnAeronef = new System.Windows.Forms.Button();
             this.btnCharger = new System.Windows.Forms.Button();
             this.btnEnregistrer = new System.Windows.Forms.Button();
+            this.modifierAeroport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listAeroport
@@ -67,6 +68,7 @@
             this.listAeroport.Name = "listAeroport";
             this.listAeroport.Size = new System.Drawing.Size(1084, 164);
             this.listAeroport.TabIndex = 0;
+            this.listAeroport.SelectedIndexChanged += new System.EventHandler(this.listAeroport_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -167,9 +169,9 @@
             // 
             // btnAjouterAeroport
             // 
-            this.btnAjouterAeroport.Location = new System.Drawing.Point(13, 245);
+            this.btnAjouterAeroport.Location = new System.Drawing.Point(13, 250);
             this.btnAjouterAeroport.Name = "btnAjouterAeroport";
-            this.btnAjouterAeroport.Size = new System.Drawing.Size(1084, 23);
+            this.btnAjouterAeroport.Size = new System.Drawing.Size(387, 23);
             this.btnAjouterAeroport.TabIndex = 14;
             this.btnAjouterAeroport.Text = "Ajouter Aéroport";
             this.btnAjouterAeroport.UseVisualStyleBackColor = true;
@@ -288,12 +290,23 @@
             this.btnEnregistrer.UseVisualStyleBackColor = true;
             this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
+            // modifierAeroport
+            // 
+            this.modifierAeroport.Location = new System.Drawing.Point(469, 248);
+            this.modifierAeroport.Name = "modifierAeroport";
+            this.modifierAeroport.Size = new System.Drawing.Size(202, 23);
+            this.modifierAeroport.TabIndex = 29;
+            this.modifierAeroport.Text = "ModifierAéroport";
+            this.modifierAeroport.UseVisualStyleBackColor = true;
+            this.modifierAeroport.Click += new System.EventHandler(this.modifierAeroport_Click);
+            // 
             // FormGenerateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1110, 672);
+            this.Controls.Add(this.modifierAeroport);
             this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.btnCharger);
             this.Controls.Add(this.btnAeronef);
@@ -328,6 +341,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button modifierAeroport;
 
         private System.Windows.Forms.Button btnCharger;
         private System.Windows.Forms.Button btnEnregistrer;

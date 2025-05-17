@@ -89,6 +89,7 @@ namespace Gererateur_Scenario.Controle
             // Mettre à jour le gestionnaire avec le nouveau scénario
             m_gestionnaire.SetScenarioActuel(nouveauScenario);
 
+            EnregistrerObservateur(formGenerateur);
             // Notifier l'observateur
             nouveauScenario.Notifier();
         }
@@ -99,9 +100,23 @@ namespace Gererateur_Scenario.Controle
             var scenario = m_gestionnaire.GetScenario();
             GestionnaireFichierXML.Exporter(scenario, cheminFichier);
         }
-        
-        
-        public void ModifierAeroport(object args) {}
+
+
+        public void ModifierAeroport(string ancienNom, Dictionary<string, string> data)
+        {
+            string nom = data["Nom"];
+            double latitude = double.Parse(data["Latitude"]);
+            double longitude = double.Parse(data["Longitude"]);
+            int minPassagers = int.Parse(data["MinPassagers"]);
+            int maxPassagers = int.Parse(data["MaxPassagers"]);
+            double minCargaisons = double.Parse(data["MinCargaisons"]);
+            double maxCargaisons = double.Parse(data["MaxCargaisons"]);
+            
+            var position = new Position(latitude, longitude);
+            var scenario = m_gestionnaire.GetScenario();
+            scenario.ModifierAeroport(ancienNom ,nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
+
+        }
         public void SupprimerAeroport(object args) {}
         
         public void AjouterAeronef(object args) {

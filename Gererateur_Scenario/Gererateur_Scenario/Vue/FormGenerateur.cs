@@ -14,6 +14,7 @@ namespace Gererateur_Scenario.Vue
     public partial class FormGenerateur : Form, IObservateur
     {
         private ControleurGenerateur m_controleur;
+       
         
         public FormGenerateur()
         {
@@ -91,8 +92,6 @@ namespace Gererateur_Scenario.Vue
             m_controleur.AjouterAeroport(data);
         }
         
-        public void AfficherScenario() { }
-
         public void AfficherAeroports()
         {
             listAeroport.Items.Clear();
@@ -194,6 +193,128 @@ namespace Gererateur_Scenario.Vue
                     MessageBox.Show("Scénario enregistré avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void modifierAeroport_Click(object sender, EventArgs e)
+        {
+            // Vérifie qu’un aéroport est sélectionné
+            if (listAeroport.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport à modifier.");
+                return;
+            }
+
+            try
+            {
+                // Récupérer l'ancien nom à partir de la ligne affichée dans la ListView
+                string ligneAffichee = listAeroport.SelectedItem.ToString();
+                string ancienNom = ligneAffichee.Split('(')[0].Trim();
+
+                string nom = nomAeroport.Text.Trim();
+                var data = new Dictionary<string, string>()
+                {
+                    { "Nom", nomAeroport.Text.Trim() },
+                    { "Latitude", position_latitude.Text.Trim() },
+                    { "Longitude", position_longitude.Text.Trim() },
+                    { "MinPassagers", minPassager.Text.Trim() },
+                    { "MaxPassagers", maxPassager.Text.Trim() },
+                    { "MinCargaisons", minCargaison.Text.Trim() },
+                    { "MaxCargaisons", maxCargaison.Text.Trim() }
+                };
+            
+                // --- Vérification si le nom est vide ---
+                if (string.IsNullOrWhiteSpace(nom))
+                {
+                    MessageBox.Show("Le nom de l'aéroport est requis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            
+                // --- Vérification de l'unicité du nom ---
+                
+                // --- Vérification de l'unicité du nom de l'aéroport (hors cas où le nom reste inchangé) ---
+                foreach (string item in listAeroport.Items)
+                {
+                    // Récupération du nom sans les parenthèses (ex: "Paris (48.8, 2.3)" → "Paris")
+                    string nomItem = item.Split('(')[0].Trim();
+
+                    // Si un aéroport porte déjà le nom qu'on essaie d'utiliser (et que ce n'est pas le même qu'avant)
+                    if (nomItem.Equals(nom, StringComparison.OrdinalIgnoreCase) && !nom.Equals(ancienNom, StringComparison.OrdinalIgnoreCase))
+                    {
+                        MessageBox.Show("Un aéroport avec ce nom existe déjà.", "Doublon", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+
+            
+            
+                
+                // Vérifier si les champs numériques sont valides
+                if (!int.TryParse(data["MinPassagers"], out int minPassagers) ||
+                    !int.TryParse(data["MaxPassagers"], out int maxPassagers) ||
+                    !double.TryParse(data["MinCargaisons"], out double minCargaisons) ||
+                    !double.TryParse(data["MaxCargaisons"], out double maxCargaisons) ||
+                    !double.TryParse(data["Latitude"], out double latitude) ||
+                    !double.TryParse(data["Longitude"], out double longitude))
+                {
+                    MessageBox.Show("Veuillez entrer des valeurs valides pour tous les champs numériques.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            
+                // Vérifier que Max > Min pour les passagers et cargaisons
+                if (maxPassagers <= minPassagers)
+                {
+                    MessageBox.Show("Le nombre maximal de passagers doit être supérieur au nombre minimal.", "Erreur logique", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (maxCargaisons <= minCargaisons)
+                {
+                    MessageBox.Show("La cargaison maximale doit être supérieure à la cargaison minimale.", "Erreur logique", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                
+                m_controleur.ModifierAeroport(ancienNom, data);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Une erreur est survenue : " + ex.Message);
+            }
+        }
+
+        private void listAeroport_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listAeroport.SelectedIndex == -1) return;
+
+            // Récupère le nom affiché dans la listview
+            string ligneAffichee = listAeroport.SelectedItem.ToString();
+
+            // Le nom est avant le premier espace, ou avant la première parenthèse
+            string nomSelectionne = ligneAffichee.Split('(')[0].Trim();
+
+            // Obtenir la liste brute depuis le contrôleur
+            List<string> listeAeroports = m_controleur.ObtenirListeAeroports();
+            
+            // Trouver la ligne correspondante dans la liste brute
+            string ligneBrute = listeAeroports.FirstOrDefault(a => a.StartsWith(nomSelectionne + "|"));
+
+            if (ligneBrute == null)
+            {
+                MessageBox.Show("Impossible de retrouver les informations de cet aéroport.");
+                return;
+            }
+            
+            // Extraire les valeurs et les placer dans les TextBox
+            string[] parties = ligneBrute.Split('|');
+
+            nomAeroport.Text = parties[0];
+            position_latitude.Text = parties[1];
+            position_longitude.Text = parties[2];
+            minPassager.Text = parties[3];
+            maxPassager.Text = parties[4];
+            minCargaison.Text = parties[5];
+            maxCargaison.Text = parties[6];
         }
     }
 }

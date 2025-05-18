@@ -20,11 +20,6 @@ namespace Gererateur_Scenario.Vue
             InitializeComponent();
         }
 
-        private void FormGenerateur_Load(object sender, EventArgs e)
-        {
-            frequence.Text = "0";  
-        }
-
         public void SetControleur(ControleurGenerateur controleur)
         {
             m_controleur = controleur;
@@ -404,56 +399,105 @@ namespace Gererateur_Scenario.Vue
             listAeronef.Items.Clear();
         }
 
-        
+
         // à modifier, aeroport ne doit pas apparaitre ici
         private void btnAeronef_Click(object sender, EventArgs e)
         {
-            if (listAeroport.SelectedIndex == -1) 
+            if (listAeroport.SelectedIndex == -1)
             {
-                MessageBox.Show("Veuillez sélectionner un aéroport", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Veuillez sélectionner un aéroport avant d'ajouter un aéronef.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             string ligneAffichee = listAeroport.SelectedItem.ToString();
-            int indexParenthese = ligneAffichee.IndexOf('(');
-            string nomAeroport = (indexParenthese > 0) ? ligneAffichee.Substring(0, indexParenthese).Trim() : ligneAffichee.Trim();
-            Aeroport aeroportSelectionne = m_controleur.ObtenirAeroportSelectionne(nomAeroport);
-            if (aeroportSelectionne == null)
+            string nomAeroport = ligneAffichee.Split('(')[0].Trim();
+
+            if (string.IsNullOrWhiteSpace(nomAeronef.Text))
             {
-                MessageBox.Show("Introuvable", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Le nom de l'aéronef est requis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var data = new Dictionary<string, string>()
+
+            foreach (string item in listAeronef.Items)
             {
+                if (item.StartsWith(nomAeronef.Text.Trim() + ","))
+                {
+                    MessageBox.Show("Un aéronef avec ce nom existe déjà.", "Doublon", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
+
+            string typeStr = type.Text.Trim();
+                        
+            if (!double.TryParse(vitesse.Text.Trim(), out double vitesseAeronef) ||
+                !double.TryParse(tempsEntretien.Text.Trim(), out double tempsEntretienAeronef))
+            {
+                MessageBox.Show("Veuillez entrer des valeurs valides pour tous les champs numériques.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            double embarquement = 0;
+            double debarquement = 0;
+            int capacitePassager = 0;
+            double capaciteCargaison = 0;
+
+            switch (typeStr)
+            {
+                case "Passager":
+                    if (!double.TryParse(tempsEmbarquement.Text.Trim(), out embarquement) ||
+                        !double.TryParse(tempsDebarquement.Text.Trim(), out debarquement) ||
+                        !int.TryParse(capacite.Text.Trim(), out capacitePassager))
+                    {
+                        MessageBox.Show("Veuillez entrer des valeurs valides pour tous les champs numériques.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    break;
+                case "Cargo":
+                    if (!double.TryParse(tempsEmbarquement.Text.Trim(), out embarquement) ||
+                        !double.TryParse(tempsDebarquement.Text.Trim(), out debarquement) ||
+                        !double.TryParse(capacite.Text.Trim(), out capaciteCargaison))
+                    {
+                        MessageBox.Show("Veuillez entrer des valeurs valides pour tous les champs numériques.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    break;
+                case "Secours":
+                case "Citerne":
+                case "Helicoptere":
+                    if (!string.IsNullOrWhiteSpace(tempsEmbarquement.Text) ||
+                        !string.IsNullOrWhiteSpace(tempsDebarquement.Text) ||
+                        !string.IsNullOrWhiteSpace(capacite.Text))
+                    {
+                        MessageBox.Show("Les champs d'embarquement, de débarquement et de capacité ne sont pas requis pour ce type d'aéronef.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    break;
+                default:
+                    MessageBox.Show("Type d'aéronef inconnu.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+            }
+            // Créer un dictionnaire pour stocker les données de l'aéronef
+            var data = new Dictionary<string, string>()
+            {                
                 { "Nom", nomAeronef.Text.Trim() },
-                { "Type", type.Text.Trim() },
+                { "Type", typeStr },
+                { "Aeroport", nomAeroport },
                 { "Vitesse", vitesse.Text.Trim() },
                 { "TempsEmbarquement", tempsEmbarquement.Text.Trim() },
                 { "TempsDebarquement", tempsDebarquement.Text.Trim() },
                 { "Capacite", capacite.Text.Trim() },
-                { "TempsEntretien", tempsEntretien.Text.Trim() },
-                { "Aeroport", aeroportSelectionne.Nom }
+                { "TempsEntretien", tempsEntretien.Text.Trim() }
             };
 
             try
             {
-                m_controleur.AjouterAeronef(data);
-                MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // Après avoir ajouté un aéronef à l'aéroport sélectionné
-                if (listAeroport.SelectedIndex >= 0)
-                {
-                    string ligne = listAeroport.SelectedItem.ToString();
-                    string nom = ligne.Split('(')[0].Trim();
-                    AfficherAeronefs(nom); // appel manuel
-                }
+                m_controleur.AjouterAeronef(nomAeroport, data);
+                AfficherAeronefs(nomAeroport);
             }
-            catch (FormatException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erreur lors de l'ajout de l'aéronef : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -507,6 +551,35 @@ namespace Gererateur_Scenario.Vue
                     // Type non trouvé, on affiche 0
                     frequence.Text = "0";
                 }
+            }
+        }
+
+        private void type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (type.SelectedItem == null)
+                return;
+            Enum.TryParse(type.Text, true, out TypeAeronef typeAeronef);
+            switch (typeAeronef)
+            {
+                case TypeAeronef.Passager:
+                    tempsEmbarquement.Visible = true;
+                    tempsDebarquement.Visible = true;
+                    capacite.Visible = true;
+                    break;
+                case TypeAeronef.Cargo:
+                    tempsEmbarquement.Visible = true;
+                    tempsDebarquement.Visible = true;
+                    capacite.Visible = true;
+                    break;
+                case TypeAeronef.Secours:
+                case TypeAeronef.Citerne:
+                case TypeAeronef.Helicoptere:
+                    tempsEmbarquement.Visible = false;
+                    tempsDebarquement.Visible = false;
+                    capacite.Visible = false;
+                    break;
+                default:
+                    break;
             }
         }
     }

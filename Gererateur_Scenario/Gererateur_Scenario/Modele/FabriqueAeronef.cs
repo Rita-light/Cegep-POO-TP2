@@ -25,20 +25,21 @@ namespace Gererateur_Scenario
             }
         }
         private FabriqueAeronef() { }
-        public Aeronef CreerAeronef(string nom, string type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
-        {
-            type = type.ToLower();
+
+        //Modifier parce que passait un type string
+        public Aeronef CreerAeronef(string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
+        {           
             switch (type)
             {
-                case "passager":
+                case TypeAeronef.Passager:
                     return new AvionPassager(nom, vitesse, tempsEntretien, (int)capacite, tempsEmbarquement, tempsDebarquement);
-                case "cargo":
+                case TypeAeronef.Cargo:
                     return new AvionCargaison(nom, vitesse, tempsEntretien, capacite, tempsEmbarquement, tempsDebarquement);
-                case "secours":
+                case TypeAeronef.Secours:
                     return new AvionSecours(nom, vitesse, tempsEntretien);
-                case "citerne":
+                case TypeAeronef.Citerne:
                     return new AvionCiterne(nom, vitesse, tempsEntretien);
-                case "helicoptere":
+                case TypeAeronef.Helicoptere:
                     return new Helicoptere(nom, vitesse, tempsEntretien);
                 default:
                     throw new ArgumentException("Type d'aéronef inconnu");

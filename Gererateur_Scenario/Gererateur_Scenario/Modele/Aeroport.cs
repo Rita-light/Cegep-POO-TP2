@@ -15,8 +15,6 @@ namespace Gererateur_Scenario
         public double MinCargaisons { get; set; }
         public double MaxCargaisons { get; set; }
         public List<Aeronef> Aeronefs { get; set; }
-       // public List<IObservateur> m_observateurs { get; set; }
-
 
        public Aeroport() 
        {
@@ -30,32 +28,60 @@ namespace Gererateur_Scenario
             MinCargaisons = minCargaisons;
             MaxCargaisons = maxCargaisons;
             Aeronefs = new List<Aeronef>();
-           // m_observateurs = new List<IObservateur>();
         }
 
-       /* public void Attacher(IObservateur obs)
-        {
-            if (!m_observateurs.Contains(obs))
-            {
-                m_observateurs.Add(obs);
-            }
-        }*/
-       /* public void Detacher(IObservateur obs) => m_observateurs.Remove(obs);
-        public void Notifier()
-        {
-            foreach (IObservateur obs in m_observateurs)
-            {
-                obs.MettreAJour();
-            }
-        }*/
         public void AjouterAeronef(string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
         {
-            Aeronef aeronef = FabriqueAeronef.Instance.CreerAeronef(nom, type.ToString(), vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
+            Aeronef aeronef = FabriqueAeronef.Instance.CreerAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
             Aeronefs.Add(aeronef);
-           // Notifier();
         }
-        public void ModifierAeronef() { }
-        public void SupprimerAeronef() { }
+        public void ModifierAeronef(string ancienNom, string nouveauNom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
+        {
+            var aeronef = Aeronefs.FirstOrDefault(a => a.Nom.Equals(ancienNom, StringComparison.OrdinalIgnoreCase));
+            if (aeronef == null)
+                throw new ArgumentException("Aéronef non trouvé : " + ancienNom);
+
+            aeronef.Nom = nouveauNom;
+            aeronef.Vitesse = vitesse;
+            aeronef.TempsEntretien = tempsEntretien;
+
+            switch (type)
+            {
+                case TypeAeronef.Passager:
+                    if (aeronef is AvionPassager avionPassager)
+                    {
+                        avionPassager.TempsEmbarquement = tempsEmbarquement;
+                        avionPassager.TempsDebarquement = tempsDebarquement;
+                        avionPassager.Capacite = (int)capacite;
+                    }
+                    break;
+                case TypeAeronef.Cargo:
+                    if (aeronef is AvionCargaison avionCargaison)
+                    {
+                        avionCargaison.TempsEmbarquement = tempsEmbarquement;
+                        avionCargaison.TempsDebarquement = tempsDebarquement;
+                        avionCargaison.Capacite = capacite;
+                    }
+                    break;
+                case TypeAeronef.Secours:
+                    break;
+                case TypeAeronef.Citerne:
+                    break;
+                case TypeAeronef.Helicoptere:
+                    break;
+                default:
+                    throw new ArgumentException("Type d'aéronef inconnu");
+            }
+        }
+
+        public void SupprimerAeronef() { 
+            var aeronef = Aeronefs.FirstOrDefault(a => a.Nom.Equals("NomAeronef", StringComparison.OrdinalIgnoreCase));
+            if (aeronef != null)
+            {
+                Aeronefs.Remove(aeronef);
+            }        
+        }
+
         public List<Aeronef> GetAeronefs() => Aeronefs;
         
         public override string ToString()

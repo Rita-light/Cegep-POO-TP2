@@ -130,58 +130,20 @@ namespace Gererateur_Scenario.Controle
         }
 
 
-        public void AjouterAeronef(Dictionary<string, string> data)
+        public void AjouterAeronef(string nomAeroport, Dictionary<string, string> data)
         {
-            string[] champs = { "Nom", "Type", "Aeroport", "Vitesse", "TempsEmbarquement", "TempsDebarquement", "Capacite", "TempsEntretien" };
-
-            foreach (var champ in champs)
-            {
-                if (!data.TryGetValue(champ, out string valeur) || string.IsNullOrWhiteSpace(valeur))
-                {
-                    MessageBox.Show($"Le champ '{champ}' est requis et ne peut pas être vide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
             string nom = data["Nom"];
-            string typeStr = data["Type"];
-            string aeroportStr = data["Aeroport"];
+            string type = data["Type"];
+            double vitesse = double.Parse(data["Vitesse"]);
+            double tempsEmbarquement = double.Parse(data["TempsEmbarquement"]);
+            double tempsDebarquement = double.Parse(data["TempsDebarquement"]);
+            double capacite = double.Parse(data["Capacite"]);
+            double tempsEntretien = double.Parse(data["TempsEntretien"]);
+            var scenario = m_gestionnaire.GetScenario();
+            scenario.AjouterAeronef(nomAeroport, nom, (TypeAeronef)Enum.Parse(typeof(TypeAeronef), type), vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
 
-            if (!Enum.TryParse(typeStr, true, out TypeAeronef type))
-            {
-                throw new ArgumentException($"Type d’aéronef invalide : {typeStr}");
-            }
-
-            if (!double.TryParse(data["Vitesse"], out double vitesse))
-                throw new ArgumentException("La vitesse doit être un nombre valide.");
-
-            if (!double.TryParse(data["TempsEmbarquement"], out double tempsEmbarquement))
-                throw new ArgumentException("Le temps d'embarquement doit être un nombre valide.");
-
-            if (!double.TryParse(data["TempsDebarquement"], out double tempsDebarquement))
-                throw new ArgumentException("Le temps de débarquement doit être un nombre valide.");
-
-            if (!double.TryParse(data["Capacite"], out double capacite))
-                throw new ArgumentException("La capacité doit être un nombre valide.");
-
-            if (!double.TryParse(data["TempsEntretien"], out double tempsEntretien))
-                throw new ArgumentException("Le temps d'entretien doit être un nombre valide.");
-
-            Aeroport aeroport = ObtenirAeroportSelectionne(aeroportStr);
-            if (aeroport == null)
-            {
-                throw new ArgumentException($"Aéroport '{aeroportStr}' introuvable.");
-            }
-
-            aeroport.AjouterAeronef(
-                nom,
-                type,
-                vitesse,
-                tempsEmbarquement,
-                tempsDebarquement,
-                capacite,
-                tempsEntretien
-            );
         }
+            
         public void ModifierAeronef(object args) { }
         public void SupprimerAeronef(object args) { }
        
@@ -208,14 +170,6 @@ namespace Gererateur_Scenario.Controle
         public List<string> ObtenirListeAeronefs(string nomAeroport)
         {
             return m_gestionnaire.ObtenirListeAeronefs(nomAeroport);
-        }
-        public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
-        {
-            if (string.IsNullOrWhiteSpace(nomAeroport))
-                return null;
-
-            return m_gestionnaire.ObtenirAeroportSelectionne(nomAeroport);
-        }
-
+        }        
     }
 }

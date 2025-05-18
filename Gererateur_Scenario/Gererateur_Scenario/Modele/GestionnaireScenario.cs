@@ -51,10 +51,6 @@ namespace Gererateur_Scenario
         {
             return m_scenario.ObtenirListeAeronefs(nomAeroport);
         }
-
-        public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
-        {
-            return m_scenario.ObtenirAeroportSelectionne(nomAeroport);
-        }           
+                     
     }
 }

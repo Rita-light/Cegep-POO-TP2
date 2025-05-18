@@ -490,11 +490,23 @@ namespace Gererateur_Scenario.Vue
 
         private void typeEvenement_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (typeEvenement.SelectedItem is TypeEvenement selectedType)
+            if (typeEvenement.SelectedItem == null)
+                return;
+            
+            string typeStr = typeEvenement.SelectedItem.ToString();
+            
+            if (Enum.TryParse(typeStr, out TypeEvenement type))
             {
-                double freq = m_controleur.ObtenirFrequence(selectedType);
-                //frequence.Text = freq.HasValue ? freq.Value.ToString("0.##") : "";
-                frequence.Text = freq.ToString();
+                try
+                {
+                    double frequence = m_controleur.ObtenirFrequence(type); // Va chercher depuis Scenario
+                    this.frequence.Text = frequence.ToString();
+                }
+                catch
+                {
+                    // Type non trouvé, on affiche 0
+                    frequence.Text = "0";
+                }
             }
         }
     }

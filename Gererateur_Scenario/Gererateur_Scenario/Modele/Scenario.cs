@@ -14,6 +14,7 @@ namespace Gererateur_Scenario
 
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public Scenario()
         {
             aeroports = new List<Aeroport>();
@@ -29,10 +30,13 @@ namespace Gererateur_Scenario
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         public void SupprimerAeroport(Aeroport aeroport)
         {
             aeroports.Remove(aeroport);
         }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
         
@@ -43,11 +47,16 @@ namespace Gererateur_Scenario
 =======
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         public void ModifierAeroport(Aeroport aeroport)
         {
         }
         
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -116,6 +125,7 @@ namespace Gererateur_Scenario
         }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public void ModifierAeroport(string ancienNom, string nouveauNom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             var aeroport = aeroports.FirstOrDefault(a => a.Nom == ancienNom);
@@ -143,6 +153,8 @@ namespace Gererateur_Scenario
             }
         }
 
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
         public Aeroport ObtenirAeroportSelectionne(string nomAeroport)

@@ -262,6 +262,32 @@ namespace Gererateur_Scenario.Vue
             }
         }
 
+        private Aeroport ObtenirAeroportSelectionne()
+        {
+            if (listAeroport.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            string ligneAffichee = listAeroport.SelectedItem.ToString();
+            int indexParenthese = ligneAffichee.IndexOf('(');
+            string nomAeroport = (indexParenthese > 0)
+                ? ligneAffichee.Substring(0, indexParenthese).Trim()
+                : ligneAffichee.Trim();
+
+            Aeroport aeroport = m_controleur.ObtenirAeroportSelectionne(nomAeroport);
+
+            if (aeroport == null)
+            {
+                MessageBox.Show("Aéroport introuvable.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+            return aeroport;
+        }
+
+
         private void listAeroport_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listAeroport.SelectedIndex == -1) return;
@@ -294,6 +320,15 @@ namespace Gererateur_Scenario.Vue
             maxPassager.Text = parties[4];
             minCargaison.Text = parties[5];
             maxCargaison.Text = parties[6];
+
+            // Afficher la liste des aéronefs associés
+            listAeronef.Items.Clear();
+            List<string> listeAeronefs = m_controleur.ObtenirListeAeronefs(nomAeroport.Text);
+            foreach (string ligne in listeAeronefs)
+            {
+                string[] infos = ligne.Split('|');
+                listAeronef.Items.Add(infos[0]); // 
+            }
         }
 
         private void SupprimerAeroport_Click_1(object sender, EventArgs e)
@@ -347,13 +382,21 @@ namespace Gererateur_Scenario.Vue
 
         private void btnAeronef_Click(object sender, EventArgs e)
         {
-            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
-            if (aeroportSelectionne == null)
+            if (listAeroport.SelectedIndex == -1) 
             {
-                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Veuillez sélectionner un aéroport", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
+            string ligneAffichee = listAeroport.SelectedItem.ToString();
+            int indexParenthese = ligneAffichee.IndexOf('(');
+            string nomAeroport = (indexParenthese > 0) ? ligneAffichee.Substring(0, indexParenthese).Trim() : ligneAffichee.Trim();
+            Aeroport aeroportSelectionne = m_controleur.ObtenirAeroportSelectionne(nomAeroport);
+            if (aeroportSelectionne == null)
+            {
+                MessageBox.Show("Introuvable", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var data = new Dictionary<string, string>()
             {
                 { "Nom", nomAeronef.Text.Trim() },
@@ -413,50 +456,7 @@ namespace Gererateur_Scenario.Vue
         private void listAeronef_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (listAeroport.SelectedIndex == -1)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéroport avant de sélectionner un aéronef.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            //Recherche l'aéroport sélectionné
-            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
-            if (aeroportSelectionne == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            // Vérifie qu’un aéronef est sélectionné
-            if (listAeronef.SelectedIndex == -1) return;
-
-            // Récupère le nom affiché dans la listview
-            Aeronef aeronefSelectionne = listAeronef.SelectedItem as Aeronef;
-            if (aeronefSelectionne == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéronef valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Le nom est avant le premier espace, ou avant la première parenthèse
-            string nomSelectionne = aeronefSelectionne.Nom;
-            // Obtenir la liste brute depuis le contrôleur
-            List<string> listeAeronefs = m_controleur.ObtenirListeAeronefs(aeroportSelectionne.Nom);
-            // Trouver la ligne correspondante dans la liste brute
-            string ligneBrute = listeAeronefs.FirstOrDefault(a => a.StartsWith(nomSelectionne + "|"));
-            if (ligneBrute == null)
-            {
-                MessageBox.Show("Impossible de retrouver les informations de cet aéronef.");
-                return;
-            }
-            // Extraire les valeurs et les placer dans les TextBox
-            string[] parties = ligneBrute.Split('|');
-            nomAeronef.Text = parties[0];
-            type.Text = parties[1];
-            vitesse.Text = parties[2];
-            tempsEmbarquement.Text = parties[3];
-            tempsDebarquement.Text = parties[4];
-            capacite.Text = parties[5];
-            tempsEntretien.Text = parties[6];          
+               
         }
     }
 }

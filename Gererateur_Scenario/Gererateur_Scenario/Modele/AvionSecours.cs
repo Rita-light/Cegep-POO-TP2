@@ -11,6 +11,7 @@ namespace Gererateur_Scenario
         public AvionSecours(): base(){}
         public AvionSecours(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
         {
+            type = TypeAeronef.Secours;
         }
 
         public override string ToString()
@@ -20,7 +21,7 @@ namespace Gererateur_Scenario
 
         public override string Serialiser()
         {
-            return $"{type}|{Nom}|{Vitesse}|{TempsEntretien}";
+            return $"{base.Serialiser()}";
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Gererateur_Scenario
     public class FrequenceEvenement
     {
         public TypeEvenement Type { get; set; }
-        public double Frequence { get; set; }
+        public double Frequence { get; set; } = 0;
 
         public FrequenceEvenement()
         {

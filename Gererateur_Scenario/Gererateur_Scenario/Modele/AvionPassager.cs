@@ -14,6 +14,7 @@ namespace Gererateur_Scenario
             : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement)
         {
             Capacite = capacite;
+            type = TypeAeronef.Passager;
         }
         
         public AvionPassager(){}

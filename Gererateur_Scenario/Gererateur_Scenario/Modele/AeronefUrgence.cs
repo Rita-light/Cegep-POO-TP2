@@ -20,7 +20,7 @@ namespace Gererateur_Scenario
         }
         public override string Serialiser()
         {
-            return $"{Nom}|{type}|{Vitesse}|{TempsEntretien}";
+            return $"{base.Serialiser()}";
         }
     }
 }

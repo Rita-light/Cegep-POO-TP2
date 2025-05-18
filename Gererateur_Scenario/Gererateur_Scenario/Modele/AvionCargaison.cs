@@ -16,6 +16,7 @@ namespace Gererateur_Scenario
             : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement)
         {
             Capacite = capacite;
+            type = TypeAeronef.Cargo;
         }
 
         public override string ToString()

@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace Gererateur_Scenario
 {
-    public class Helicoptere : Aeronef
+    public class Helicoptere : AeronefUrgence
     {
         public Helicoptere() : base() { }
         public Helicoptere(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
         {
+            type = TypeAeronef.Helicoptere;
         }
 
         public override string ToString()
@@ -20,7 +21,7 @@ namespace Gererateur_Scenario
 
         public override string Serialiser()
         {
-            return $"{base.Serialiser()}|Helicoptere";
+            return $"{base.Serialiser()}";
         }
     }
 }

@@ -142,14 +142,14 @@ namespace Gererateur_Scenario.Vue
                         int embarquementP = int.Parse(parties[4]);
                         int debarquementP = int.Parse(parties[5]);
                         int capaciteurP = int.Parse(parties[6]);
-                        description += $", EmbarquementP: {embarquementP} min, DébarquementP: {debarquementP} min, Capacité : {capaciteurP} min";
+                        description += $", EmbarquementP: {embarquementP} min, DébarquementP: {debarquementP} min, Capacité : {capaciteurP} personnes ";
                         break;
 
                     case "Cargo":
                         int embarquementC = int.Parse(parties[4]);
                         int debarquementC = int.Parse(parties[5]);
                         int capaciteurC = int.Parse(parties[6]);
-                        description += $", EmbarquementC: {embarquementC} min, DébarquementC: {debarquementC} min, CapaciteurC: {capaciteurC} min";
+                        description += $", EmbarquementC: {embarquementC} min, DébarquementC: {debarquementC} min, CapaciteurC: {capaciteurC} tonnes";
                         break;
 
                     case "Secours":
@@ -161,7 +161,7 @@ namespace Gererateur_Scenario.Vue
                         break;
 
                     case "Helicoptere":
-                        description += " (Hélicoptère polyvalent)";
+                        description += " (Hélicoptère observation)";
                         break;
 
                     default:
@@ -308,31 +308,7 @@ namespace Gererateur_Scenario.Vue
                 MessageBox.Show("Une erreur est survenue : " + ex.Message);
             }
         }
-
-        private Aeroport ObtenirAeroportSelectionne()
-        {
-            if (listAeroport.SelectedIndex == -1)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéroport.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-
-            string ligneAffichee = listAeroport.SelectedItem.ToString();
-            int indexParenthese = ligneAffichee.IndexOf('(');
-            string nomAeroport = (indexParenthese > 0)
-                ? ligneAffichee.Substring(0, indexParenthese).Trim()
-                : ligneAffichee.Trim();
-
-            Aeroport aeroport = m_controleur.ObtenirAeroportSelectionne(nomAeroport);
-
-            if (aeroport == null)
-            {
-                MessageBox.Show("Aéroport introuvable.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
-            }
-
-            return aeroport;
-        }
+        
         
         private void listAeroport_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -425,8 +401,11 @@ namespace Gererateur_Scenario.Vue
                     textBox.Clear();
                 }
             }
+            listAeronef.Items.Clear();
         }
 
+        
+        // à modifier, aeroport ne doit pas apparaitre ici
         private void btnAeronef_Click(object sender, EventArgs e)
         {
             if (listAeroport.SelectedIndex == -1) 
@@ -460,6 +439,13 @@ namespace Gererateur_Scenario.Vue
             {
                 m_controleur.AjouterAeronef(data);
                 MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Après avoir ajouté un aéronef à l'aéroport sélectionné
+                if (listAeroport.SelectedIndex >= 0)
+                {
+                    string ligne = listAeroport.SelectedItem.ToString();
+                    string nom = ligne.Split('(')[0].Trim();
+                    AfficherAeronefs(nom); // appel manuel
+                }
             }
             catch (FormatException ex)
             {
@@ -500,10 +486,16 @@ namespace Gererateur_Scenario.Vue
             }
         }
 
-        private void listAeronef_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        
 
-               
+        private void typeEvenement_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (typeEvenement.SelectedItem is TypeEvenement selectedType)
+            {
+                double freq = m_controleur.ObtenirFrequence(selectedType);
+                //frequence.Text = freq.HasValue ? freq.Value.ToString("0.##") : "";
+                frequence.Text = freq.ToString();
+            }
         }
     }
 }

@@ -142,11 +142,13 @@ namespace Gererateur_Scenario
             {
                 //Si la fréquence du type d'évènement existe déjà, on la modifie
                 frequenceExiste.Frequence = valeur;
+                Console.WriteLine("frequence changé");
             }
             else
             {
                 //Sinon, on crée une nouvelle fréquence
                 m_frequence.Add(new FrequenceEvenement(type, valeur));
+                Console.WriteLine("frequence ajouté");
             }
         }
     }

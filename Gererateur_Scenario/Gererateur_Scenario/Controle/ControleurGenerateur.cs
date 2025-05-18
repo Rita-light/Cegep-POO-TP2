@@ -187,21 +187,7 @@ namespace Gererateur_Scenario.Controle
        
         public void ChangerFrequence(TypeEvenement type, string frequenceText) 
         {
-            if (!double.TryParse(frequenceText.ToString(), out double frequence) || frequence < 0)
-            {
-                throw new ArgumentException("La fréquence doit être un nombre valide.");
-            }
-
-            var existe = m_gestionnaire.GetScenario().GetFrequences().Find(f => f.Type == type);
-
-            if (existe != null)
-            {
-                existe.Frequence = frequence;
-            }
-            else
-            {
-                m_gestionnaire.GetScenario().GetFrequences().Add(new FrequenceEvenement(type, frequence));
-            }
+            m_gestionnaire.GetScenario().ChangerFrequence(type, frequenceText);
         }
 
         public double ObtenirFrequence(TypeEvenement type)

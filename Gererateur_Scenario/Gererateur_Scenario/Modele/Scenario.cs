@@ -13,6 +13,7 @@ namespace Gererateur_Scenario
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         public Scenario()
         {
             aeroports = new List<Aeroport>();
@@ -26,10 +27,13 @@ namespace Gererateur_Scenario
         }
 =======
 >>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
         public void SupprimerAeroport(Aeroport aeroport)
         {
             aeroports.Remove(aeroport);
         }
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
         
         public List<Aeroport> GetAeroports()
@@ -37,10 +41,15 @@ namespace Gererateur_Scenario
             return aeroports;
         }
 =======
+=======
+>>>>>>> Stashed changes
         public void ModifierAeroport(Aeroport aeroport)
         {
         }
         
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         /*public void ImporterScenario(string cheminFichier)
         {
@@ -106,6 +115,7 @@ namespace Gererateur_Scenario
             return aeroports.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
         }
 
+<<<<<<< Updated upstream
         public void ModifierAeroport(string ancienNom, string nouveauNom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             var aeroport = aeroports.FirstOrDefault(a => a.Nom == ancienNom);
@@ -133,6 +143,8 @@ namespace Gererateur_Scenario
             }
         }
 
+=======
+>>>>>>> Stashed changes
         public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
         {
             if (string.IsNullOrEmpty(nomAeroport))

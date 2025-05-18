@@ -171,6 +171,7 @@ namespace Gererateur_Scenario.Controle
             }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
             aeroport.AjouterAeronef(
                 nom,
                 type,
@@ -187,6 +188,10 @@ namespace Gererateur_Scenario.Controle
             EnregistrerObservateur(formGenerateur);
             m_gestionnaire.GetScenario().Notifier(); 
         }     
+=======
+            aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
+        }
+>>>>>>> Stashed changes
 =======
             aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
         }

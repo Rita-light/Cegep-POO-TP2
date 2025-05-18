@@ -1,12 +1,87 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\scenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\scenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\frequenceevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\frequenceevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\gestionnairescenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\gestionnairescenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\vue\\formgenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\vue\\formgenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Scenario.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Scenario.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\Scenario.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Scenario.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\Scenario.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA0wCsAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T01:35:07.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GestionnaireScenario.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAADwv10AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T01:33:55.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FrequenceEvenement.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\FrequenceEvenement.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\FrequenceEvenement.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\FrequenceEvenement.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\FrequenceEvenement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T01:22:35.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormGenerateur.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Vue\\FormGenerateur.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs [Design]",
+              "RelativeToolTip": "Gererateur_Scenario\\Vue\\FormGenerateur.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-18T01:20:20.307Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

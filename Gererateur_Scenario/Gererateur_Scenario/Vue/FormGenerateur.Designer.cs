@@ -64,17 +64,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.capacite = new System.Windows.Forms.TextBox();
             this.type = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.incendies = new System.Windows.Forms.TextBox();
-            this.secours = new System.Windows.Forms.TextBox();
-            this.cargaisons = new System.Windows.Forms.TextBox();
-            this.passagers = new System.Windows.Forms.TextBox();
-            this.observations = new System.Windows.Forms.TextBox();
             this.btnChangerFrequence = new System.Windows.Forms.Button();
+            this.typeEvenement = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.frequence = new System.Windows.Forms.TextBox();
+            this.Load += FormGenerateur_Load;
             this.SuspendLayout();
             // 
             // listAeroport
@@ -216,6 +210,7 @@
             this.listAeronef.Name = "listAeronef";
             this.listAeronef.Size = new System.Drawing.Size(814, 134);
             this.listAeronef.TabIndex = 15;
+            this.listAeronef.SelectedIndexChanged += new System.EventHandler(this.listAeronef_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -304,7 +299,7 @@
             // 
             // btnAeronef
             // 
-            this.btnAeronef.Location = new System.Drawing.Point(13, 456);
+            this.btnAeronef.Location = new System.Drawing.Point(10, 477);
             this.btnAeronef.Margin = new System.Windows.Forms.Padding(2);
             this.btnAeronef.Name = "btnAeronef";
             this.btnAeronef.Size = new System.Drawing.Size(811, 28);
@@ -408,94 +403,9 @@
             this.type.Size = new System.Drawing.Size(121, 21);
             this.type.TabIndex = 36;
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(13, 497);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 13);
-            this.label12.TabIndex = 37;
-            this.label12.Text = "Frequence incendies";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 522);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(98, 13);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Frequence secours";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 546);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(112, 13);
-            this.label16.TabIndex = 39;
-            this.label16.Text = "Frequence cargaisons";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(268, 497);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(109, 13);
-            this.label17.TabIndex = 40;
-            this.label17.Text = "Frequence passagers";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(268, 522);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(121, 13);
-            this.label18.TabIndex = 41;
-            this.label18.Text = "Frequence observations";
-            // 
-            // incendies
-            // 
-            this.incendies.Location = new System.Drawing.Point(148, 494);
-            this.incendies.Margin = new System.Windows.Forms.Padding(2);
-            this.incendies.Name = "incendies";
-            this.incendies.Size = new System.Drawing.Size(84, 20);
-            this.incendies.TabIndex = 42;
-            // 
-            // secours
-            // 
-            this.secours.Location = new System.Drawing.Point(148, 519);
-            this.secours.Margin = new System.Windows.Forms.Padding(2);
-            this.secours.Name = "secours";
-            this.secours.Size = new System.Drawing.Size(84, 20);
-            this.secours.TabIndex = 43;
-            // 
-            // cargaisons
-            // 
-            this.cargaisons.Location = new System.Drawing.Point(148, 546);
-            this.cargaisons.Margin = new System.Windows.Forms.Padding(2);
-            this.cargaisons.Name = "cargaisons";
-            this.cargaisons.Size = new System.Drawing.Size(84, 20);
-            this.cargaisons.TabIndex = 44;
-            // 
-            // passagers
-            // 
-            this.passagers.Location = new System.Drawing.Point(406, 494);
-            this.passagers.Margin = new System.Windows.Forms.Padding(2);
-            this.passagers.Name = "passagers";
-            this.passagers.Size = new System.Drawing.Size(84, 20);
-            this.passagers.TabIndex = 45;
-            // 
-            // observations
-            // 
-            this.observations.Location = new System.Drawing.Point(406, 519);
-            this.observations.Margin = new System.Windows.Forms.Padding(2);
-            this.observations.Name = "observations";
-            this.observations.Size = new System.Drawing.Size(84, 20);
-            this.observations.TabIndex = 46;
-            // 
             // btnChangerFrequence
             // 
-            this.btnChangerFrequence.Location = new System.Drawing.Point(306, 546);
+            this.btnChangerFrequence.Location = new System.Drawing.Point(448, 520);
             this.btnChangerFrequence.Name = "btnChangerFrequence";
             this.btnChangerFrequence.Size = new System.Drawing.Size(171, 27);
             this.btnChangerFrequence.TabIndex = 47;
@@ -503,23 +413,47 @@
             this.btnChangerFrequence.UseVisualStyleBackColor = true;
             this.btnChangerFrequence.Click += new System.EventHandler(this.btnChangerFrequence_Click);
             // 
+            // typeEvenement
+            // 
+            this.typeEvenement.FormattingEnabled = true;
+            this.typeEvenement.Items.AddRange(new object[] {
+            "Passager",
+            "Cargaison",
+            "Secours",
+            "Incendie",
+            "Observation"});
+            this.typeEvenement.Location = new System.Drawing.Point(122, 524);
+            this.typeEvenement.Name = "typeEvenement";
+            this.typeEvenement.Size = new System.Drawing.Size(121, 21);
+            this.typeEvenement.TabIndex = 48;
+            this.typeEvenement.Text = "Types d\'évènements";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(287, 527);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 49;
+            this.label12.Text = "Fréquence";
+            // 
+            // frequence
+            // 
+            this.frequence.Location = new System.Drawing.Point(352, 524);
+            this.frequence.Name = "frequence";
+            this.frequence.Size = new System.Drawing.Size(45, 20);
+            this.frequence.TabIndex = 50;
+            // 
             // FormGenerateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(835, 623);
-            this.Controls.Add(this.btnChangerFrequence);
-            this.Controls.Add(this.observations);
-            this.Controls.Add(this.passagers);
-            this.Controls.Add(this.cargaisons);
-            this.Controls.Add(this.secours);
-            this.Controls.Add(this.incendies);
-            this.Controls.Add(this.label18);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.frequence);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.typeEvenement);
+            this.Controls.Add(this.btnChangerFrequence);
             this.Controls.Add(this.type);
             this.Controls.Add(this.capacite);
             this.Controls.Add(this.label15);
@@ -613,16 +547,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox capacite;
         private System.Windows.Forms.ComboBox type;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox incendies;
-        private System.Windows.Forms.TextBox secours;
-        private System.Windows.Forms.TextBox cargaisons;
-        private System.Windows.Forms.TextBox passagers;
-        private System.Windows.Forms.TextBox observations;
         private System.Windows.Forms.Button btnChangerFrequence;
+        private System.Windows.Forms.ComboBox typeEvenement;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox frequence;
     }
 }

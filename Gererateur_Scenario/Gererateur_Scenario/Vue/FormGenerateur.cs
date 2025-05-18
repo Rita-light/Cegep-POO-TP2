@@ -20,6 +20,11 @@ namespace Gererateur_Scenario.Vue
             InitializeComponent();
         }
 
+        private void FormGenerateur_Load(object sender, EventArgs e)
+        {
+            frequence.Text = "0";  
+        }
+
         public void SetControleur(ControleurGenerateur controleur)
         {
             m_controleur = controleur;
@@ -380,18 +385,78 @@ namespace Gererateur_Scenario.Vue
         {
             try
             {
-                m_controleur.ChangerFrequence(TypeEvenement.Observation, observations.Text);
-                m_controleur.ChangerFrequence(TypeEvenement.Secours, secours.Text);
-                m_controleur.ChangerFrequence(TypeEvenement.Incendie, incendies.Text);
-                m_controleur.ChangerFrequence(TypeEvenement.Passager, passagers.Text);
-                m_controleur.ChangerFrequence(TypeEvenement.Cargaison, cargaisons.Text);
+                if (typeEvenement.SelectedItem == null)
+                {
+                    MessageBox.Show("Veuillez sélectionner un type d'événement.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                MessageBox.Show("Fréquences mises à jour !");
+                string type = typeEvenement.SelectedItem.ToString();
+                if (!Enum.TryParse(type, out TypeEvenement typeEvenementSelectionne))
+                {
+                    MessageBox.Show("Type d'événement invalide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string frequenceText = frequence.Text.Trim();
+                m_controleur.ChangerFrequence(typeEvenementSelectionne, frequenceText);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void listAeronef_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (listAeroport.SelectedIndex == -1)
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport avant de sélectionner un aéronef.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            //Recherche l'aéroport sélectionné
+            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
+            if (aeroportSelectionne == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Vérifie qu’un aéronef est sélectionné
+            if (listAeronef.SelectedIndex == -1) return;
+
+            // Récupère le nom affiché dans la listview
+            Aeronef aeronefSelectionne = listAeronef.SelectedItem as Aeronef;
+            if (aeronefSelectionne == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un aéronef valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Le nom est avant le premier espace, ou avant la première parenthèse
+            string nomSelectionne = aeronefSelectionne.Nom;
+            // Obtenir la liste brute depuis le contrôleur
+            List<string> listeAeronefs = m_controleur.ObtenirListeAeronefs(aeroportSelectionne.Nom);
+            // Trouver la ligne correspondante dans la liste brute
+            string ligneBrute = listeAeronefs.FirstOrDefault(a => a.StartsWith(nomSelectionne + "|"));
+            if (ligneBrute == null)
+            {
+                MessageBox.Show("Impossible de retrouver les informations de cet aéronef.");
+                return;
+            }
+            // Extraire les valeurs et les placer dans les TextBox
+            string[] parties = ligneBrute.Split('|');
+            nomAeronef.Text = parties[0];
+            type.Text = parties[1];
+            vitesse.Text = parties[2];
+            tempsEmbarquement.Text = parties[3];
+            tempsDebarquement.Text = parties[4];
+            capacite.Text = parties[5];
+            tempsEntretien.Text = parties[6];          
         }
     }
 }

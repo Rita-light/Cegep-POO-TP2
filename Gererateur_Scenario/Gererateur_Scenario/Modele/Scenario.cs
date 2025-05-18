@@ -8,29 +8,29 @@ namespace Gererateur_Scenario
 {
     public class Scenario
     {
-        public List<Aeroport> aeroports { get; set; }
+        private List<Aeroport> m_aeroport { get; set; }
         private List<FrequenceEvenement> m_frequence { get; set; } = new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
         public Scenario()
         {
-            aeroports = new List<Aeroport>();
+            m_aeroport = new List<Aeroport>();
             m_frequence = new List<FrequenceEvenement>();
             m_observateurs = new List<IObservateur>();
         }
 
         public void AjouterAeroport(Aeroport aeroport)
         {
-            aeroports.Add(aeroport);
+            m_aeroport.Add(aeroport);
         }
         public void SupprimerAeroport(Aeroport aeroport)
         {
-            aeroports.Remove(aeroport);
+            m_aeroport.Remove(aeroport);
         }
 
         public List<Aeroport> GetAeroports()
         {
-            return aeroports;
+            return m_aeroport;
         }
         /*public void ImporterScenario(string cheminFichier)
         {
@@ -58,7 +58,7 @@ namespace Gererateur_Scenario
         public void AjouterAeroport(string nom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             var aeroport = new Aeroport(nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
-            aeroports.Add(aeroport);
+            m_aeroport.Add(aeroport);
             Notifier();
         }
 
@@ -67,7 +67,7 @@ namespace Gererateur_Scenario
         {
             List<string> liste = new List<string>();
 
-            foreach (var aeroport in aeroports)
+            foreach (var aeroport in m_aeroport)
             {
                 liste.Add(aeroport.Serialiser());
             }
@@ -77,7 +77,7 @@ namespace Gererateur_Scenario
 
         public List<string> ObtenirListeAeronefs(string nomAeroport)
         {
-            foreach (var aeroport in aeroports)
+            foreach (var aeroport in m_aeroport)
             {
                 if (aeroport.Nom == nomAeroport)
                 {
@@ -90,7 +90,7 @@ namespace Gererateur_Scenario
 
         public void ModifierAeroport(string ancienNom, string nouveauNom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
-            var aeroport = aeroports.FirstOrDefault(a => a.Nom == ancienNom);
+            var aeroport = m_aeroport.FirstOrDefault(a => a.Nom == ancienNom);
             if (aeroport == null)
                 throw new ArgumentException("Aéroport non trouvé : " + ancienNom);
 
@@ -107,10 +107,10 @@ namespace Gererateur_Scenario
 
         public void SupprimerAeroport(string nom)
         {
-            var aeroport = aeroports.FirstOrDefault(a => a.Nom.Equals(nom, StringComparison.OrdinalIgnoreCase));
+            var aeroport = m_aeroport.FirstOrDefault(a => a.Nom.Equals(nom, StringComparison.OrdinalIgnoreCase));
             if (aeroport != null)
             {
-                aeroports.Remove(aeroport);
+                m_aeroport.Remove(aeroport);
                 Notifier();
             }
         }
@@ -121,7 +121,7 @@ namespace Gererateur_Scenario
             {
                 return null;
             }
-            return aeroports.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
+            return m_aeroport.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
         }
 
         public double GetFrequence(TypeEvenement type)

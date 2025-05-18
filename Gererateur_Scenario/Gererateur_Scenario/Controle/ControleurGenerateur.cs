@@ -8,7 +8,6 @@ namespace Gererateur_Scenario.Controle
 {
     public class ControleurGenerateur
     {
-        private Aeroport m_aeroport;
         private GestionnaireScenario m_gestionnaire;
         private FormGenerateur formGenerateur;
 
@@ -17,14 +16,14 @@ namespace Gererateur_Scenario.Controle
             m_gestionnaire = GestionnaireScenario.Instance;
             this.formGenerateur = formGenerateur;
         }
-        
-        
+
+
         public void EnregistrerObservateur(IObservateur obs)
         {
             m_gestionnaire.GetScenario().Attacher(obs);
         }
 
-        
+
         public void AjouterAeroport(Dictionary<string, string> data)
         {
             string nom = data["Nom"];
@@ -34,7 +33,7 @@ namespace Gererateur_Scenario.Controle
             int maxPassagers = int.Parse(data["MaxPassagers"]);
             double minCargaisons = double.Parse(data["MinCargaisons"]);
             double maxCargaisons = double.Parse(data["MaxCargaisons"]);
-            
+
             var position = new Position(latitude, longitude);
             var scenario = m_gestionnaire.GetScenario();
             scenario.AjouterAeroport(nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
@@ -112,10 +111,10 @@ namespace Gererateur_Scenario.Controle
             int maxPassagers = int.Parse(data["MaxPassagers"]);
             double minCargaisons = double.Parse(data["MinCargaisons"]);
             double maxCargaisons = double.Parse(data["MaxCargaisons"]);
-            
+
             var position = new Position(latitude, longitude);
             var scenario = m_gestionnaire.GetScenario();
-            scenario.ModifierAeroport(ancienNom ,nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
+            scenario.ModifierAeroport(ancienNom, nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
 
         }
         public void SupprimerAeroport(string nom)
@@ -123,14 +122,18 @@ namespace Gererateur_Scenario.Controle
             var scenario = m_gestionnaire.GetScenario();
             scenario.SupprimerAeroport(nom);
         }
-        
-        
-        public void ModifierAeroport(object args) {}
-        public void SupprimerAeroport(object args) {}
+
+        public void CommencerNouveauScenario()
+        {
+            m_gestionnaire.NouveauScenario();
+            EnregistrerObservateur(formGenerateur);
+            m_gestionnaire.GetScenario().Notifier();
+        }
+
 
         public void AjouterAeronef(Dictionary<string, string> data)
         {
-            string[] champs = {"Nom", "Type", "Aeroport", "Vitesse", "TempsEmbarquement", "TempsDebarquement", "Capacite", "TempsEntretien"};
+            string[] champs = { "Nom", "Type", "Aeroport", "Vitesse", "TempsEmbarquement", "TempsDebarquement", "Capacite", "TempsEntretien" };
 
             foreach (var champ in champs)
             {
@@ -170,9 +173,6 @@ namespace Gererateur_Scenario.Controle
                 throw new ArgumentException($"Aéroport '{aeroportStr}' introuvable.");
             }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
             aeroport.AjouterAeronef(
                 nom,
                 type,
@@ -183,44 +183,20 @@ namespace Gererateur_Scenario.Controle
                 tempsEntretien
             );
         }
-        public void CommencerNouveauScenario()
-        {
-            m_gestionnaire.NouveauScenario();
-            EnregistrerObservateur(formGenerateur);
-            m_gestionnaire.GetScenario().Notifier(); 
-        }     
-=======
-            aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
-        }
->>>>>>> Stashed changes
-=======
-            aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
-        }
->>>>>>> Stashed changes
-=======
-            aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
-        }
->>>>>>> Stashed changes
+        public void ModifierAeronef(object args) { }
+        public void SupprimerAeronef(object args) { }
+       
+        public void ChangerFrequence(object args) { }
 
-        public void ModifierAeronef(object args) {}
-        public void SupprimerAeronef(object args) {}
-        
-        public void AjouterEvenement(object args) {}
-        public void ModifierEvenement(object args) {}
-        public void SupprimerEvenement(object args) {}
-        
-        public void ChangerFrequence(object args) {}
-        
         public List<string> ObtenirListeAeroports()
         {
             return m_gestionnaire.ObtenirListeAeroports();
         }
-        
+
         public List<string> ObtenirListeAeronefs(string nomAeroport)
         {
             return m_gestionnaire.ObtenirListeAeronefs(nomAeroport);
         }
-
         public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
         {
             if (string.IsNullOrWhiteSpace(nomAeroport))
@@ -228,5 +204,6 @@ namespace Gererateur_Scenario.Controle
 
             return m_gestionnaire.ObtenirAeroportSelectionne(nomAeroport);
         }
+
     }
 }

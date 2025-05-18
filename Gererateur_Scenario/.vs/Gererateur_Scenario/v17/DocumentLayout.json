@@ -1,82 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\",
-  "Documents": [
-    {
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\controle\\controleurgenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\controle\\controleurgenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-=======
-=======
->>>>>>> Stashed changes
-      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\helicoptere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\helicoptere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\aeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\aeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-              "Title": "ControleurGenerateur.cs",
-              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Controle\\ControleurGenerateur.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Controle\\ControleurGenerateur.cs",
-              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Controle\\ControleurGenerateur.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Controle\\ControleurGenerateur.cs",
-              "ViewState": "AgIAAKQAAAAAAAAAAAASwLwAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T00:25:04.326Z",
-=======
-=======
->>>>>>> Stashed changes
-              "Title": "Helicoptere.cs",
-              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Helicoptere.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\Helicoptere.cs",
-              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Helicoptere.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Modele\\Helicoptere.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T20:42:36.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Aeronef.cs",
-              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Aeronef.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\Aeronef.cs",
-              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Aeronef.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Modele\\Aeronef.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-17T20:39:52.248Z",
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

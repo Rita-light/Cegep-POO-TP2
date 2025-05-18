@@ -12,54 +12,26 @@ namespace Gererateur_Scenario
         public List<FrequenceEvenement> frequenceEvenements { get; set; } = new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         public Scenario()
         {
             aeroports = new List<Aeroport>();
             frequenceEvenements = new List<FrequenceEvenement>();
             m_observateurs = new List<IObservateur>();
         }
-        
+
         public void AjouterAeroport(Aeroport aeroport)
         {
             aeroports.Add(aeroport);
         }
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         public void SupprimerAeroport(Aeroport aeroport)
         {
             aeroports.Remove(aeroport);
         }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-        
+
         public List<Aeroport> GetAeroports()
         {
             return aeroports;
         }
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-        public void ModifierAeroport(Aeroport aeroport)
-        {
-        }
-        
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         /*public void ImporterScenario(string cheminFichier)
         {
         }
@@ -82,7 +54,7 @@ namespace Gererateur_Scenario
                 obs.MettreAJour();
             }
         }
-        
+
         public void AjouterAeroport(string nom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             var aeroport = new Aeroport(nom, position, minPassagers, maxPassagers, minCargaisons, maxCargaisons);
@@ -115,23 +87,13 @@ namespace Gererateur_Scenario
 
             return new List<string>();
         }
-        public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
-        {
-            if (string.IsNullOrEmpty(nomAeroport))
-            {
-                return null;
-            }
-            return aeroports.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
-        }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         public void ModifierAeroport(string ancienNom, string nouveauNom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             var aeroport = aeroports.FirstOrDefault(a => a.Nom == ancienNom);
             if (aeroport == null)
                 throw new ArgumentException("Aéroport non trouvé : " + ancienNom);
-            
+
             aeroport.Nom = nouveauNom;
             aeroport.Position = position;
             aeroport.MinPassagers = minPassagers;
@@ -149,14 +111,10 @@ namespace Gererateur_Scenario
             if (aeroport != null)
             {
                 aeroports.Remove(aeroport);
-                Notifier(); 
+                Notifier();
             }
         }
 
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
         public Aeroport ObtenirAeroportSelectionne(string nomAeroport)
         {
             if (string.IsNullOrEmpty(nomAeroport))
@@ -165,6 +123,5 @@ namespace Gererateur_Scenario
             }
             return aeroports.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
         }
-
     }
 }

@@ -14,14 +14,7 @@ namespace Gererateur_Scenario.Vue
     public partial class FormGenerateur : Form, IObservateur
     {
         private ControleurGenerateur m_controleur;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
-=======
-
->>>>>>> Stashed changes
         public FormGenerateur()
         {
             InitializeComponent();
@@ -32,16 +25,7 @@ namespace Gererateur_Scenario.Vue
             m_controleur = controleur;
             m_controleur.EnregistrerObservateur(this);
         }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 
-
->>>>>>> Stashed changes
-=======
-
-
->>>>>>> Stashed changes
         private void btnAeroport_Click(object sender, EventArgs e)
         {
             string nom = nomAeroport.Text.Trim();
@@ -103,140 +87,18 @@ namespace Gererateur_Scenario.Vue
             m_controleur.AjouterAeroport(data);
         }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> Stashed changes
         public void AfficherScenario() { }
-
-        public void AfficherAeroports() { }
->>>>>>> Stashed changes
-        public void AfficherAeronefs() { }
-
-        private void AjouterAeronef_Click(object sender, EventArgs e)
-        {
-            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
-            if (aeroportSelectionne == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-<<<<<<< Updated upstream
-=======
-        private void AjouterAeronef_Click(object sender, EventArgs e)
-        {
-            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
-            if (aeroportSelectionne == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
->>>>>>> Stashed changes
-            var data = new Dictionary<string, string>()
-            {
-                { "Nom", nomAeronef.Text.Trim() },
-                { "Type", type.Text.Trim() },
-                { "Vitesse", vitesse.Text.Trim() },
-                { "TempsEmbarquement", tempsEmbarquement.Text.Trim() },
-                { "TempsDebarquement", tempsDebarquement.Text.Trim() },
-                { "Capacite", capacite.Text.Trim() },
-                { "TempsEntretien", tempsEntretien.Text.Trim() },
-                { "Aeroport", aeroportSelectionne.Nom } 
-            };
-<<<<<<< Updated upstream
-=======
-
-            try
-            {
-                m_controleur.AjouterAeronef(data);
-                MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-
-<<<<<<< Updated upstream
-=======
-        private void AjouterAeronef_Click(object sender, EventArgs e)
-        {
-            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
-            if (aeroportSelectionne == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            var data = new Dictionary<string, string>()
-            {
-                { "Nom", nomAeronef.Text.Trim() },
-                { "Type", type.Text.Trim() },
-                { "Vitesse", vitesse.Text.Trim() },
-                { "TempsEmbarquement", tempsEmbarquement.Text.Trim() },
-                { "TempsDebarquement", tempsDebarquement.Text.Trim() },
-                { "Capacite", capacite.Text.Trim() },
-                { "TempsEntretien", tempsEntretien.Text.Trim() },
-                { "Aeroport", aeroportSelectionne.Nom } 
-            };
-
-            try
-            {
-                m_controleur.AjouterAeronef(data);
-                MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-
->>>>>>> Stashed changes
-        private void ModifierAeronef_Click(object sender, EventArgs e) { }
-        private void SupprimerAeronef_Click(object sender, EventArgs e) { }
->>>>>>> Stashed changes
-
-            try
-            {
-                m_controleur.AjouterAeronef(data);
-                MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
- 
-               
+      
         public void AfficherAeroports()
         {
             listAeroport.Items.Clear();
             List<String> aeroport = m_controleur.ObtenirListeAeroports();
-            
+
             // Afficher dans la listview
             foreach (var ligne in aeroport)
             {
                 string[] parties = ligne.Split('|');
-                
+
                 string nom = parties[0];
                 double latitude = double.Parse(parties[1]);
                 double longitude = double.Parse(parties[2]);
@@ -244,8 +106,8 @@ namespace Gererateur_Scenario.Vue
                 int maxPassagers = int.Parse(parties[4]);
                 double minCargaisons = double.Parse(parties[5]);
                 double maxCargaisons = double.Parse(parties[6]);
-                
-                    // Direction (Nord/Sud, Est/Ouest)
+
+                // Direction (Nord/Sud, Est/Ouest)
                 string latDirection = latitude >= 0 ? "N" : "S";
                 string longDirection = longitude >= 0 ? "E" : "O";
 
@@ -256,7 +118,8 @@ namespace Gererateur_Scenario.Vue
                 listAeroport.Items.Add(texteAffichage);
             }
         }
-       
+        public void AfficherAeronefs() { }
+
         public void MettreAJour()
         {
             Console.WriteLine("Debut mise à jour");
@@ -294,8 +157,6 @@ namespace Gererateur_Scenario.Vue
                     MessageBox.Show("Erreur lors de l'importation du scénario : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
@@ -342,14 +203,14 @@ namespace Gererateur_Scenario.Vue
                     { "MinCargaisons", minCargaison.Text.Trim() },
                     { "MaxCargaisons", maxCargaison.Text.Trim() }
                 };
-            
+
                 // --- Vérification si le nom est vide ---
                 if (string.IsNullOrWhiteSpace(nom))
                 {
                     MessageBox.Show("Le nom de l'aéroport est requis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            
+
                 // --- Vérification de l'unicité du nom ---
                 foreach (string item in listAeroport.Items)
                 {
@@ -361,7 +222,7 @@ namespace Gererateur_Scenario.Vue
                         return;
                     }
                 }
-                
+
                 // Vérifier si les champs numériques sont valides
                 if (!int.TryParse(data["MinPassagers"], out int minPassagers) ||
                     !int.TryParse(data["MaxPassagers"], out int maxPassagers) ||
@@ -373,7 +234,7 @@ namespace Gererateur_Scenario.Vue
                     MessageBox.Show("Veuillez entrer des valeurs valides pour tous les champs numériques.", "Erreur de saisie", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-            
+
                 // Vérifier que Max > Min pour les passagers et cargaisons
                 if (maxPassagers <= minPassagers)
                 {
@@ -386,9 +247,9 @@ namespace Gererateur_Scenario.Vue
                     MessageBox.Show("La cargaison maximale doit être supérieure à la cargaison minimale.", "Erreur logique", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                
+
                 m_controleur.ModifierAeroport(ancienNom, data);
-                
+
             }
             catch (Exception ex)
             {
@@ -408,7 +269,7 @@ namespace Gererateur_Scenario.Vue
 
             // Obtenir la liste brute depuis le contrôleur
             List<string> listeAeroports = m_controleur.ObtenirListeAeroports();
-            
+
             // Trouver la ligne correspondante dans la liste brute
             string ligneBrute = listeAeroports.FirstOrDefault(a => a.StartsWith(nomSelectionne + "|"));
 
@@ -417,7 +278,7 @@ namespace Gererateur_Scenario.Vue
                 MessageBox.Show("Impossible de retrouver les informations de cet aéroport.");
                 return;
             }
-            
+
             // Extraire les valeurs et les placer dans les TextBox
             string[] parties = ligneBrute.Split('|');
 
@@ -429,13 +290,13 @@ namespace Gererateur_Scenario.Vue
             minCargaison.Text = parties[5];
             maxCargaison.Text = parties[6];
         }
-        
+
         private void SupprimerAeroport_Click_1(object sender, EventArgs e)
         {
             if (listAeroport.SelectedItem != null)
             {
                 string item = listAeroport.SelectedItem.ToString();
-                string nomAeroport = item.Split('(')[0].Trim(); 
+                string nomAeroport = item.Split('(')[0].Trim();
                 DialogResult result = MessageBox.Show(
                     $"Voulez-vous vraiment supprimer l’aéroport « {nomAeroport} » ?",
                     "Confirmation",
@@ -467,7 +328,7 @@ namespace Gererateur_Scenario.Vue
                 m_controleur.CommencerNouveauScenario();
             }
         }
-        
+
         private void ReinitialiserTextBox()
         {
             foreach (Control ctrl in this.Controls)
@@ -478,12 +339,42 @@ namespace Gererateur_Scenario.Vue
                 }
             }
         }
-=======
-        }               
->>>>>>> Stashed changes
-=======
-        }               
->>>>>>> Stashed changes
+
+        private void btnAeronef_Click(object sender, EventArgs e)
+        {
+            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
+            if (aeroportSelectionne == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var data = new Dictionary<string, string>()
+            {
+                { "Nom", nomAeronef.Text.Trim() },
+                { "Type", type.Text.Trim() },
+                { "Vitesse", vitesse.Text.Trim() },
+                { "TempsEmbarquement", tempsEmbarquement.Text.Trim() },
+                { "TempsDebarquement", tempsDebarquement.Text.Trim() },
+                { "Capacite", capacite.Text.Trim() },
+                { "TempsEntretien", tempsEntretien.Text.Trim() },
+                { "Aeroport", aeroportSelectionne.Nom }
+            };
+
+            try
+            {
+                m_controleur.AjouterAeronef(data);
+                MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
            

@@ -14,12 +14,6 @@ namespace Gererateur_Scenario.Vue
     public partial class FormGenerateur : Form, IObservateur
     {
         private ControleurGenerateur m_controleur;
-<<<<<<< Updated upstream
-       
-        
-=======
-
->>>>>>> Stashed changes
         public FormGenerateur()
         {
             InitializeComponent();
@@ -30,12 +24,6 @@ namespace Gererateur_Scenario.Vue
             m_controleur = controleur;
             m_controleur.EnregistrerObservateur(this);
         }
-<<<<<<< Updated upstream
-        
-=======
-
-
->>>>>>> Stashed changes
         private void btnAeroport_Click(object sender, EventArgs e)
         {
             string nom = nomAeroport.Text.Trim();
@@ -97,12 +85,6 @@ namespace Gererateur_Scenario.Vue
             m_controleur.AjouterAeroport(data);
         }
 
-<<<<<<< Updated upstream
-=======
-        public void AfficherScenario() { }
-
-        public void AfficherAeroports() { }
->>>>>>> Stashed changes
         public void AfficherAeronefs() { }
 
         private void AjouterAeronef_Click(object sender, EventArgs e)
@@ -140,11 +122,6 @@ namespace Gererateur_Scenario.Vue
                 MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-<<<<<<< Updated upstream
-=======
         private void AjouterAeronef_Click(object sender, EventArgs e)
         {
             Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
@@ -183,7 +160,6 @@ namespace Gererateur_Scenario.Vue
 
 
 
->>>>>>> Stashed changes
         private void ModifierAeronef_Click(object sender, EventArgs e) { }
         private void SupprimerAeronef_Click(object sender, EventArgs e) { }
         

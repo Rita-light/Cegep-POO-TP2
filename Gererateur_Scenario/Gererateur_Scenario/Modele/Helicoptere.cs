@@ -8,6 +8,7 @@ namespace Gererateur_Scenario
 {
     public class Helicoptere : Aeronef
     {
+        public Helicoptere() : base() { }
         public Helicoptere(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
         {
         }

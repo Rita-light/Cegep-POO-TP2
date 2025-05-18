@@ -10,6 +10,8 @@ namespace Gererateur_Scenario
     {
         public double Capacite { get; set; }
 
+        public AvionCargaison() : base(){ }
+
         public AvionCargaison(string nom, double vitesse, double tempsEntretien, double capacite, double tempsEmbarquement, double tempsDebarquement)
             : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement)
         {

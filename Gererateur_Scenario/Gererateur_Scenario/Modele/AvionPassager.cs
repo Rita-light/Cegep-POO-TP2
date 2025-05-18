@@ -15,6 +15,8 @@ namespace Gererateur_Scenario
         {
             Capacite = capacite;
         }
+        
+        public AvionPassager(){}
 
         public override string ToString()
         {

@@ -8,8 +8,8 @@ namespace Gererateur_Scenario
 {
     public class Scenario
     {
-        private List<Aeroport> m_aeroport { get; set; }
-        private List<FrequenceEvenement> m_frequence { get; set; } = new List<FrequenceEvenement>();
+        public List<Aeroport> m_aeroport { get; set; }
+        public List<FrequenceEvenement> m_frequence { get; set; } = new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
         public Scenario()
@@ -25,12 +25,7 @@ namespace Gererateur_Scenario
         {
             return m_aeroport;
         }
-        /*public void ImporterScenario(string cheminFichier)
-        {
-        }
-        public void ExporterScenario(string cheminFichier)
-        {
-        }*/
+        
 
         public void Attacher(IObservateur obs)
         {

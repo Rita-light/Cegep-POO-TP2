@@ -2,6 +2,11 @@
 {
     public class AvionCiterne : AeronefUrgence
     {
+        public AvionCiterne()
+        {
+            
+        }
+        
         public AvionCiterne(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
         {
         }

@@ -8,6 +8,8 @@ namespace Gererateur_Scenario
 {
    public abstract class AeronefUrgence : Aeronef
     {
+        
+        public AeronefUrgence() : base() { }
         protected AeronefUrgence(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
         {
         }

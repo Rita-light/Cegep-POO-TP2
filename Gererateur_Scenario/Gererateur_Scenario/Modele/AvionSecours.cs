@@ -8,6 +8,7 @@ namespace Gererateur_Scenario
 {
     public class AvionSecours : AeronefUrgence
     {
+        public AvionSecours(): base(){}
         public AvionSecours(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
         {
         }

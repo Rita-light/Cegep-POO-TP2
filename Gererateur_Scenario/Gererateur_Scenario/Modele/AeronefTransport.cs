@@ -10,6 +10,8 @@ namespace Gererateur_Scenario
     {
         public double TempsEmbarquement { get; set; }
         public double TempsDebarquement { get; set; }
+        
+        public AeronefTransport() : base() { }
 
         protected AeronefTransport(string nom, double vitesse, double tempsEntretien, double tempsEmbarquement, double tempsDebarquement)
             : base(nom, vitesse, tempsEntretien)

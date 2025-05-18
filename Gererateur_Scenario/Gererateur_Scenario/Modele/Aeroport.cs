@@ -16,6 +16,7 @@ namespace Gererateur_Scenario
         public double MaxCargaisons { get; set; }
         private List<Aeronef> Aeronefs { get; }
         private List<IObservateur> m_observateurs = new List<IObservateur>();
+        private List<FrequenceEvenement> m_frequenceEvenements = new List<FrequenceEvenement>() ;
 
 
         public Aeroport(string nom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)

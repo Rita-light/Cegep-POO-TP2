@@ -30,3 +30,10 @@ C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scen
 C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.core.xml
 C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.execution.desktop.xml
 C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererate.0F8C4483.Up2Date
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.abstractions.dll
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.core.dll
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.execution.desktop.dll
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.abstractions.xml
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.core.xml
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\bin\Debug\xunit.execution.desktop.xml
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\Gererateur_Scenario\Gererateur_Scenario\obj\Debug\Gererate.0F8C4483.Up2Date

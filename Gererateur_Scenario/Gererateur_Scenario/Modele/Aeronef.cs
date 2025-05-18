@@ -8,9 +8,9 @@ namespace Gererateur_Scenario
 {
     public abstract class Aeronef
     {
-        public string Nom;
-        public double Vitesse;
-        public double TempsEntretien;
+        public string Nom { get; set; }
+        public double Vitesse { get; set; }
+        public double TempsEntretien  { get; set; }
         public TypeAeronef type { get; set; }
 
         protected Aeronef(string nom, double vitesse, double tempsEntretien)
@@ -27,7 +27,7 @@ namespace Gererateur_Scenario
         
         public virtual string Serialiser()
         {
-            return $"{Nom}|{type}|{Vitesse}|{TempsEntretien}";
+            return $"{type}|{Nom}|{Vitesse}|{TempsEntretien}";
         }
 
     }

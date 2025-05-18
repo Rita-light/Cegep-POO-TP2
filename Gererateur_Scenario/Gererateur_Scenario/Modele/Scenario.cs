@@ -19,14 +19,7 @@ namespace Gererateur_Scenario
             m_observateurs = new List<IObservateur>();
         }
 
-        public void AjouterAeroport(Aeroport aeroport)
-        {
-            m_aeroport.Add(aeroport);
-        }
-        public void SupprimerAeroport(Aeroport aeroport)
-        {
-            m_aeroport.Remove(aeroport);
-        }
+        
 
         public List<Aeroport> GetAeroports()
         {

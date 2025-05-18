@@ -91,8 +91,6 @@ namespace Gererateur_Scenario.Vue
 
             m_controleur.AjouterAeroport(data);
         }
-
-        public void AfficherScenario() { }
       
         public void AfficherAeroports()
         {
@@ -123,7 +121,57 @@ namespace Gererateur_Scenario.Vue
                 listAeroport.Items.Add(texteAffichage);
             }
         }
-        public void AfficherAeronefs() { }
+        public void AfficherAeronefs(string nomAeroport)
+        {
+            listAeronef.Items.Clear();
+            List<string> aeronefs = m_controleur.ObtenirListeAeronefs(nomAeroport);
+
+            foreach (var ligne in aeronefs)
+            {
+                string[] parties = ligne.Split('|');
+                string type = parties[0];
+                string nom = parties[1];
+                int vitesse = int.Parse(parties[2]);
+                int entretien = int.Parse(parties[3]);
+
+                string description = $" {nom}, Type: {type}, Vitesse: {vitesse} km/h, Entretien: {entretien} min";
+
+                switch (type)
+                {
+                    case "Passager":
+                        int embarquementP = int.Parse(parties[4]);
+                        int debarquementP = int.Parse(parties[5]);
+                        int capaciteurP = int.Parse(parties[6]);
+                        description += $", EmbarquementP: {embarquementP} min, DébarquementP: {debarquementP} min, Capacité : {capaciteurP} min";
+                        break;
+
+                    case "Cargo":
+                        int embarquementC = int.Parse(parties[4]);
+                        int debarquementC = int.Parse(parties[5]);
+                        int capaciteurC = int.Parse(parties[6]);
+                        description += $", EmbarquementC: {embarquementC} min, DébarquementC: {debarquementC} min, CapaciteurC: {capaciteurC} min";
+                        break;
+
+                    case "Secours":
+                        description += " (Aéronef de secours)";
+                        break;
+
+                    case "Citerne":
+                        description += " (Aéronef citerne)";
+                        break;
+
+                    case "Helicoptere":
+                        description += " (Hélicoptère polyvalent)";
+                        break;
+
+                    default:
+                        description += " (Type inconnu)";
+                        break;
+                }
+
+                listAeronef.Items.Add(description);
+            }
+        }
 
         public void MettreAJour()
         {
@@ -134,7 +182,6 @@ namespace Gererateur_Scenario.Vue
         public void MettreAJourVue()
         {
             AfficherAeroports();
-            AfficherAeronefs();
             ReinitialiserTextBox();
         }
 
@@ -286,8 +333,7 @@ namespace Gererateur_Scenario.Vue
 
             return aeroport;
         }
-
-
+        
         private void listAeroport_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (listAeroport.SelectedIndex == -1) return;
@@ -329,6 +375,7 @@ namespace Gererateur_Scenario.Vue
                 string[] infos = ligne.Split('|');
                 listAeronef.Items.Add(infos[0]); // 
             }
+            AfficherAeronefs(nomAeroport.Text);
         }
 
         private void SupprimerAeroport_Click_1(object sender, EventArgs e)

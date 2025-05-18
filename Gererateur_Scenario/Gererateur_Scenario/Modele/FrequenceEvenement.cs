@@ -11,6 +11,10 @@ namespace Gererateur_Scenario
         public TypeEvenement Type { get; set; }
         public double Frequence { get; set; }
 
+        public FrequenceEvenement()
+        {
+            
+        }
         public FrequenceEvenement(TypeEvenement type, double frequence)
         {
             Type = type;
@@ -19,7 +23,7 @@ namespace Gererateur_Scenario
 
         public override string ToString()
         {
-            return $"Type: {Type}, Fréquence: {Frequence}";
+            return $"T{Type}|{Frequence}";
         }
 
         public string GetTypeAsString()

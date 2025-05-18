@@ -93,8 +93,7 @@ namespace Gererateur_Scenario.Controle
             // Notifier l'observateur
             nouveauScenario.Notifier();
         }
-
-
+        
         public void GenererScenario(String cheminFichier)
         {
             var scenario = m_gestionnaire.GetScenario();

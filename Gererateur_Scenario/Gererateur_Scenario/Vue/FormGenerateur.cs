@@ -376,9 +376,22 @@ namespace Gererateur_Scenario.Vue
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnChangerFrequence_Click(object sender, EventArgs e)
         {
+            try
+            {
+                m_controleur.ChangerFrequence(TypeEvenement.Observation, observations.Text);
+                m_controleur.ChangerFrequence(TypeEvenement.Secours, secours.Text);
+                m_controleur.ChangerFrequence(TypeEvenement.Incendie, incendies.Text);
+                m_controleur.ChangerFrequence(TypeEvenement.Passager, passagers.Text);
+                m_controleur.ChangerFrequence(TypeEvenement.Cargaison, cargaisons.Text);
 
+                MessageBox.Show("Fréquences mises à jour !");
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

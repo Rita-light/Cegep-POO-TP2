@@ -186,7 +186,34 @@ namespace Gererateur_Scenario.Controle
         public void ModifierAeronef(object args) { }
         public void SupprimerAeronef(object args) { }
        
-        public void ChangerFrequence(object args) { }
+        public void ChangerFrequence(TypeEvenement type, string frequenceText) 
+        {
+            if (!double.TryParse(frequenceText.ToString(), out double frequence) || frequence < 0)
+            {
+                throw new ArgumentException("La fréquence doit être un nombre valide.");
+            }
+
+            var existe = m_gestionnaire.GetScenario().GetFrequences().Find(f => f.Type == type);
+
+            if (existe != null)
+            {
+                existe.Frequence = frequence;
+            }
+            else
+            {
+                m_gestionnaire.GetScenario().GetFrequences().Add(new FrequenceEvenement(type, frequence));
+            }
+        }
+
+        public double ObtenirFrequence(TypeEvenement type)
+        {
+            return m_gestionnaire.GetScenario().GetFrequence(type);
+        }
+
+        public List<FrequenceEvenement> ObtenirFrequences()
+        {
+            return m_gestionnaire.GetScenario().GetFrequences();
+        }
 
         public List<string> ObtenirListeAeroports()
         {

@@ -9,13 +9,13 @@ namespace Gererateur_Scenario
     public class Scenario
     {
         public List<Aeroport> aeroports { get; set; }
-        public List<FrequenceEvenement> frequenceEvenements { get; set; } = new List<FrequenceEvenement>();
+        private List<FrequenceEvenement> m_frequence { get; set; } = new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
         public Scenario()
         {
             aeroports = new List<Aeroport>();
-            frequenceEvenements = new List<FrequenceEvenement>();
+            m_frequence = new List<FrequenceEvenement>();
             m_observateurs = new List<IObservateur>();
         }
 
@@ -122,6 +122,44 @@ namespace Gererateur_Scenario
                 return null;
             }
             return aeroports.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
+        }
+
+        public double GetFrequence(TypeEvenement type)
+        {
+            var frequence = m_frequence.FirstOrDefault(f => f.Type == type);
+            if (frequence != null)
+            {
+                return frequence.Frequence;
+            }
+            else
+            {
+                throw new ArgumentException("Type d'événement non trouvé : " + type);
+            }
+        }
+
+        public List<FrequenceEvenement> GetFrequences()
+        {
+            return m_frequence;
+        }
+
+        public void ChangerFrequence(TypeEvenement type, string frequenceTextBox)
+        {
+            //Si la string entrée par l'utilisateur dans le textbox n'est pas convertible en double ou si elle est négative, on lève une exception
+            if (!double.TryParse(frequenceTextBox, out double valeur) || valeur < 0)
+                throw new ArgumentException("Fréquence invalide");
+            //On compare la valeur entrée par l'utilisateur avec la valeur actuelle de la fréquence
+            var frequenceExiste = m_frequence.FirstOrDefault(f => f.Type == type);
+
+            if (frequenceExiste != null)
+            {
+                //Si la fréquence du type d'évènement existe déjà, on la modifie
+                frequenceExiste.Frequence = valeur;
+            }
+            else
+            {
+                //Sinon, on crée une nouvelle fréquence
+                m_frequence.Add(new FrequenceEvenement(type, valeur));
+            }
         }
     }
 }

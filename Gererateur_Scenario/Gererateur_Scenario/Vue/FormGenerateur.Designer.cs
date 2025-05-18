@@ -501,7 +501,7 @@
             this.btnChangerFrequence.TabIndex = 47;
             this.btnChangerFrequence.Text = "Mettre fréquences à jour";
             this.btnChangerFrequence.UseVisualStyleBackColor = true;
-            this.btnChangerFrequence.Click += new System.EventHandler(this.button1_Click);
+            this.btnChangerFrequence.Click += new System.EventHandler(this.btnChangerFrequence_Click);
             // 
             // FormGenerateur
             // 

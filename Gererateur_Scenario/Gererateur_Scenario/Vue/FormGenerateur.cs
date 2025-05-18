@@ -122,47 +122,8 @@ namespace Gererateur_Scenario.Vue
                 MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void AjouterAeronef_Click(object sender, EventArgs e)
-        {
-            Aeroport aeroportSelectionne = listAeroport.SelectedItem as Aeroport;
-            if (aeroportSelectionne == null)
-            {
-                MessageBox.Show("Veuillez sélectionner un aéroport valide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            var data = new Dictionary<string, string>()
-            {
-                { "Nom", nomAeronef.Text.Trim() },
-                { "Type", type.Text.Trim() },
-                { "Vitesse", vitesse.Text.Trim() },
-                { "TempsEmbarquement", tempsEmbarquement.Text.Trim() },
-                { "TempsDebarquement", tempsDebarquement.Text.Trim() },
-                { "Capacite", capacite.Text.Trim() },
-                { "TempsEntretien", tempsEntretien.Text.Trim() },
-                { "Aeroport", aeroportSelectionne.Nom } 
-            };
-
-            try
-            {
-                m_controleur.AjouterAeronef(data);
-                MessageBox.Show("Aéronef ajouté avec succès !", "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (FormatException ex)
-            {
-                MessageBox.Show("Erreur de format : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-
-        private void ModifierAeronef_Click(object sender, EventArgs e) { }
-        private void SupprimerAeronef_Click(object sender, EventArgs e) { }
-        
+ 
+               
         public void AfficherAeroports()
         {
             listAeroport.Items.Clear();
@@ -230,7 +191,6 @@ namespace Gererateur_Scenario.Vue
                     MessageBox.Show("Erreur lors de l'importation du scénario : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-<<<<<<< Updated upstream
         }
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
@@ -413,9 +373,6 @@ namespace Gererateur_Scenario.Vue
                 }
             }
         }
-=======
-        }               
->>>>>>> Stashed changes
     }
 }
            

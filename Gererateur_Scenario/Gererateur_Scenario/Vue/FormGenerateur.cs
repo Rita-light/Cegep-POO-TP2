@@ -529,9 +529,7 @@ namespace Gererateur_Scenario.Vue
                 MessageBox.Show("Erreur : " + ex.Message, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         
-
         private void typeEvenement_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (typeEvenement.SelectedItem == null)
@@ -580,6 +578,34 @@ namespace Gererateur_Scenario.Vue
                     break;
                 default:
                     break;
+            }
+        }
+
+        private void suuprimerAeronef_Click(object sender, EventArgs e)
+        {
+            if (listAeronef.SelectedItem != null)
+            {
+                string item = listAeroport.SelectedItem.ToString();
+                string nomAeroport = item.Split('(')[0].Trim();
+                
+                string item1 = listAeronef.SelectedItem.ToString();
+                string nomAeronef = item1.Split(',')[0].Trim(); 
+                DialogResult result = MessageBox.Show(
+                    $"Voulez-vous vraiment supprimer l’aéronef « {nomAeronef} » ?",
+                    "Confirmation",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (result == DialogResult.Yes)
+                {
+                    m_controleur.SupprimerAeronef(nomAeroport, nomAeronef);
+                    AfficherAeronefs(nomAeroport);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Veuillez sélectionner un aéroport à supprimer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

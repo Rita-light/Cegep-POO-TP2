@@ -74,8 +74,8 @@ namespace Gererateur_Scenario
             }
         }
 
-        public void SupprimerAeronef() { 
-            var aeronef = Aeronefs.FirstOrDefault(a => a.Nom.Equals("NomAeronef", StringComparison.OrdinalIgnoreCase));
+        public void SupprimerAeronef(String nomAeronef) { 
+            var aeronef = Aeronefs.FirstOrDefault(a => a.Nom.Equals(nomAeronef, StringComparison.OrdinalIgnoreCase));
             if (aeronef != null)
             {
                 Aeronefs.Remove(aeronef);

@@ -111,6 +111,15 @@ namespace Gererateur_Scenario
                 Notifier();
             }
         }
+        
+        public void SupprimerAeronef(string nomAeroport, string nomAeronef)
+        {
+            var aeroport = m_aeroport.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
+            if (aeroport != null)
+            {
+                aeroport.SupprimerAeronef(nomAeronef);
+            }
+        }
 
        
         public double GetFrequence(TypeEvenement type)

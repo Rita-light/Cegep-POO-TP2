@@ -145,7 +145,11 @@ namespace Gererateur_Scenario.Controle
         }
             
         public void ModifierAeronef(object args) { }
-        public void SupprimerAeronef(object args) { }
+        public void SupprimerAeronef(string nomAeroport, string nomAeronef)
+        {
+            var scenario = m_gestionnaire.GetScenario();
+            scenario.SupprimerAeronef(nomAeroport, nomAeronef);
+        }
        
         public void ChangerFrequence(TypeEvenement type, string frequenceText) 
         {

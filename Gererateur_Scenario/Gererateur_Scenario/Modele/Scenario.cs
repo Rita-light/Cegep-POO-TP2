@@ -56,7 +56,6 @@ namespace Gererateur_Scenario
             if (aeroport == null)
                 throw new ArgumentException("Aéroport non trouvé : " + nomAeroport);
             aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
-            Notifier();
         }
 
         public List<string> ObtenirListeAeroports()

@@ -81,9 +81,6 @@ namespace Gererateur_Scenario.Vue
                 MessageBox.Show("La cargaison maximale doit être supérieure à la cargaison minimale.", "Erreur logique", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            
-            
-
             m_controleur.AjouterAeroport(data);
         }
       
@@ -126,24 +123,24 @@ namespace Gererateur_Scenario.Vue
                 string[] parties = ligne.Split('|');
                 string type = parties[0];
                 string nom = parties[1];
-                int vitesse = int.Parse(parties[2]);
-                int entretien = int.Parse(parties[3]);
+                double vitesse = double.Parse(parties[2]);
+                double entretien = double.Parse(parties[3]);
 
                 string description = $" {nom}, Type: {type}, Vitesse: {vitesse} km/h, Entretien: {entretien} min";
 
                 switch (type)
                 {
                     case "Passager":
-                        int embarquementP = int.Parse(parties[4]);
-                        int debarquementP = int.Parse(parties[5]);
+                        double embarquementP = double.Parse(parties[4]);
+                        double debarquementP = double.Parse(parties[5]);
                         int capaciteurP = int.Parse(parties[6]);
                         description += $", EmbarquementP: {embarquementP} min, DébarquementP: {debarquementP} min, Capacité : {capaciteurP} personnes ";
                         break;
 
                     case "Cargo":
-                        int embarquementC = int.Parse(parties[4]);
-                        int debarquementC = int.Parse(parties[5]);
-                        int capaciteurC = int.Parse(parties[6]);
+                        double embarquementC = double.Parse(parties[4]);
+                        double debarquementC = double.Parse(parties[5]);
+                        double capaciteurC = double.Parse(parties[6]);
                         description += $", EmbarquementC: {embarquementC} min, DébarquementC: {debarquementC} min, CapaciteurC: {capaciteurC} tonnes";
                         break;
 
@@ -170,7 +167,6 @@ namespace Gererateur_Scenario.Vue
 
         public void MettreAJour()
         {
-            Console.WriteLine("Debut mise à jour");
             MettreAJourVue();
         }
 
@@ -398,9 +394,7 @@ namespace Gererateur_Scenario.Vue
             }
             listAeronef.Items.Clear();
         }
-
-
-        // à modifier, aeroport ne doit pas apparaitre ici
+        
         private void btnAeronef_Click(object sender, EventArgs e)
         {
             if (listAeroport.SelectedIndex == -1)
@@ -465,13 +459,9 @@ namespace Gererateur_Scenario.Vue
                 case "Secours":
                 case "Citerne":
                 case "Helicoptere":
-                    if (!string.IsNullOrWhiteSpace(tempsEmbarquement.Text) ||
-                        !string.IsNullOrWhiteSpace(tempsDebarquement.Text) ||
-                        !string.IsNullOrWhiteSpace(capacite.Text))
-                    {
-                        MessageBox.Show("Les champs d'embarquement, de débarquement et de capacité ne sont pas requis pour ce type d'aéronef.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    tempsEmbarquement.Text = "0";
+                    tempsDebarquement.Text = "0";
+                    capacite.Text = "0";
                     break;
                 default:
                     MessageBox.Show("Type d'aéronef inconnu.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);

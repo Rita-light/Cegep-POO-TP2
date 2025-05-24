@@ -1,0 +1,15 @@
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\SimulateurScenario.exe
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\SimulateurScenario.deps.json
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\SimulateurScenario.runtimeconfig.json
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\SimulateurScenario.dll
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\SimulateurScenario.pdb
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.sourcelink.json
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.dll
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\refint\SimulateurScenario.dll
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.pdb
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.genruntimeconfig.cache
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\ref\SimulateurScenario.dll

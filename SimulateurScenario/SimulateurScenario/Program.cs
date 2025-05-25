@@ -1,3 +1,5 @@
+using SimulateurScenario.Controleur;
+
 namespace SimulateurScenario;
 
 static class Program
@@ -11,6 +13,9 @@ static class Program
         // To customize application configuration such as set high DPI settings or default font,
         // see https://aka.ms/applicationconfiguration.
         ApplicationConfiguration.Initialize();
-        Application.Run(new Form1());
+        
+        form_Simulateur formSimulateur = new form_Simulateur();
+        ControleurSimulateur controleurSimulateur = new ControleurSimulateur(formSimulateur);
+        Application.Run(formSimulateur);
     }
 }

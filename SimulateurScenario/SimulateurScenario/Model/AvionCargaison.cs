@@ -12,8 +12,8 @@ namespace SimulateurScenario.Model
 
         public AvionCargaison() : base() { }
 
-        public AvionCargaison(string nom, double vitesse, double tempsEntretien, double capacite, double tempsEmbarquement, double tempsDebarquement)
-            : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement)
+        public AvionCargaison(string nom, double vitesse, double tempsEntretien, double capacite, double tempsEmbarquement, double tempsDebarquement, TypeEtat etat)
+            : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement,etat)
         {
             Capacite = capacite;
             type = TypeAeronef.Cargo;

@@ -13,8 +13,8 @@ namespace SimulateurScenario.Model
 
         public AeronefTransport() : base() { }
 
-        protected AeronefTransport(string nom, double vitesse, double tempsEntretien, double tempsEmbarquement, double tempsDebarquement)
-            : base(nom, vitesse, tempsEntretien)
+        protected AeronefTransport(string nom, double vitesse, double tempsEntretien, double tempsEmbarquement, double tempsDebarquement, TypeEtat etat)
+            : base(nom, vitesse, tempsEntretien, etat)
         {
             TempsEmbarquement = tempsEmbarquement;
             TempsDebarquement = tempsDebarquement;

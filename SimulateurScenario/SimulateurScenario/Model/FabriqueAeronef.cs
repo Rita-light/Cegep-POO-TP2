@@ -27,20 +27,20 @@ namespace SimulateurScenario.Model
         private FabriqueAeronef() { }
 
         //Modifier parce que passait un type string
-        public Aeronef CreerAeronef(string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
-        {
+        public Aeronef CreerAeronef(string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien, TypeEtat etat)
+        {           
             switch (type)
             {
                 case TypeAeronef.Passager:
-                    return new AvionPassager(nom, vitesse, tempsEntretien, (int)capacite, tempsEmbarquement, tempsDebarquement);
+                    return new AvionPassager(nom, vitesse, tempsEntretien, (int)capacite, tempsEmbarquement, tempsDebarquement, etat);
                 case TypeAeronef.Cargo:
-                    return new AvionCargaison(nom, vitesse, tempsEntretien, capacite, tempsEmbarquement, tempsDebarquement);
+                    return new AvionCargaison(nom, vitesse, tempsEntretien, capacite, tempsEmbarquement, tempsDebarquement, etat);
                 case TypeAeronef.Secours:
-                    return new AvionSecours(nom, vitesse, tempsEntretien);
+                    return new AvionSecours(nom, vitesse, tempsEntretien, etat);
                 case TypeAeronef.Citerne:
-                    return new AvionCiterne(nom, vitesse, tempsEntretien);
+                    return new AvionCiterne(nom, vitesse, tempsEntretien, etat);
                 case TypeAeronef.Helicoptere:
-                    return new Helicoptere(nom, vitesse, tempsEntretien);
+                    return new Helicoptere(nom, vitesse, tempsEntretien, etat);
                 default:
                     throw new ArgumentException("Type d'aéronef inconnu");
             }

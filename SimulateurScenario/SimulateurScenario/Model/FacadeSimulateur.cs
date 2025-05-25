@@ -3,14 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SimulateurScenario.Controleur;
+using SimulateurScenario.Modele;
 
 namespace SimulateurScenario.Model
 {
-    public class FacadeSimulateur
+    public class FacadeSimulateur 
     {
-        public void DemarrerSimulation() { }
+        private Simulateur simulateur;
+        //private ControleurSimulateur controleur;
+        
+        public FacadeSimulateur()
+        {
+            this.simulateur = new Simulateur();
+            
+        }
+        public void AttacherObservateur(IObservateur observateur)
+        {
+            // Attache du contrôleur comme observateur au scénario
+            simulateur.GetScenario().Attacher(observateur);
+        }
+        
+        public void ChargerScenario(string cheminFichier)
+        {
+            simulateur.ChargerScenario(cheminFichier);
+        }
 
-        public void AvancerSimulation(int nbPas) { }
+        
+        public void DemarrerSimulation()
+        {
+            simulateur.DemarrerSimulation();
+        }
+
+        public void AvancerSimulation(int nbPas)
+        {
+            simulateur.AvancerPlusieursPas(nbPas);
+        }
+        
+        
         public void CreerClient(Evenement evenement) { }
         public void AjouterClient() { }
         public void CreerAeronef() { }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimulateurScenario
 {
-    public class IObservateur
+    public interface IObservateur
     {
         public void Notifier(Evenement evenement) { }
     }

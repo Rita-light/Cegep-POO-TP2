@@ -13,3 +13,6 @@ C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenar
 C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.pdb
 C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.genruntimeconfig.cache
 C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\ref\SimulateurScenario.dll
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.form_Simulateur.resources
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\SimulateurScenario.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\HorlogeNumerique.resources

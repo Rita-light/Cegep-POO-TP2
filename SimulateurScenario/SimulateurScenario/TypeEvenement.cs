@@ -12,6 +12,7 @@ namespace SimulateurScenario
         Cargaison,
         Secours,
         Incendie,
-        Observation
+        Observation, 
+        ChargementTermine
     }
 }

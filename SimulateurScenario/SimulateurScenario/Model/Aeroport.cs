@@ -15,7 +15,11 @@ namespace SimulateurScenario.Model
         public double MinCargaisons { get; set; }
         public double MaxCargaisons { get; set; }
         public List<Aeronef> Aeronefs { get; set; }
+        public List<Client> Clients { get; set; }
 
+        public Aeroport() 
+        {
+        }
         public Aeroport(string nom, Position position, int minPassagers, int maxPassagers, double minCargaisons, double maxCargaisons)
         {
             Nom = nom;
@@ -25,6 +29,7 @@ namespace SimulateurScenario.Model
             MinCargaisons = minCargaisons;
             MaxCargaisons = maxCargaisons;
             Aeronefs = new List<Aeronef>();
+            Clients = new List<Client>();
         }
 
         public void TraiterEvenement(Evenement evenement) { }

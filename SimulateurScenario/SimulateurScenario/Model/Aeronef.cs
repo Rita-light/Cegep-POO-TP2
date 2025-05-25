@@ -21,14 +21,16 @@ namespace SimulateurScenario.Model
         public double Vitesse { get; set; }
         public double TempsEntretien { get; set; }
         public TypeAeronef type { get; set; }
+        public TypeEtat EtatActuel { get; set; }
 
-        public Aeronef() { }
+        public Aeronef() {}
 
-        protected Aeronef(string nom, double vitesse, double tempsEntretien)
+        protected Aeronef(string nom, double vitesse, double tempsEntretien, TypeEtat etat)
         {
             Nom = nom;
             Vitesse = vitesse;
             TempsEntretien = tempsEntretien;
+            EtatActuel = etat;
         }
 
         public override string ToString()
@@ -42,3 +44,4 @@ namespace SimulateurScenario.Model
         }
 
     }
+}

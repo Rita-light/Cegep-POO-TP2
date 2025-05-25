@@ -1,30 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\",
+  "WorkspaceRootPath": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Gererateur_Scenario\\Vue\\FormGenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\typeaeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\typeaeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Aeroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Gererateur_Scenario\\Modele\\Aeroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\GestionnaireScenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Gererateur_Scenario\\Modele\\GestionnaireScenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\helicoptere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\helicoptere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Scenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Gererateur_Scenario\\Modele\\Scenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\avionciterne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\avionciterne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\gererateur_scenario\\vue\\formgenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:gererateur_scenario\\vue\\formgenerateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\avioncargaison.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\avioncargaison.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\FabriqueAeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Gererateur_Scenario\\Modele\\FabriqueAeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\aeronefurgence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\aeronefurgence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\gererateur_scenario\\gererateur_scenario\\modele\\avionsecours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{464357FE-DD61-42FA-8994-C97391B07B8C}|Gererateur_Scenario\\Gererateur_Scenario.csproj|solutionrelative:gererateur_scenario\\modele\\avionsecours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,87 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TypeAeronef.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\TypeAeronef.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\TypeAeronef.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\TypeAeronef.cs*",
+              "RelativeToolTip": "Gererateur_Scenario\\TypeAeronef.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T21:57:12.938Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Aeroport.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Aeroport.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\Aeroport.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Aeroport.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Modele\\Aeroport.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAwBEAAAAAAAAAAAAAAA==",
+              "Title": "Position.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Position.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Position.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Position.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Position.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAYwCoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T23:01:06.957Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormGenerateur.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Vue\\FormGenerateur.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Vue\\FormGenerateur.cs",
-              "ViewState": "AgIAABsBAAAAAAAAAAAAACsBAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T22:53:26.223Z",
+              "WhenOpened": "2025-05-21T21:57:04.21Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GestionnaireScenario.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Modele\\GestionnaireScenario.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCAAAAAAAAAAAAAAAA==",
+              "Title": "Helicoptere.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Helicoptere.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\Helicoptere.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Helicoptere.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\Helicoptere.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T22:52:00.293Z"
+              "WhenOpened": "2025-05-21T21:52:26.982Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Scenario.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Scenario.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\Scenario.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\Scenario.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Modele\\Scenario.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAUwCkAAAAiAAAAAAAAAA==",
+              "Title": "AvionCiterne.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AvionCiterne.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\AvionCiterne.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AvionCiterne.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\AvionCiterne.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T19:56:43.212Z"
+              "WhenOpened": "2025-05-21T21:51:54.157Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "FormGenerateur.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Vue\\FormGenerateur.cs",
-              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Vue\\FormGenerateur.cs [Design]",
+              "Title": "AvionCargaison.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AvionCargaison.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\AvionCargaison.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AvionCargaison.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\AvionCargaison.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T22:34:39.552Z"
+              "WhenOpened": "2025-05-21T21:51:16.013Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "FabriqueAeronef.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\FabriqueAeronef.cs",
-              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\FabriqueAeronef.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\FabriqueAeronef.cs",
-              "RelativeToolTip": "Gererateur_Scenario\\Modele\\FabriqueAeronef.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAADwvy4AAAAJAAAAAAAAAA==",
+              "Title": "AeronefUrgence.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AeronefUrgence.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\AeronefUrgence.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AeronefUrgence.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\AeronefUrgence.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T21:28:19.596Z"
+              "WhenOpened": "2025-05-21T21:50:14.98Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AvionSecours.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AvionSecours.cs",
+              "RelativeDocumentMoniker": "Gererateur_Scenario\\Modele\\AvionSecours.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\Gererateur_Scenario\\Gererateur_Scenario\\Modele\\AvionSecours.cs",
+              "RelativeToolTip": "Gererateur_Scenario\\Modele\\AvionSecours.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T21:49:27.219Z",
+              "EditorCaption": ""
             }
           ]
         }

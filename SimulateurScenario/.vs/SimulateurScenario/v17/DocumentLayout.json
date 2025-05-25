@@ -1,0 +1,682 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\cargo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\evenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\evenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\etatsol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\etatsol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\etatenmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\etatenmission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\etatembarquement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\etatembarquement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\etatdebarquement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\etatdebarquement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\etataeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\etataeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\clienttransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\clienttransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\avionciterne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\avionciterne.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\avioncargaison.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\avioncargaison.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\aeroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\aeroport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\aeronefurgence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\aeronefurgence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\aeroneftransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\aeroneftransport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\gestionnairefichierxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\gestionnairefichierxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\aeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\aeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\typeevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\typeevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\iobservateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\iobservateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\fabriqueclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\fabriqueclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\passager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\passager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\observation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\observation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\incendie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\incendie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\secours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\secours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\clientevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\clientevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\helicoptere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\helicoptere.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\etatvol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\etatvol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\etatentretien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\etatentretien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\fabriqueaeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\fabriqueaeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\avionsecours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\avionsecours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\avionpassager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\avionpassager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\typeaeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\typeaeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\scenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\scenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\gestionnairescenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\gestionnairescenario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\frequenceevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\frequenceevenement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\facadesimulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\facadesimulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\controleur\\controleursimulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\controleur\\controleursimulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\vue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\vue\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cargo.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Cargo.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Cargo.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Cargo.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Cargo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:15:55.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Client.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Client.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Client.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:11:19.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Aeroport.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Aeroport.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Aeroport.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Aeroport.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Aeroport.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAIwAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:53:19.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AeronefUrgence.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AeronefUrgence.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\AeronefUrgence.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AeronefUrgence.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\AeronefUrgence.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:03:06.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AvionCargaison.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionCargaison.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\AvionCargaison.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionCargaison.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\AvionCargaison.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:03:37.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AvionCiterne.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionCiterne.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\AvionCiterne.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionCiterne.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\AvionCiterne.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:04:05.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClientTransport.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\ClientTransport.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\ClientTransport.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\ClientTransport.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\ClientTransport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:12:05.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EtatAeronef.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatAeronef.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\EtatAeronef.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatAeronef.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\EtatAeronef.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:07:16.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EtatDebarquement.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatDebarquement.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\EtatDebarquement.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatDebarquement.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\EtatDebarquement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:09:35.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EtatEmbarquement.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatEmbarquement.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\EtatEmbarquement.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatEmbarquement.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\EtatEmbarquement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:09:22.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EtatEnMission.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatEnMission.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\EtatEnMission.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatEnMission.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\EtatEnMission.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:09:09.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EtatSol.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatSol.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\EtatSol.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatSol.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\EtatSol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:08:56.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Evenement.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Evenement.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Evenement.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Evenement.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Evenement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:57:29.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AeronefTransport.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AeronefTransport.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\AeronefTransport.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AeronefTransport.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\AeronefTransport.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:02:07.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GestionnaireFichierXML.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\GestionnaireFichierXML.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\GestionnaireFichierXML.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\GestionnaireFichierXML.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\GestionnaireFichierXML.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:22:34.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Aeronef.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Aeronef.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Aeronef.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Aeronef.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Aeronef.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:59:47.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TypeEvenement.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\TypeEvenement.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\TypeEvenement.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\TypeEvenement.cs",
+              "RelativeToolTip": "SimulateurScenario\\TypeEvenement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:20:08.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "FabriqueClient.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FabriqueClient.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\FabriqueClient.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FabriqueClient.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\FabriqueClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:17:20.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Passager.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Passager.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Passager.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Passager.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Passager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:14:52.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Observation.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Observation.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Observation.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Observation.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Observation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:14:23.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Incendie.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Incendie.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Incendie.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Incendie.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Incendie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:13:57.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Secours.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Secours.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Secours.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Secours.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Secours.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:13:29.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ClientEvenement.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\ClientEvenement.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\ClientEvenement.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\ClientEvenement.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\ClientEvenement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:13:03.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IObservateur.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\IObservateur.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\IObservateur.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\IObservateur.cs",
+              "RelativeToolTip": "SimulateurScenario\\IObservateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:59:00.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EtatEntretien.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatEntretien.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\EtatEntretien.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatEntretien.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\EtatEntretien.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:09:46.197Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "EtatVol.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatVol.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\EtatVol.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\EtatVol.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\EtatVol.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:08:36.843Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Helicoptere.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Helicoptere.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Helicoptere.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Helicoptere.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Helicoptere.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:06:44.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "FabriqueAeronef.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FabriqueAeronef.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\FabriqueAeronef.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FabriqueAeronef.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\FabriqueAeronef.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:05:21.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AvionSecours.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionSecours.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\AvionSecours.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionSecours.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\AvionSecours.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:04:59.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AvionPassager.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionPassager.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\AvionPassager.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\AvionPassager.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\AvionPassager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:04:32.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "TypeAeronef.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\TypeAeronef.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\TypeAeronef.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\TypeAeronef.cs",
+              "RelativeToolTip": "SimulateurScenario\\TypeAeronef.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T04:01:27.122Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "FrequenceEvenement.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FrequenceEvenement.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\FrequenceEvenement.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FrequenceEvenement.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\FrequenceEvenement.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:50:12.02Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Scenario.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Scenario.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Scenario.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Scenario.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Scenario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:45:05.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "GestionnaireScenario.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\GestionnaireScenario.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\GestionnaireScenario.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\GestionnaireScenario.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\GestionnaireScenario.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:42:39.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Position.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Position.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Position.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Position.cs",
+              "RelativeToolTip": "SimulateurScenario\\Position.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:41:54.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "FacadeSimulateur.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FacadeSimulateur.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\FacadeSimulateur.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\FacadeSimulateur.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\FacadeSimulateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:39:16.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ControleurSimulateur.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Controleur\\ControleurSimulateur.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Controleur\\ControleurSimulateur.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Controleur\\ControleurSimulateur.cs",
+              "RelativeToolTip": "SimulateurScenario\\Controleur\\ControleurSimulateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:32:44.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Simulateur.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Simulateur.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Simulateur.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Simulateur.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Simulateur.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T03:31:19.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Form1.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\Form1.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Vue\\Form1.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\Form1.cs [Conception]",
+              "RelativeToolTip": "SimulateurScenario\\Vue\\Form1.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T20:20:24.502Z",
+              "EditorCaption": " [Conception]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

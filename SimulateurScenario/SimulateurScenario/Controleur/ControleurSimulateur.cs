@@ -28,6 +28,7 @@ namespace SimulateurScenario.Controleur
         public void ChargerScenario(string cheminFichier)
         {
             facadeSimulateur.ChargerScenario(cheminFichier);
+            Initialiser();
         }
 
         public void Notifier(Evenement evenement) { }

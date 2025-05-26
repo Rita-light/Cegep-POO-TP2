@@ -13,6 +13,7 @@ namespace SimulateurScenario
         Secours,
         Incendie,
         Observation, 
-        ChargementTermine
+        ChargementTermine,
+        NouveauClient
     }
 }

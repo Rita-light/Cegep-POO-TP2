@@ -33,6 +33,15 @@ namespace SimulateurScenario.Model
         }
 
         public void TraiterEvenement(Evenement evenement) { }
+        public List<Aeronef> GetAeronefs() => Aeronefs;
+        
+        public void AjouterClient(Client c)
+        {
+            if (Clients == null) Clients = new List<Client>();
+            Clients.Add(c);
+        }
+
+        public List<Client> GetClients() => Clients;
 
     }
 }

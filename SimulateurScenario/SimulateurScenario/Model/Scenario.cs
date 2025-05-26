@@ -12,6 +12,7 @@ namespace SimulateurScenario.Model
         public List<FrequenceEvenement> m_frequence { get; set; } =  new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
 
+        private static Random rnd = new Random();
         public Scenario()
         {
             m_aeroport = new List<Aeroport>();
@@ -48,6 +49,30 @@ namespace SimulateurScenario.Model
         public List<IObservateur> GetObservateurs()
         {
             return m_observateurs;
+        }
+        public List<Aeroport> GetAeroports() => m_aeroport;
+        
+        public Aeroport GetAeroportAleatoire()
+        {
+            if (m_aeroport == null || m_aeroport.Count == 0)
+                throw new InvalidOperationException("Aucun aéroport disponible.");
+
+            int index = rnd.Next(m_aeroport.Count);
+            return m_aeroport[index];
+        }
+        
+        public Aeroport GetAeroportAleatoireDifferent(Aeroport aeroportExclu)
+        {
+            if (m_aeroport == null || m_aeroport.Count < 2)
+                throw new InvalidOperationException("Pas assez d’aéroports pour choisir un différent.");
+
+            Aeroport aeroportChoisi;
+            do
+            {
+                aeroportChoisi = GetAeroportAleatoire();
+            } while (aeroportChoisi == aeroportExclu);
+
+            return aeroportChoisi;
         }
 
 

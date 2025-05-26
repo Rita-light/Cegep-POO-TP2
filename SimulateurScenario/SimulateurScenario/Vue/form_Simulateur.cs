@@ -6,6 +6,8 @@ namespace SimulateurScenario;
 public partial class form_Simulateur : Form, IObservateur
 {
     private ControleurSimulateur controleur;
+    private Dictionary<string, Aeroport> nomVersAeroport = new Dictionary<string, Aeroport>();
+
 
     public form_Simulateur()
     {
@@ -23,19 +25,28 @@ public partial class form_Simulateur : Form, IObservateur
         if (e.typeEvenement == TypeEvenement.ChargementTermine)
         {
             AfficherAeroportsDansListe(e.Aeroports);
-          AfficherAeroportsSurCarte(e.Aeroports);
+             AfficherAeroportsSurCarte(e.Aeroports);
           //AfficherAeroportsSurCarte(e.Aeroports, pictureBoxCarte, Image.FromFile("icone_aeroport.png"));
 
         }
+        
+        if (e.typeEvenement == TypeEvenement.NouveauClient)
+        {
+            AfficherAeroportsDansListe(e.Aeroports);
+        }
+
         
     }
     
     private void AfficherAeroportsDansListe(List<Aeroport> aeroports)
     {
         listAeroport.Items.Clear();
-        foreach (var aeroport in aeroports)
+        nomVersAeroport.Clear();
+
+        foreach (Aeroport a in aeroports)
         {
-            listAeroport.Items.Add(aeroport.Nom);
+            listAeroport.Items.Add(a.Nom);
+            nomVersAeroport[a.Nom] = a;
         }
     }
     
@@ -45,8 +56,8 @@ public partial class form_Simulateur : Form, IObservateur
         {
             // Conversion des coordonnées
             Point positionPixel = Position.ConvertirCoordonneesEnPixels(aeroport.Position);
-            Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées: {aeroport.Position.Latitude}, {aeroport.Position.Longitude}");
-            Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées pixel: {positionPixel.X}, {positionPixel.Y}");
+            //Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées: {aeroport.Position.Latitude}, {aeroport.Position.Longitude}");
+           // Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées pixel: {positionPixel.X}, {positionPixel.Y}");
 
             // Création du marqueur image
             PictureBox marqueur = new PictureBox
@@ -82,16 +93,6 @@ public partial class form_Simulateur : Form, IObservateur
     
     
 
-    
-
-
-
-
-
-
-
-    
-
     private void form_Simulateur_Load(object sender, EventArgs e)
     {
         HorlogeNumerique horloge = new HorlogeNumerique();
@@ -116,9 +117,6 @@ public partial class form_Simulateur : Form, IObservateur
             try
             {
                 controleur.ChargerScenario(cheminFichier);
-                MessageBox.Show("Succès de l'importation "  ,"validation",
-                    MessageBoxButtons.OK);
-                
             }
             catch (Exception ex)
             {
@@ -128,4 +126,78 @@ public partial class form_Simulateur : Form, IObservateur
         }
     }
 
+    private void listAeroport_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        string nomSelectionne = listAeroport.SelectedItem?.ToString().Trim();
+        if (nomSelectionne != null && nomVersAeroport.ContainsKey(nomSelectionne))
+        {
+            Aeroport aeroport = nomVersAeroport[nomSelectionne];
+            Console.WriteLine("Detail aéropor");
+            AfficherAeronefs(aeroport);
+            AfficherClients(aeroport);
+        }
+        else
+        {
+            Console.WriteLine("pas aéropor");
+        }
+    }
+    
+    private void AfficherAeronefs(Aeroport aeroport)
+    {
+        listAeronef.Items.Clear();
+
+        foreach (Aeronef a in aeroport.Aeronefs)
+        {
+            listAeronef.Items.Add(a.Nom); // ou $"{a.GetType().Name} - {a.nom}" si tu veux le type aussi
+        }
+    }
+    
+    private void AfficherClients(Aeroport aeroport)
+    {
+        listClient.Items.Clear();
+
+        // Groupement : Dictionnaire de (Type, Destination) → nombre
+        var regroupement = new Dictionary<string, int>();
+
+        foreach (Client c in aeroport.Clients)
+        {
+            string typeClient = c switch
+            {
+                Passager => "Passager",
+                Cargo => "Cargo",
+                _ => "Autre"
+            };
+
+            string destination = "";
+
+            if (c is Passager p)
+                destination = p.Destination.Nom;
+            else if (c is Cargo g)
+                destination = g.Destination.Nom;
+
+            string cle = $"{typeClient} → {destination}";
+
+            if (regroupement.ContainsKey(cle))
+                regroupement[cle]++;
+            else
+                regroupement[cle] = 1;
+        }
+
+        // Affichage
+        foreach (var item in regroupement)
+        {
+            listClient.Items.Add($"{item.Value} {item.Key}");
+        }
+    }
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

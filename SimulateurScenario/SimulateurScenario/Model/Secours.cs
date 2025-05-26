@@ -8,5 +8,17 @@ namespace SimulateurScenario.Model
 {
     public class Secours : ClientEvenement
     {
+        private bool termine = false;
+
+        public override void Traiter(Aeronef aeronef)
+        {
+            Console.WriteLine("Mission de secours effectuée.");
+            termine = true;
+        }
+
+        public override bool estTermine()
+        {
+            return termine;
+        }
     }
 }

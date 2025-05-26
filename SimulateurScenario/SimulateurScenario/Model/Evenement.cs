@@ -12,6 +12,7 @@ namespace SimulateurScenario.Model
         public Position ? position {get;set;}
         public int? Intensite { get; set; }
         public int? NombrePassagers { get; set; }
+        public double? PoidsCargo { get; set; }  
         public double? Vitesse { get; set; }
         public Aeroport? Destination;
         public List<Aeroport>? Aeroports { get; set; }

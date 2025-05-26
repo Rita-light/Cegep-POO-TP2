@@ -9,7 +9,8 @@ namespace SimulateurScenario.Model
     public abstract class Client
     {
         Position position;
-        
-        public void Traiter(Aeronef aeronef) { }
+
+        public abstract void Traiter(Aeronef aeronef);
+        public abstract bool estTermine();
     }
 }

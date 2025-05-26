@@ -21,20 +21,30 @@ public partial class form_Simulateur : Form, IObservateur
 
     public void Notifier(Evenement e)
     {
-        MessageBox.Show($"Nouvel évènement");
-        if (e.typeEvenement == TypeEvenement.ChargementTermine)
-        {
-            AfficherAeroportsDansListe(e.Aeroports);
-             AfficherAeroportsSurCarte(e.Aeroports);
-          //AfficherAeroportsSurCarte(e.Aeroports, pictureBoxCarte, Image.FromFile("icone_aeroport.png"));
+        if (e == null) return;
 
-        }
-        
-        if (e.typeEvenement == TypeEvenement.NouveauClient)
+        switch (e.typeEvenement)
         {
-            AfficherAeroportsDansListe(e.Aeroports);
-        }
+            case TypeEvenement.ChargementTermine:
+                AfficherAeroportsDansListe(e.Aeroports);
+                AfficherAeroportsSurCarte(e.Aeroports);
+                break;
 
+            case TypeEvenement.Secours:
+                AfficherEvenementSurCarte(e);
+                break;
+
+            case TypeEvenement.Incendie:
+               AfficherEvenementSurCarte(e);
+                break;
+
+            case TypeEvenement.Observation:
+               AfficherEvenementSurCarte(e);
+                break;
+            case TypeEvenement.NouveauClient:
+                AfficherAeroportsDansListe(e.Aeroports);
+                break;
+        }
         
     }
     
@@ -87,9 +97,42 @@ public partial class form_Simulateur : Form, IObservateur
             marqueur.BringToFront();
             labelNom.BringToFront();
         }
-        
-        
     }
+    
+    public void AfficherEvenementSurCarte(Evenement e)
+    {
+        if (e.position == null) return;
+
+        // Déterminer l’icône à utiliser
+        string cheminImage = e.typeEvenement switch
+        {
+            TypeEvenement.Secours => "icone_secours.png",
+            TypeEvenement.Incendie => "icone_incendie.png",
+            TypeEvenement.Observation => "icone_observation.png",
+            _ => null
+        };
+
+        if (cheminImage == null) return;
+
+        // Conversion des coordonnées géographiques en pixels
+        Point positionPixel = Position.ConvertirCoordonneesEnPixels(e.position);
+
+        // Création du marqueur image
+        PictureBox marqueur = new PictureBox
+        {
+            Image = Image.FromFile(cheminImage),
+            Size = new Size(30, 30),
+            Location = positionPixel,
+            BackColor = Color.Transparent,
+            SizeMode = PictureBoxSizeMode.StretchImage
+        };
+
+        
+        // Ajout sur la carte
+        carte.Controls.Add(marqueur);
+        marqueur.BringToFront();
+    }
+
     
     
 

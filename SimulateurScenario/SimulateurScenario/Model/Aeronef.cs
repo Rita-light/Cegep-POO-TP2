@@ -22,6 +22,9 @@ namespace SimulateurScenario.Model
         public double TempsEntretien { get; set; }
         public TypeAeronef type { get; set; }
         public TypeEtat EtatActuel { get; set; }
+        
+        public Position PositionActuelle { get; set; }
+        public Position PositionDestination { get; set; }
 
         public Aeronef() {}
 
@@ -42,6 +45,7 @@ namespace SimulateurScenario.Model
         {
             return $"{type}|{Nom}|{Vitesse}|{TempsEntretien}";
         }
-
+        
+        
     }
 }

@@ -11,7 +11,8 @@ namespace SimulateurScenario.Model
         public List<Aeroport> m_aeroport { get; set; }
         public List<FrequenceEvenement> m_frequence { get; set; } =  new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
-
+        private List<Client> clientsEvenements = new List<Client>();
+        
         private static Random rnd = new Random();
         public Scenario()
         {
@@ -36,6 +37,10 @@ namespace SimulateurScenario.Model
             {
                 obs.Notifier(evenement);
             }
+        }
+        public void AjouterEvenementClient(Client c)
+        {
+            clientsEvenements.Add(c);
         }
         
         public void GenereEvenement() { }
@@ -73,6 +78,16 @@ namespace SimulateurScenario.Model
             } while (aeroportChoisi == aeroportExclu);
 
             return aeroportChoisi;
+        }
+        
+        public ScenarioMemento CreateMemento()
+        {
+            return new ScenarioMemento(m_aeroport);
+        }
+
+        public void RestoreMemento(ScenarioMemento memento)
+        {
+            m_aeroport = memento.Aeroports.Select(a => a.Clone()).ToList();
         }
 
 

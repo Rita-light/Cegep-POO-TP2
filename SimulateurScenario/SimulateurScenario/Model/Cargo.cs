@@ -9,8 +9,15 @@ namespace SimulateurScenario.Model
     public class  Cargo :ClientTransport
     {
         public double PoidsCargaison { get; set; }
-        public Aeroport Destination { get; set; }
         private bool termine = false;
+
+        public Cargo() { }
+
+        public Cargo(Position position, Aeroport destination, double poids)
+            : base(position, destination)
+        {
+            PoidsCargaison = poids;
+        }
 
         public override void Traiter(Aeronef aeronef)
         {
@@ -21,6 +28,10 @@ namespace SimulateurScenario.Model
         public override bool estTermine()
         {
             return termine;
+        }
+        public override Client Clone()
+        {
+            return new Cargo(position?.Clone(), Destination, PoidsCargaison);
         }
     }
 }

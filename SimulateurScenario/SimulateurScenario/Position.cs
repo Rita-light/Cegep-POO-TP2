@@ -34,6 +34,30 @@ namespace SimulateurScenario
             return new Point(x, y);
         }
         
+        public Position Clone()
+        {
+            return new Position
+            {
+                Latitude = this.Latitude,
+                Longitude = this.Longitude
+            };
+        }
+        
+        public static Position GenererPositionAleatoire()
+        {
+            Random rnd = new Random();
+
+            // Latitude entre -90 et 90
+            double latitude = rnd.NextDouble() * 180 - 90;
+
+            // Longitude entre -180 et 180
+            double longitude = rnd.NextDouble() * 360 - 180;
+
+            return new Position(latitude, longitude);
+        }
+
+        
+
 
         
        

@@ -9,6 +9,13 @@ namespace SimulateurScenario.Model
     public class Secours : ClientEvenement
     {
         private bool termine = false;
+        
+        public Secours() { }
+
+        public Secours(Position position)
+            : base(position)
+        {
+        }
 
         public override void Traiter(Aeronef aeronef)
         {
@@ -20,5 +27,12 @@ namespace SimulateurScenario.Model
         {
             return termine;
         }
+        
+        public override Client Clone()
+        {
+            return new Secours(position?.Clone());
+        }
+        
+        
     }
 }

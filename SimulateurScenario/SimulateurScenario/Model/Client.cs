@@ -8,9 +8,16 @@ namespace SimulateurScenario.Model
 {
     public abstract class Client
     {
-        Position position;
+        public Position position;
+        protected Client() { }
+
+        protected Client(Position pos)
+        {
+            position = pos;
+        }
 
         public abstract void Traiter(Aeronef aeronef);
         public abstract bool estTermine();
+        public abstract Client Clone();
     }
 }

@@ -8,5 +8,9 @@ namespace SimulateurScenario.Model
 {
     public abstract class ClientEvenement : Client
     {
+        protected ClientEvenement() { }
+
+        protected ClientEvenement(Position position)
+            : base(position) {}
     }
 }

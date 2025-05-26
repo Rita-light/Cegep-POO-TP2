@@ -9,9 +9,15 @@ namespace SimulateurScenario.Model
     class Passager : ClientTransport
     {
         public int NbPassagers { get; set; }
-        public Aeroport Destination { get; set; }
         private bool termine = false;
         
+        public Passager() { }
+
+        public Passager(Position position, Aeroport destination, int nbPassagers)
+            : base(position, destination)
+        {
+            NbPassagers = nbPassagers;
+        }
         public override void Traiter(Aeronef aeronef)
         {
             // Exemple simple : Embarquement puis marquer comme terminé
@@ -21,6 +27,15 @@ namespace SimulateurScenario.Model
         public override bool estTermine()
         {
             return termine;
+        }
+        public override Client Clone()
+        {
+            return new Passager
+            {
+                position = this.position?.Clone(),
+                Destination = this.Destination, // Clonage optionnel
+                NbPassagers = this.NbPassagers
+            };
         }
     }
 }

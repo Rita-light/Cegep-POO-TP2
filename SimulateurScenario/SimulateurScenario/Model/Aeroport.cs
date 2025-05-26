@@ -42,6 +42,22 @@ namespace SimulateurScenario.Model
         }
 
         public List<Client> GetClients() => Clients;
+        
+        public Aeroport Clone()
+        {
+            return new Aeroport
+            {
+                Nom = this.Nom,
+                Position = this.Position.Clone(),
+                MinPassagers = this.MinPassagers,
+                MaxPassagers = this.MaxPassagers,
+                MinCargaisons = this.MinCargaisons,
+                MaxCargaisons = this.MaxCargaisons,
+                Clients = this.Clients.Select(c => c.Clone()).ToList(),
+                //Aeronefs = this.Aeronefs.Select(a => a.Clone()).ToList()
+                Aeronefs = new List<Aeronef>(this.Aeronefs)
+            };
+        }
 
     }
 }

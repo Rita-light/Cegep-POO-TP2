@@ -9,7 +9,7 @@ namespace SimulateurScenario.Model
     public class Evenement
     {
         public TypeEvenement typeEvenement { get; set; }
-        public Position ? position {get;set;}
+        public Position position {get;set;}
         public int? Intensite { get; set; }
         public int? NombrePassagers { get; set; }
         public double? PoidsCargo { get; set; }  

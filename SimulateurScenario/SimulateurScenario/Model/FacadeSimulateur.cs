@@ -39,6 +39,11 @@ namespace SimulateurScenario.Model
         {
             simulateur.AvancerPlusieursPas(nbPas);
         }
+
+        public void TraiterEvenement(Evenement evenement)
+        {
+            simulateur.TraiterEvenement(evenement);
+        }
         
         
         public void CreerClient(Evenement evenement) { }

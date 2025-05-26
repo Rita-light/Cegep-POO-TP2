@@ -1,5 +1,7 @@
 ﻿using SimulateurScenario.Controleur;
 using SimulateurScenario.Model;
+using System.Windows.Forms;
+using Timer = System.Windows.Forms.Timer;
 
 namespace SimulateurScenario;
 
@@ -7,6 +9,8 @@ public partial class form_Simulateur : Form, IObservateur
 {
     private ControleurSimulateur controleur;
     private Dictionary<string, Aeroport> nomVersAeroport = new Dictionary<string, Aeroport>();
+    private Dictionary<Aeronef, PictureBox> marqueurAeronef = new();
+    private Dictionary<Aeronef, Timer> timerDeplacement = new();
 
 
     public form_Simulateur()
@@ -31,16 +35,12 @@ public partial class form_Simulateur : Form, IObservateur
                 break;
 
             case TypeEvenement.Secours:
-                AfficherEvenementSurCarte(e);
-                break;
-
             case TypeEvenement.Incendie:
-               AfficherEvenementSurCarte(e);
-                break;
-
             case TypeEvenement.Observation:
                AfficherEvenementSurCarte(e);
+               controleur.TraiterEvenement(e);
                 break;
+            
             case TypeEvenement.NouveauClient:
                 AfficherAeroportsDansListe(e.Aeroports);
                 break;
@@ -132,17 +132,14 @@ public partial class form_Simulateur : Form, IObservateur
         carte.Controls.Add(marqueur);
         marqueur.BringToFront();
     }
-
     
-    
-
     private void form_Simulateur_Load(object sender, EventArgs e)
     {
         HorlogeNumerique horloge = new HorlogeNumerique();
         horloge.Location = new Point(10, 20); // Dans le GroupBox
         Horloge.Controls.Add(horloge);
+        
     }
-
     private void carte_Click(object sender, EventArgs e)
     {
 
@@ -233,8 +230,47 @@ public partial class form_Simulateur : Form, IObservateur
         }
     }
 
+    public void LancerDeplacement(Aeronef aeronef)
+    {
+        if (!marqueurAeronef.ContainsKey(aeronef))
+        {
+            PictureBox pic= new PictureBox
+            {
+                Image = Image.FromFile("icone_aeronef.png"),
+                Size = new Size(30, 30),
+                BackColor = Color.Transparent,
+                SizeMode = PictureBoxSizeMode.StretchImage
+            };
+            carte.Controls.Add(pic);
+            marqueurAeronef[aeronef] = pic;
+        }
 
-    
+        Timer timer = new Timer();
+        timer.Interval = 50;
+        double progression = 0;
+        const double vitesse = 0.01;
+
+        timer.Tick += (s, e) =>
+        {
+            progression += vitesse;
+            if (progression >= 1)
+            {
+                progression = 1;
+                timer.Stop();
+                aeronef.EtatActuel = TypeEtat.Sol;
+            }
+
+            aeronef.MettreAJourPosition(progression);
+            Point positionPixel = Position.ConvertirCoordonneesEnPixels(aeronef.PositionActuelle);
+            marqueurAeronef[aeronef].Location = positionPixel;
+        };
+        timerDeplacement[aeronef] = timer;
+        timer.Start();
+    }
+
+
+   
+
     
     
     

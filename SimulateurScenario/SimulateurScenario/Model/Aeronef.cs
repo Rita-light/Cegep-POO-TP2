@@ -36,6 +36,30 @@ namespace SimulateurScenario.Model
             EtatActuel = etat;
         }
 
+        public void Avancer(Position destination)
+        {
+            PositionActuelle = destination;
+            EtatActuel = TypeEtat.Vol;
+        }
+
+        public void MettreAJourPosition(double ratio)
+        {
+            double nouvelleLatitude = PositionActuelle.Latitude + (PositionDestination.Latitude - PositionActuelle.Latitude) * ratio;
+            double nouvelleLongitude = PositionActuelle.Longitude + (PositionDestination.Longitude - PositionActuelle.Longitude) * ratio;
+            PositionActuelle = new Position(nouvelleLatitude, nouvelleLongitude);
+        }
+        
+        public void ChangerEtat(TypeEtat nouvelEtat)
+        {
+            EtatActuel = nouvelEtat;
+        }
+
+        
+
+
+
+
+
         public override string ToString()
         {
             return $"{Nom} - Type: {type}, Vitesse: {Vitesse}, TempsEntretien : {TempsEntretien}";

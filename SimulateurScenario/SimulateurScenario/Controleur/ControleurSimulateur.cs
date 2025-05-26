@@ -31,6 +31,13 @@ namespace SimulateurScenario.Controleur
             Initialiser();
         }
 
+        public void TraiterEvenement(Evenement evenement)
+        {
+            if (evenement == null)
+                return;
+            facadeSimulateur.TraiterEvenement(evenement);
+        }
+
         public void Notifier(Evenement evenement) { }
     }
 }

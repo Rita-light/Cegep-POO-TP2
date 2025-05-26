@@ -294,7 +294,11 @@ namespace SimulateurScenario.Modele
             };
             scenario.NotifierObservateur(evt);
         }
-        
+
+        public void TraiterEvenement(Evenement evenement)
+        {
+            scenario.TraiterEvenement(evenement);
+        }
        
 
 

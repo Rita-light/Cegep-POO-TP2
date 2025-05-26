@@ -8,6 +8,7 @@ namespace SimulateurScenario.Model
 {
     public class Aeroport
     {
+        private Aeronef m_dernierAeronefEnvoye;
         public string Nom { get; set; }
         public Position Position { get; set; }
         public int MinPassagers { get; set; }
@@ -16,6 +17,7 @@ namespace SimulateurScenario.Model
         public double MaxCargaisons { get; set; }
         public List<Aeronef> Aeronefs { get; set; }
         public List<Client> Clients { get; set; }
+        
 
         public Aeroport() 
         {
@@ -40,6 +42,13 @@ namespace SimulateurScenario.Model
             if (Clients == null) Clients = new List<Client>();
             Clients.Add(c);
         }
+
+        public void SaveLastAeronef(Aeronef aeronef)
+        {
+            m_dernierAeronefEnvoye = aeronef;
+        }
+        
+        public Aeronef GetLastAeronef() => m_dernierAeronefEnvoye;
 
         public List<Client> GetClients() => Clients;
         

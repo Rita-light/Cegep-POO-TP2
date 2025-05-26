@@ -14,4 +14,14 @@
       </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="bin\Debug\icone_avion.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="bin\Debug\net9.0-windows\icone_avion.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <Content Include="bin\Debug\net9.0-windows\icone_observation.png" />
+    </ItemGroup>
+
 </Project>

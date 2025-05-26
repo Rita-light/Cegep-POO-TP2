@@ -38,10 +38,10 @@ partial class form_Simulateur
         listAeroport = new System.Windows.Forms.ListBox();
         Horloge = new System.Windows.Forms.GroupBox();
         groupBox4 = new System.Windows.Forms.GroupBox();
+        listAeronef = new System.Windows.Forms.ListBox();
         groupBox3 = new System.Windows.Forms.GroupBox();
         listClient = new System.Windows.Forms.ListBox();
         carte = new System.Windows.Forms.Panel();
-        listAeronef = new System.Windows.Forms.ListBox();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
         groupBox4.SuspendLayout();
@@ -106,6 +106,14 @@ partial class form_Simulateur
         groupBox4.TabStop = false;
         groupBox4.Text = "Aeronef";
         // 
+        // listAeronef
+        // 
+        listAeronef.FormattingEnabled = true;
+        listAeronef.Location = new System.Drawing.Point(15, 18);
+        listAeronef.Name = "listAeronef";
+        listAeronef.Size = new System.Drawing.Size(313, 184);
+        listAeronef.TabIndex = 0;
+        // 
         // groupBox3
         // 
         groupBox3.Controls.Add(listClient);
@@ -121,29 +129,23 @@ partial class form_Simulateur
         listClient.FormattingEnabled = true;
         listClient.Location = new System.Drawing.Point(9, 31);
         listClient.Name = "listClient";
-        listClient.Size = new System.Drawing.Size(368, 164);
+        listClient.Size = new System.Drawing.Size(368, 154);
         listClient.TabIndex = 0;
         // 
         // carte
         // 
+        carte.Anchor = System.Windows.Forms.AnchorStyles.None;
         carte.BackgroundImage = ((System.Drawing.Image)resources.GetObject("carte.BackgroundImage"));
         carte.Location = new System.Drawing.Point(7, 333);
         carte.Name = "carte";
         carte.Size = new System.Drawing.Size(960, 540);
         carte.TabIndex = 6;
         // 
-        // listAeronef
-        // 
-        listAeronef.FormattingEnabled = true;
-        listAeronef.Location = new System.Drawing.Point(15, 18);
-        listAeronef.Name = "listAeronef";
-        listAeronef.Size = new System.Drawing.Size(313, 184);
-        listAeronef.TabIndex = 0;
-        // 
         // form_Simulateur
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+        AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+        AutoSize = true;
         ClientSize = new System.Drawing.Size(970, 971);
         Controls.Add(carte);
         Controls.Add(Horloge);
@@ -151,6 +153,7 @@ partial class form_Simulateur
         Controls.Add(groupBox3);
         Controls.Add(groupBox2);
         Controls.Add(groupBox1);
+        Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
         Text = "form_Simulateur";
         Load += form_Simulateur_Load;
         groupBox1.ResumeLayout(false);

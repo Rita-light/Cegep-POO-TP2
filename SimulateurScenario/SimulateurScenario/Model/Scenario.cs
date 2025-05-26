@@ -44,13 +44,53 @@ namespace SimulateurScenario.Model
         }
         
         public void GenereEvenement() { }
-        public void TraiterEvenement(Evenement evenement) { }
 
-        public Aeroport GetAeroportProche(Position coordonnees)
+        public void TraiterEvenement(Evenement evenement)
         {
-            return m_aeroport.FirstOrDefault(o => o.Position == coordonnees);
+            Aeroport aeroport = GetAeroportProche(evenement.position);
+
+            if (aeroport == null)
+            {
+                return;
+            };
+
+            Aeronef aeronef = aeroport.Aeronefs.FirstOrDefault(a => evenement.typeEvenement 
+                switch
+            {
+                TypeEvenement.Cargaison => a is AvionCargaison,
+                TypeEvenement.Incendie => a is AvionCiterne,
+                TypeEvenement.Secours => a is AvionSecours,
+                _ => false
+            });
+            if (aeronef == null)
+            {
+                return;
+            }
+            if (aeronef.EtatActuel == TypeEtat.Sol)
+            {
+                aeroport.SaveLastAeronef(aeronef);
+                aeronef.ChangerEtat(TypeEtat.Vol);
+                aeronef.Avancer(evenement.position);
+                NotifierObservateur(evenement);
+            }
         }
         
+        public Aeroport GetAeroportProche(Position coordonnees)
+        {
+            Aeroport aeroportProche = null;
+            double distanceMin = double.MaxValue;
+            foreach (var aeroport in m_aeroport)
+            {
+                double distance = aeroport.Position.Distance(coordonnees);
+                if (distance < distanceMin)
+                {
+                    distanceMin = distance;
+                    aeroportProche = aeroport;
+                }
+            }
+            return aeroportProche;
+        }
+
         public List<IObservateur> GetObservateurs()
         {
             return m_observateurs;
@@ -89,10 +129,7 @@ namespace SimulateurScenario.Model
         {
             m_aeroport = memento.Aeroports.Select(a => a.Clone()).ToList();
         }
-
-
-       
-
+        
         
     }
 }

@@ -1,21 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\",
+  "WorkspaceRootPath": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\simulateurscenario\\vue\\form_simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\aeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\aeronef.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\model\\simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\model\\simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\simulateurscenario\\vue\\form_simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\vue\\form_simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\user\\documents\\github\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\vue\\form_simulateur.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\vue\\form_simulateur.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\vue\\form_simulateur.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\user\\documents\\github\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\horlogenumerique.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\horlogenumerique.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\horlogenumerique.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\user\\documents\\github\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\vue\\form_simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|c:\\users\\bibia\\onedrive\\bureau\\cegep-poo-tp2\\simulateurscenario\\simulateurscenario\\vue\\form_simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{560564D4-9E2E-4B07-A2D5-EC50062D4B0D}|SimulateurScenario\\SimulateurScenario.csproj|solutionrelative:simulateurscenario\\vue\\form_simulateur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,67 +34,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "form_Simulateur.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs",
               "RelativeDocumentMoniker": "SimulateurScenario\\Vue\\form_Simulateur.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs [Conception]",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs [Conception]",
               "RelativeToolTip": "SimulateurScenario\\Vue\\form_Simulateur.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-25T10:16:17.767Z",
-              "IsPinned": true,
-              "EditorCaption": " [Conception]"
+              "IsPinned": true
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Aeronef.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Aeronef.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Aeronef.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Aeronef.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Aeronef.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAswDUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T13:28:26.679Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "form_Simulateur.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
-              "RelativeDocumentMoniker": "SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
-              "RelativeToolTip": "SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAmwCcAAAAAAAAAAAAAAA==",
+              "Title": "Simulateur.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Simulateur.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Model\\Simulateur.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Model\\Simulateur.cs",
+              "RelativeToolTip": "SimulateurScenario\\Model\\Simulateur.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T12:10:31.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HorlogeNumerique.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\HorlogeNumerique.cs",
-              "RelativeDocumentMoniker": "SimulateurScenario\\HorlogeNumerique.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\HorlogeNumerique.cs",
-              "RelativeToolTip": "SimulateurScenario\\HorlogeNumerique.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T12:03:33.323Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-26T13:27:53.324Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "form_Simulateur.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
+              "RelativeToolTip": "SimulateurScenario\\Vue\\form_Simulateur.Designer.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAmwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T12:10:31.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HorlogeNumerique.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\HorlogeNumerique.cs",
+              "RelativeDocumentMoniker": "SimulateurScenario\\HorlogeNumerique.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\HorlogeNumerique.cs",
+              "RelativeToolTip": "SimulateurScenario\\HorlogeNumerique.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-25T12:03:33.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "form_Simulateur.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs",
+              "DocumentMoniker": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs",
               "RelativeDocumentMoniker": "SimulateurScenario\\Vue\\form_Simulateur.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs",
+              "ToolTip": "C:\\Users\\bibia\\OneDrive\\Bureau\\Cegep-POO-TP2\\SimulateurScenario\\SimulateurScenario\\Vue\\form_Simulateur.cs",
               "RelativeToolTip": "SimulateurScenario\\Vue\\form_Simulateur.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAkwBcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T10:18:59.645Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T10:18:59.645Z"
             }
           ]
         }

@@ -56,6 +56,13 @@ namespace SimulateurScenario
             return new Position(latitude, longitude);
         }
 
+        public double Distance(Position position)
+        {
+            double deltax = Math.Pow(position.Longitude - this.Longitude, 2);
+            double deltay = Math.Pow(position.Latitude - this.Latitude, 2);
+            return Math.Sqrt(deltax + deltay);
+        }
+
         
 
 

@@ -71,6 +71,9 @@ namespace Gererateur_Scenario.Vue
             this.label12 = new System.Windows.Forms.Label();
             this.frequence = new System.Windows.Forms.TextBox();
             this.suuprimerAeronef = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.etat = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // listAeroport
@@ -384,7 +387,7 @@ namespace Gererateur_Scenario.Vue
             this.type.FormattingEnabled = true;
             this.type.Items.AddRange(new object[] { "Passager", "Cargo", "Secours", "Citerne", "Helicoptere" });
             this.type.Location = new System.Drawing.Point(64, 528);
-            this.type.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.type.Margin = new System.Windows.Forms.Padding(4);
             this.type.Name = "type";
             this.type.Size = new System.Drawing.Size(160, 24);
             this.type.TabIndex = 36;
@@ -393,7 +396,7 @@ namespace Gererateur_Scenario.Vue
             // btnChangerFrequence
             // 
             this.btnChangerFrequence.Location = new System.Drawing.Point(597, 640);
-            this.btnChangerFrequence.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnChangerFrequence.Margin = new System.Windows.Forms.Padding(4);
             this.btnChangerFrequence.Name = "btnChangerFrequence";
             this.btnChangerFrequence.Size = new System.Drawing.Size(228, 33);
             this.btnChangerFrequence.TabIndex = 47;
@@ -403,11 +406,10 @@ namespace Gererateur_Scenario.Vue
             // 
             // typeEvenement
             // 
-            this.typeEvenement.DataSource = new Gererateur_Scenario.TypeEvenement[] { Gererateur_Scenario.TypeEvenement.Passager, Gererateur_Scenario.TypeEvenement.Cargaison, Gererateur_Scenario.TypeEvenement.Secours, Gererateur_Scenario.TypeEvenement.Incendie, Gererateur_Scenario.TypeEvenement.Observation };
             this.typeEvenement.FormattingEnabled = true;
-            //this.typeEvenement.Items.AddRange(new object[] { Gererateur_Scenario.TypeEvenement.Passager, Gererateur_Scenario.TypeEvenement.Cargaison, Gererateur_Scenario.TypeEvenement.Secours, Gererateur_Scenario.TypeEvenement.Incendie, Gererateur_Scenario.TypeEvenement.Observation });
+            this.typeEvenement.Items.AddRange(new object[] { Gererateur_Scenario.TypeEvenement.Passager, Gererateur_Scenario.TypeEvenement.Cargaison, Gererateur_Scenario.TypeEvenement.Secours, Gererateur_Scenario.TypeEvenement.Incendie, Gererateur_Scenario.TypeEvenement.Observation });
             this.typeEvenement.Location = new System.Drawing.Point(163, 645);
-            this.typeEvenement.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.typeEvenement.Margin = new System.Windows.Forms.Padding(4);
             this.typeEvenement.Name = "typeEvenement";
             this.typeEvenement.Size = new System.Drawing.Size(160, 24);
             this.typeEvenement.TabIndex = 48;
@@ -426,7 +428,7 @@ namespace Gererateur_Scenario.Vue
             // frequence
             // 
             this.frequence.Location = new System.Drawing.Point(469, 645);
-            this.frequence.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.frequence.Margin = new System.Windows.Forms.Padding(4);
             this.frequence.Name = "frequence";
             this.frequence.Size = new System.Drawing.Size(59, 22);
             this.frequence.TabIndex = 50;
@@ -441,12 +443,40 @@ namespace Gererateur_Scenario.Vue
             this.suuprimerAeronef.UseVisualStyleBackColor = true;
             this.suuprimerAeronef.Click += new System.EventHandler(this.suuprimerAeronef_Click);
             // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(445, 528);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 23);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "Etat :";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 25);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // etat
+            // 
+            this.etat.FormattingEnabled = true;
+            this.etat.Items.AddRange(new object[] { Gererateur_Scenario.TypeEtat.Entretien, Gererateur_Scenario.TypeEtat.Debarquement, Gererateur_Scenario.TypeEtat.Embarquement, Gererateur_Scenario.TypeEtat.Sol, Gererateur_Scenario.TypeEtat.Vol });
+            this.etat.Location = new System.Drawing.Point(510, 529);
+            this.etat.Margin = new System.Windows.Forms.Padding(4);
+            this.etat.Name = "etat";
+            this.etat.Size = new System.Drawing.Size(160, 24);
+            this.etat.TabIndex = 53;
+            this.etat.SelectedIndexChanged += new System.EventHandler(this.etat_SelectedIndexChanged);
+            // 
             // FormGenerateur
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1113, 767);
+            this.Controls.Add(this.etat);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.suuprimerAeronef);
             this.Controls.Add(this.frequence);
             this.Controls.Add(this.label12);
@@ -494,6 +524,12 @@ namespace Gererateur_Scenario.Vue
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ComboBox etat;
+
+        private System.Windows.Forms.ComboBox comboBox1;
+
+        private System.Windows.Forms.Label label13;
 
         private System.Windows.Forms.Button suuprimerAeronef;
 

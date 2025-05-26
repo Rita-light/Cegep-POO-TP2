@@ -10,7 +10,7 @@ namespace Gererateur_Scenario
     {
         
         public AeronefUrgence() : base() { }
-        protected AeronefUrgence(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
+        protected AeronefUrgence(string nom, double vitesse, double tempsEntretien, TypeEtat etat) : base(nom, vitesse, tempsEntretien, etat)
         {
         }
 

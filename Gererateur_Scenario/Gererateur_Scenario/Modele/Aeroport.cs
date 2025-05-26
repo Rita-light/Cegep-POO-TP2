@@ -30,9 +30,9 @@ namespace Gererateur_Scenario
             Aeronefs = new List<Aeronef>();
         }
 
-        public void AjouterAeronef(string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
+        public void AjouterAeronef(string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien, TypeEtat etat)
         {
-            Aeronef aeronef = FabriqueAeronef.Instance.CreerAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
+            Aeronef aeronef = FabriqueAeronef.Instance.CreerAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien, etat);
             Aeronefs.Add(aeronef);
         }
         public void ModifierAeronef(string ancienNom, string nouveauNom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)

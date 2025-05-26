@@ -411,6 +411,11 @@ namespace Gererateur_Scenario.Vue
                 MessageBox.Show("Le nom de l'aéronef est requis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (string.IsNullOrWhiteSpace(etat.Text))
+            {
+                MessageBox.Show("L'etat de l'aeronef est requis.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             foreach (string item in listAeronef.Items)
             {
@@ -597,6 +602,12 @@ namespace Gererateur_Scenario.Vue
             {
                 MessageBox.Show("Veuillez sélectionner un aéroport à supprimer.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+
+        private void etat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

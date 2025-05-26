@@ -50,12 +50,12 @@ namespace Gererateur_Scenario
             Notifier();
         }
 
-        public void AjouterAeronef(string nomAeroport, string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
+        public void AjouterAeronef(string nomAeroport, string nom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien, TypeEtat etat)
         {
             var aeroport = m_aeroport.FirstOrDefault(a => a.Nom.Equals(nomAeroport, StringComparison.OrdinalIgnoreCase));
             if (aeroport == null)
                 throw new ArgumentException("Aéroport non trouvé : " + nomAeroport);
-            aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien);
+            aeroport.AjouterAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien , etat);
         }
 
         public List<string> ObtenirListeAeroports()

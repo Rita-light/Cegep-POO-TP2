@@ -22,13 +22,15 @@ namespace Gererateur_Scenario
         public double TempsEntretien  { get; set; }
         public TypeAeronef type { get; set; }
         
+        public TypeEtat EtatActuel { get; set; }
         public Aeronef(){}
 
-        protected Aeronef(string nom, double vitesse, double tempsEntretien)
+        protected Aeronef(string nom, double vitesse, double tempsEntretien, TypeEtat etat)
         {
             Nom = nom;
             Vitesse = vitesse;
             TempsEntretien = tempsEntretien;
+            EtatActuel = etat;
         }
 
         public override string ToString()

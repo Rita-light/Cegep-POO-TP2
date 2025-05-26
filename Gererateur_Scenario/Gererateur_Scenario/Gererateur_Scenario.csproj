@@ -78,6 +78,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeAeronef.cs" />
+    <Compile Include="TypeEtat.cs" />
     <Compile Include="TypeEvenement.cs" />
     <Compile Include="Vue\FormGenerateur.cs">
       <SubType>Form</SubType>

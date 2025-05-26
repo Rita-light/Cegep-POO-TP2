@@ -10,8 +10,8 @@ namespace Gererateur_Scenario
     {
         public int Capacite { get; set; }
 
-        public AvionPassager(string nom, double vitesse, double tempsEntretien, int capacite, double tempsEmbarquement, double tempsDebarquement)
-            : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement)
+        public AvionPassager(string nom, double vitesse, double tempsEntretien, int capacite, double tempsEmbarquement, double tempsDebarquement, TypeEtat etat)
+            : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement, etat)
         {
             Capacite = capacite;
             type = TypeAeronef.Passager;

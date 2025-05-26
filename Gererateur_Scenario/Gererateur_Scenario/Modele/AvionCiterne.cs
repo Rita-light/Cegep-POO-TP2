@@ -7,7 +7,7 @@
             
         }
         
-        public AvionCiterne(string nom, double vitesse, double tempsEntretien) : base(nom, vitesse, tempsEntretien)
+        public AvionCiterne(string nom, double vitesse, double tempsEntretien, TypeEtat etat) : base(nom, vitesse, tempsEntretien, etat)
         {
             type = TypeAeronef.Citerne;
         }

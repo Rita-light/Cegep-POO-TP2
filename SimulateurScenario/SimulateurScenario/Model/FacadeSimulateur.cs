@@ -16,8 +16,25 @@ namespace SimulateurScenario.Model
         public FacadeSimulateur()
         {
             this.simulateur = new Simulateur();
-            
+            simulateur.PositionChanged += (aeronef) => OnPositionChanged?.Invoke(aeronef);
+            simulateur.OnAeronefEnvoye += (aeronef) => OnAeronefEnvoye?.Invoke(aeronef);
         }
+
+        public bool TraiterEvenement(Evenement evenement)
+        {
+            bool succes = simulateur.TraiterEvenement(evenement);
+
+            if (!succes)
+            {
+                OnMessage?.Invoke($"Aucun aéronef disponible pour {evenement.typeEvenement}");
+            }
+            return succes;
+        }
+        
+        public event Action<Aeronef> OnPositionChanged;
+        public event Action<string> OnMessage;
+        public event Action<Aeronef> OnAeronefEnvoye;
+        
         public void AttacherObservateur(IObservateur observateur)
         {
             // Attache du contrôleur comme observateur au scénario
@@ -39,12 +56,6 @@ namespace SimulateurScenario.Model
         {
             simulateur.AvancerPlusieursPas(nbPas);
         }
-
-        public void TraiterEvenement(Evenement evenement)
-        {
-            simulateur.TraiterEvenement(evenement);
-        }
-        
         
         public void CreerClient(Evenement evenement) { }
         public void AjouterClient() { }

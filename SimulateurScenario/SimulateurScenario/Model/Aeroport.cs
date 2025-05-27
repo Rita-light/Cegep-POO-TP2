@@ -33,8 +33,34 @@ namespace SimulateurScenario.Model
             Aeronefs = new List<Aeronef>();
             Clients = new List<Client>();
         }
+//Traitement des évènements/////////////////////////////////////////////////////////////////////////////////////////////
+        public Aeronef GetAeronefDisponible(TypeEvenement typeEvenement)
+        {
+            return Aeronefs.FirstOrDefault(a => a.EtatActuel == TypeEtat.Sol &&
+                                                (typeEvenement switch
+                                                {
+                                                    TypeEvenement.Incendie => a is AvionCiterne,
+                                                    TypeEvenement.Observation => a is Helicoptere,
+                                                    TypeEvenement.Secours => a is AvionSecours,
+                                                    _ => false
+                                                }));
+        }
 
-        public void TraiterEvenement(Evenement evenement) { }
+        public void EnvoyerAeronef(Aeronef aeronef, Position destination)
+        {
+            SaveLastAeronef(aeronef);
+            aeronef.ChangerEtat(TypeEtat.Sol);
+            aeronef.PositionDestination = destination;
+
+            aeronef.PositionActuelle = this.Position;
+        }
+        
+        public void SaveLastAeronef(Aeronef aeronef)
+        {
+            m_dernierAeronefEnvoye = aeronef;
+        }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+        
         public List<Aeronef> GetAeronefs() => Aeronefs;
         
         public void AjouterClient(Client c)
@@ -43,13 +69,8 @@ namespace SimulateurScenario.Model
             Clients.Add(c);
         }
 
-        public void SaveLastAeronef(Aeronef aeronef)
-        {
-            m_dernierAeronefEnvoye = aeronef;
-        }
         
-        public Aeronef GetLastAeronef() => m_dernierAeronefEnvoye;
-
+        
         public List<Client> GetClients() => Clients;
         
         public Aeroport Clone()

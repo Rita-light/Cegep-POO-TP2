@@ -8,5 +8,15 @@ namespace SimulateurScenario.Model
 {
     class EtatEntretien : EtatAeronef
     {
+        public override void AvancerPas(double pas)
+        {
+            Console.WriteLine($"[Entretien] Aéronef en entretien pendant {pas} pas.");
+        }
+
+        public override TypeEtat GetTypeEtat()
+        {
+            return TypeEtat.Entretien;
+        }
+        
     }
 }

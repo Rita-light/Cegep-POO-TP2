@@ -49,7 +49,7 @@ public partial class form_Simulateur : Form, IObservateur
             {
                 progression = 1;
                 timer.Stop();
-                aeronef.EtatActuel = TypeEtat.Sol;
+                aeronef.ChangerEtat(TypeEtat.Sol);
             }
 
             aeronef.MettreAJourPosition(progression);

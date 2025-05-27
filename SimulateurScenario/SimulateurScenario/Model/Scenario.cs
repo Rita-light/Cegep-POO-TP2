@@ -332,7 +332,7 @@ namespace SimulateurScenario.Model
             {
                 foreach (var aeronef in aeroport.Aeronefs)
                 {
-                    if (aeronef.EtatActuel == TypeEtat.Sol)
+                    if (aeronef.EtatActuel.GetTypeEtat() == TypeEtat.Sol)
                     {
                         if (aeronef is AvionPassager avionPassager)
                         {

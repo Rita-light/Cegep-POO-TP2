@@ -8,5 +8,14 @@ namespace SimulateurScenario.Model
 {
     class EtatVol : EtatAeronef
     {
+        public override void AvancerPas(double pas)
+        {
+            Console.WriteLine($"[Vol] Aéronef en vol pendant {pas} pas.");
+        }
+
+        public override TypeEtat GetTypeEtat()
+        {
+            return TypeEtat.Vol;
+        }
     }
 }

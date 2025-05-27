@@ -237,7 +237,7 @@ namespace SimulateurScenario.Modele
         }
         
         
-        public void VerifierEtDeclencherEmbarquement()
+        /*public void VerifierEtDeclencherEmbarquement()
         {
             foreach (var aeroport in scenario.m_aeroport)
             {
@@ -298,7 +298,7 @@ namespace SimulateurScenario.Modele
                     }
                 }
             }
-        }
+        }*/
         
         /*public void ReinitialiserScenario()
         {

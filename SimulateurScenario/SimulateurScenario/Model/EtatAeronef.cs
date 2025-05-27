@@ -8,6 +8,8 @@ namespace SimulateurScenario.Model
 {
     public abstract class EtatAeronef
     {
+        public abstract void AvancerPas(double pas);
+        public abstract TypeEtat GetTypeEtat();
         public void GererEtat(Aeronef aeronef) { }        
     }
 }

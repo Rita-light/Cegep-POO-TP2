@@ -21,10 +21,11 @@ namespace SimulateurScenario.Model
         public double Vitesse { get; set; }
         public double TempsEntretien { get; set; }
         public TypeAeronef type { get; set; }
-        public TypeEtat EtatActuel { get; set; }
-        
+        public TypeEtat typeEtat { get; set; }
         public Position PositionActuelle { get; set; }
         public Position PositionDestination { get; set; }
+        
+        public EtatAeronef EtatActuel { get; set; }
 
         public Aeronef() {}
 
@@ -33,13 +34,29 @@ namespace SimulateurScenario.Model
             Nom = nom;
             Vitesse = vitesse;
             TempsEntretien = tempsEntretien;
-            EtatActuel = etat;
+            typeEtat = etat;
+            EtatActuel = CreerEtatDepuisType(typeEtat);
         }
+        
+        private EtatAeronef CreerEtatDepuisType(TypeEtat type)
+        {
+            return type switch
+            {
+                TypeEtat.Entretien => new EtatEntretien(),
+                TypeEtat.Vol => new EtatVol(),
+                TypeEtat.Sol => new EtatSol(),
+                TypeEtat.Embarquement => new EtatEmbarquement(),
+                TypeEtat.Debarquement => new EtatDebarquement(),
+                _ => throw new ArgumentException("Type d'état inconnu", nameof(type))
+            };
+        }
+        
 
         public void Avancer(Position destination)
         {
             PositionActuelle = destination;
-            EtatActuel = TypeEtat.Vol;
+            typeEtat = TypeEtat.Vol;
+            EtatActuel = CreerEtatDepuisType(typeEtat);
         }
 
         public void MettreAJourPosition(double ratio)
@@ -51,7 +68,8 @@ namespace SimulateurScenario.Model
         
         public void ChangerEtat(TypeEtat nouvelEtat)
         {
-            EtatActuel = nouvelEtat;
+            EtatActuel = CreerEtatDepuisType(nouvelEtat);
+            typeEtat = nouvelEtat;
         }
 
         

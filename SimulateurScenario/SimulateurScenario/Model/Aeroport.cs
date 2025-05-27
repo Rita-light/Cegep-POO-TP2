@@ -36,7 +36,7 @@ namespace SimulateurScenario.Model
 //Traitement des évènements/////////////////////////////////////////////////////////////////////////////////////////////
         public Aeronef GetAeronefDisponible(TypeEvenement typeEvenement)
         {
-            return Aeronefs.FirstOrDefault(a => a.EtatActuel == TypeEtat.Sol &&
+            return Aeronefs.FirstOrDefault(a => a.EtatActuel.GetTypeEtat() == TypeEtat.Sol &&
                                                 (typeEvenement switch
                                                 {
                                                     TypeEvenement.Incendie => a is AvionCiterne,

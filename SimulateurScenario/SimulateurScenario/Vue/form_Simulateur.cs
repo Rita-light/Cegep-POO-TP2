@@ -17,7 +17,49 @@ public partial class form_Simulateur : Form, IObservateur
     {
         InitializeComponent();
     }
+//Traitement des événements/////////////////////////////////////////////////////////////////////////////////////////////
+    public PictureBox GetMarqueurAeronef(Aeronef aeronef)
+    {
+        return marqueurAeronef.ContainsKey(aeronef) ? marqueurAeronef[aeronef] : null;
+    }
+    public void LancerDeplacement(Aeronef aeronef)
+    {
+        if (!marqueurAeronef.ContainsKey(aeronef))
+        {
+            PictureBox pic= new PictureBox
+            {
+                Image = Image.FromFile("icone_aeronef.png"),
+                Size = new Size(30, 30),
+                BackColor = Color.Transparent,
+                SizeMode = PictureBoxSizeMode.StretchImage
+            };
+            carte.Controls.Add(pic);
+            marqueurAeronef[aeronef] = pic;
+        }
 
+        Timer timer = new Timer();
+        timer.Interval = 50;
+        double progression = 0;
+        const double vitesse = 0.01;
+
+        timer.Tick += (s, e) =>
+        {
+            progression += vitesse;
+            if (progression >= 1)
+            {
+                progression = 1;
+                timer.Stop();
+                aeronef.EtatActuel = TypeEtat.Sol;
+            }
+
+            aeronef.MettreAJourPosition(progression);
+            Point positionPixel = Position.ConvertirCoordonneesEnPixels(aeronef.PositionActuelle);
+            marqueurAeronef[aeronef].Location = positionPixel;
+        };
+        timerDeplacement[aeronef] = timer;
+        timer.Start();
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
     public void SetControleur(ControleurSimulateur ctrl)
     {
         this.controleur = ctrl;
@@ -43,8 +85,10 @@ public partial class form_Simulateur : Form, IObservateur
             case TypeEvenement.Secours:
             case TypeEvenement.Incendie:
             case TypeEvenement.Observation:
+
                 AfficherEvenementSurCarte(e);
                 controleur.TraiterEvenement(e);
+                
                 break;
 
             case TypeEvenement.NouveauClient:
@@ -239,7 +283,8 @@ public partial class form_Simulateur : Form, IObservateur
         }
     }
 
-    public void LancerDeplacement(Aeronef aeronef)
+
+   /* public void LancerDeplacement(Aeronef aeronef)
     {
         if (!marqueurAeronef.ContainsKey(aeronef))
         {
@@ -275,7 +320,10 @@ public partial class form_Simulateur : Form, IObservateur
         };
         timerDeplacement[aeronef] = timer;
         timer.Start();
-    }
+    }*/
+
+    
+
 
     public static void ExecuterUI(Control control, Action action)
     {

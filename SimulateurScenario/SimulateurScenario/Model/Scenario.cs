@@ -48,7 +48,7 @@ namespace SimulateurScenario.Model
         {
             clientsEvenements.Add(c);
         }
-        
+
         public bool DoitGenerer(TypeEvenement type, double frequence)
         {
             if (!dernieresGenerations.ContainsKey(type))
@@ -67,7 +67,7 @@ namespace SimulateurScenario.Model
             return false;
         }
 
-        public void TraiterEvenement(Evenement evenement)
+/*        public void TraiterEvenement(Evenement evenement)
         {
             Aeroport aeroport = GetAeroportProche(evenement.position);
 
@@ -96,11 +96,14 @@ namespace SimulateurScenario.Model
                 NotifierObservateur(evenement);
             }
         }
+*/
         
+//Traitement des évènements/////////////////////////////////////////////////////////////////////////////////////////////
         public Aeroport GetAeroportProche(Position coordonnees)
         {
             Aeroport aeroportProche = null;
             double distanceMin = double.MaxValue;
+            
             foreach (var aeroport in m_aeroport)
             {
                 double distance = aeroport.Position.Distance(coordonnees);
@@ -113,6 +116,43 @@ namespace SimulateurScenario.Model
             return aeroportProche;
         }
 
+        public Aeronef TraiterEvenement(Evenement evenement)
+        {
+            Aeroport aeroport = GetAeroportProche(evenement.position);
+            if(aeroport == null)
+                return null;
+
+            Aeronef aeronef = aeroport.GetAeronefDisponible(evenement.typeEvenement);
+            if (aeronef == null)
+            {
+             return AutreAeroport(evenement, aeroport); ;   
+            }
+            
+            aeroport.EnvoyerAeronef(aeronef, evenement.position);
+            return aeronef;
+        }
+
+        private Aeronef AutreAeroport(Evenement evenement, Aeroport checkedAeroport)
+        {
+            var aeroports = m_aeroport
+                .Where(a => a != checkedAeroport)
+                .OrderBy(a => a.Position.Distance(evenement.position));
+            
+            foreach (var aeroport in aeroports)
+            {
+                Aeronef aeronef = aeroport.GetAeronefDisponible(evenement.typeEvenement);
+                if (aeronef != null)
+                {
+                    aeroport.EnvoyerAeronef(aeronef, evenement.position);
+                    return aeronef;
+                }
+            }
+            return null;
+        }
+/// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        
+        
         public List<IObservateur> GetObservateurs()
         {
             return m_observateurs;

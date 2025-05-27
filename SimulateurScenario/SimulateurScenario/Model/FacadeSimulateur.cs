@@ -35,10 +35,13 @@ namespace SimulateurScenario.Model
             simulateur.DemarrerSimulation();
         }
 
-        public void AvancerSimulation(int nbPas)
-        {
-            simulateur.AvancerPlusieursPas(nbPas);
-        }
+        public void LancerSimulationAuto() => simulateur.LancerSimulationAuto();
+
+        public void ArreterSimulation() => simulateur.ArreterSimulation();
+
+        public void AvancerUnPas() => simulateur.AvancerUnPas();
+
+        public void AvancerPlusieursPas(int nbPas) => simulateur.AvancerPlusieursPas(nbPas);
 
         public void TraiterEvenement(Evenement evenement)
         {

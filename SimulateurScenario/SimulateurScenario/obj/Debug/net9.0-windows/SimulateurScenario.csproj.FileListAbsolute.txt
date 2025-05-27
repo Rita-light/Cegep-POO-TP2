@@ -36,3 +36,5 @@ C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\SimulateurScenario\SimulateurScenar
 C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\obj\Debug\net9.0-windows\ref\SimulateurScenario.dll
 C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\bin\Debug\icone_avion.png
 C:\Users\bibia\OneDrive\Bureau\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\bin\Debug\net9.0-windows\icone_avion.png
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\bin\Debug\icone_avion.png
+C:\Users\User\Documents\GitHub\Cegep-POO-TP2\SimulateurScenario\SimulateurScenario\bin\Debug\net9.0-windows\bin\Debug\net9.0-windows\icone_avion.png

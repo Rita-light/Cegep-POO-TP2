@@ -25,6 +25,12 @@ public partial class form_Simulateur : Form, IObservateur
 
     public void Notifier(Evenement e)
     {
+        if (InvokeRequired)
+        {
+            Invoke(new Action(() => Notifier(e)));
+            return;
+        }
+
         if (e == null) return;
 
         switch (e.typeEvenement)
@@ -37,17 +43,17 @@ public partial class form_Simulateur : Form, IObservateur
             case TypeEvenement.Secours:
             case TypeEvenement.Incendie:
             case TypeEvenement.Observation:
-               AfficherEvenementSurCarte(e);
-               controleur.TraiterEvenement(e);
+                AfficherEvenementSurCarte(e);
+                controleur.TraiterEvenement(e);
                 break;
-            
+
             case TypeEvenement.NouveauClient:
                 AfficherAeroportsDansListe(e.Aeroports);
                 break;
         }
-        
+
     }
-    
+
     private void AfficherAeroportsDansListe(List<Aeroport> aeroports)
     {
         listAeroport.Items.Clear();
@@ -59,7 +65,7 @@ public partial class form_Simulateur : Form, IObservateur
             nomVersAeroport[a.Nom] = a;
         }
     }
-    
+
     public void AfficherAeroportsSurCarte(List<Aeroport> aeroports)
     {
         foreach (var aeroport in aeroports)
@@ -67,7 +73,7 @@ public partial class form_Simulateur : Form, IObservateur
             // Conversion des coordonnées
             Point positionPixel = Position.ConvertirCoordonneesEnPixels(aeroport.Position);
             //Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées: {aeroport.Position.Latitude}, {aeroport.Position.Longitude}");
-           // Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées pixel: {positionPixel.X}, {positionPixel.Y}");
+            // Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées pixel: {positionPixel.X}, {positionPixel.Y}");
 
             // Création du marqueur image
             PictureBox marqueur = new PictureBox
@@ -83,7 +89,7 @@ public partial class form_Simulateur : Form, IObservateur
             Label labelNom = new Label
             {
                 Text = aeroport.Nom,
-                Location = new Point(positionPixel.X + 35, positionPixel.Y+5),
+                Location = new Point(positionPixel.X + 35, positionPixel.Y + 5),
                 AutoSize = true,
                 BackColor = Color.Transparent,
                 ForeColor = Color.Black // Ou blanc selon la carte
@@ -98,9 +104,10 @@ public partial class form_Simulateur : Form, IObservateur
             labelNom.BringToFront();
         }
     }
-    
+
     public void AfficherEvenementSurCarte(Evenement e)
     {
+
         if (e.position == null) return;
 
         // Déterminer l’icône à utiliser
@@ -127,18 +134,20 @@ public partial class form_Simulateur : Form, IObservateur
             SizeMode = PictureBoxSizeMode.StretchImage
         };
 
-        
+
         // Ajout sur la carte
+        //ExecuterUI(carte, () => carte.Controls.Add(marqueur));
+        //ExecuterUI(carte, () => carte.Controls.Add(marqueur));
         carte.Controls.Add(marqueur);
         marqueur.BringToFront();
     }
-    
+
     private void form_Simulateur_Load(object sender, EventArgs e)
     {
         HorlogeNumerique horloge = new HorlogeNumerique();
         horloge.Location = new Point(10, 20); // Dans le GroupBox
         Horloge.Controls.Add(horloge);
-        
+
     }
     private void carte_Click(object sender, EventArgs e)
     {
@@ -181,7 +190,7 @@ public partial class form_Simulateur : Form, IObservateur
             Console.WriteLine("pas aéropor");
         }
     }
-    
+
     private void AfficherAeronefs(Aeroport aeroport)
     {
         listAeronef.Items.Clear();
@@ -191,7 +200,7 @@ public partial class form_Simulateur : Form, IObservateur
             listAeronef.Items.Add(a.Nom); // ou $"{a.GetType().Name} - {a.nom}" si tu veux le type aussi
         }
     }
-    
+
     private void AfficherClients(Aeroport aeroport)
     {
         listClient.Items.Clear();
@@ -234,7 +243,7 @@ public partial class form_Simulateur : Form, IObservateur
     {
         if (!marqueurAeronef.ContainsKey(aeronef))
         {
-            PictureBox pic= new PictureBox
+            PictureBox pic = new PictureBox
             {
                 Image = Image.FromFile("icone_aeronef.png"),
                 Size = new Size(30, 30),
@@ -268,15 +277,55 @@ public partial class form_Simulateur : Form, IObservateur
         timer.Start();
     }
 
+    public static void ExecuterUI(Control control, Action action)
+    {
+        if (control.InvokeRequired)
+            control.Invoke(action);
+        else
+            action();
+    }
 
-   
 
-    
-    
-    
-    
-    
-    
-    
-    
+
+    private void listAeronef_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void btnStartAuto_Click(object sender, EventArgs e)
+    {
+        ActiverBoutonsPas(false);
+        controleur.DemarrerSimulationAuto();
+
+    }
+
+    public void ActiverBoutonsPas(bool actif)
+    {
+        AvancerPas.Enabled = actif;
+        avancerPluspas.Enabled = actif;
+    }
+
+    private void btnStopAuto_Click(object sender, EventArgs e)
+    {
+        ActiverBoutonsPas(true);
+        controleur.ArreterSimulation();
+    }
+
+    private void AvancerPas_Click(object sender, EventArgs e)
+    {
+        controleur.AvancerUnPas();
+    }
+
+    private void avancerPluspas_Click(object sender, EventArgs e)
+    {
+
+        if (int.TryParse(nombrePas.Text, out int nbPas) && nbPas > 0)
+        {
+            controleur.AvancerPlusieursPas(nbPas);
+        }
+        else
+        {
+            MessageBox.Show("Veuillez entrer un nombre de pas valide.");
+        }
+    }
 }

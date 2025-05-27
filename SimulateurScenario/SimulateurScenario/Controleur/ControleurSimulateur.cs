@@ -30,6 +30,14 @@ namespace SimulateurScenario.Controleur
             facadeSimulateur.ChargerScenario(cheminFichier);
             Initialiser();
         }
+        
+        public void DemarrerSimulationAuto() => facadeSimulateur.LancerSimulationAuto();
+
+        public void ArreterSimulation() => facadeSimulateur.ArreterSimulation();
+
+        public void AvancerUnPas() => facadeSimulateur.AvancerUnPas();
+
+        public void AvancerPlusieursPas(int nombrePas) => facadeSimulateur.AvancerPlusieursPas(nombrePas);
 
         public void TraiterEvenement(Evenement evenement)
         {

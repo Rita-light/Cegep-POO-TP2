@@ -66,38 +66,6 @@ namespace SimulateurScenario.Model
             return false;
         }
 
-/*        public void TraiterEvenement(Evenement evenement)
-        {
-            Aeroport aeroport = GetAeroportProche(evenement.position);
-
-            if (aeroport == null)
-            {
-                return;
-            };
-
-            Aeronef aeronef = aeroport.Aeronefs.FirstOrDefault(a => evenement.typeEvenement 
-                switch
-            {
-                TypeEvenement.Cargaison => a is AvionCargaison,
-                TypeEvenement.Incendie => a is AvionCiterne,
-                TypeEvenement.Secours => a is AvionSecours,
-                _ => false
-            });
-            if (aeronef == null)
-            {
-                return;
-            }
-            if (aeronef.EtatActuel == TypeEtat.Sol)
-            {
-                aeroport.SaveLastAeronef(aeronef);
-                aeronef.ChangerEtat(TypeEtat.Vol);
-                aeronef.Avancer(evenement.position);
-                NotifierObservateur(evenement);
-            }
-        }
-*/
-        
-//Traitement des évènements/////////////////////////////////////////////////////////////////////////////////////////////
         public Aeroport GetAeroportProche(Position coordonnees)
         {
             Aeroport aeroportProche = null;
@@ -127,9 +95,11 @@ namespace SimulateurScenario.Model
              return AutreAeroport(evenement, aeroport); ;   
             }
             
-            aeroport.EnvoyerAeronef(aeronef, evenement.position);
+            aeroport.EnvoyerAeronefUrgence(aeronef, evenement.position);
+
             evenement.NotifierObservateurs();
             FacadeSimulateur.EvenementTermine(evenement);
+            
             return aeronef;
         }
 
@@ -144,15 +114,14 @@ namespace SimulateurScenario.Model
                 Aeronef aeronef = aeroport.GetAeronefDisponible(evenement.typeEvenement);
                 if (aeronef != null)
                 {
-                    aeroport.EnvoyerAeronef(aeronef, evenement.position);
+                    aeroport.EnvoyerAeronefUrgence(aeronef, evenement.position);
+                    
                     return aeronef;
                 }
             }
             return null;
         }
-/// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        
+      
         
         public List<IObservateur> GetObservateurs()
         {
@@ -341,6 +310,7 @@ namespace SimulateurScenario.Model
                     }
                 }
             }
+            
             VerifierEtDeclencherEmbarquement(m_aeroport);
             Console.WriteLine("Mettre à jours vue");
             Evenement evt = new Evenement
@@ -350,6 +320,11 @@ namespace SimulateurScenario.Model
             };
             NotifierObservateur(evt);
             
+        }
+
+        public List<Client> GetClients()
+        {
+            return clientsEvenements;
         }
         
        public void VerifierEtDeclencherEmbarquement(List<Aeroport> aeroports)
@@ -522,10 +497,19 @@ namespace SimulateurScenario.Model
             {
                 aeroportActuel.Aeronefs.Remove(aeronef);
             }
+
+            if (aeroportDestination != null)
+            {
+                aeroportDestination.AjouterAeronef(aeronef);
+                            Console.WriteLine("Appartenance Aeroport changé");
+            }
+            else
+            {
+                Console.WriteLine($"⚠️ Aucun aéroport de destination défini pour l’aéronef {aeronef.Nom}");
+            }
             
             // Ajouter à l’aéroport de destination
-            aeroportDestination.AjouterAeronef(aeronef);
-            Console.WriteLine("Appartenance Aeroport changé");            
+                        
         }
 
         

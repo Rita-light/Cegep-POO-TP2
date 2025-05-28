@@ -18,6 +18,7 @@ namespace SimulateurScenario.Model
         public List<Aeronef> Aeronefs { get; set; }
         public List<Client> Clients { get; set; }
         
+        
 
         public Aeroport() 
         {
@@ -33,7 +34,6 @@ namespace SimulateurScenario.Model
             Aeronefs = new List<Aeronef>();
             Clients = new List<Client>();
         }
-//Traitement des évènements/////////////////////////////////////////////////////////////////////////////////////////////
         public Aeronef GetAeronefDisponible(TypeEvenement typeEvenement)
         {
             return Aeronefs.FirstOrDefault(a => a.EtatActuel.GetTypeEtat() == TypeEtat.Sol &&
@@ -46,20 +46,21 @@ namespace SimulateurScenario.Model
                                                 }));
         }
 
-        public void EnvoyerAeronef(Aeronef aeronef, Position destination)
+        public void EnvoyerAeronefUrgence(Aeronef aeronef, Position positionEvenement)
         {
-            SaveLastAeronef(aeronef);
-            aeronef.ChangerEtat(TypeEtat.Sol);
-            aeronef.PositionDestination = destination;
-
+            if (aeronef == null || positionEvenement == null)
+                throw new ArgumentNullException("Aéronef ou destination invalide pour la mission d'urgence.");
             aeronef.PositionActuelle = this.Position;
+            aeronef.PositionDepart = this.Position;
+            
+            aeronef.PositionDestination = positionEvenement;
+            aeronef.Destination = null; // Pas d'aéroport comme destination
+            
+            aeronef.ChangerEtat(TypeEtat.Vol);
+            
+            Console.WriteLine($"[Urgence] {aeronef.Nom} envoyé en mission vers {positionEvenement} depuis {this.Nom}");
         }
         
-        public void SaveLastAeronef(Aeronef aeronef)
-        {
-            m_dernierAeronefEnvoye = aeronef;
-        }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
         
         public List<Aeronef> GetAeronefs() => Aeronefs;
         

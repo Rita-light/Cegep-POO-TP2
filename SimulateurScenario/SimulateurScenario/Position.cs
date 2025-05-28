@@ -88,6 +88,11 @@ namespace SimulateurScenario
             return new Position(nouvelleLatitude, nouvelleLongitude);
         }
 
+        public override string ToString()
+        {
+            return $"({Latitude},{Longitude})";
+        }
+
 
         
 

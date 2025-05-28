@@ -34,6 +34,13 @@ namespace SimulateurScenario.Model
         public event Action<Aeronef> OnPositionChanged;
         public event Action<string> OnMessage;
         public event Action<Aeronef> OnAeronefEnvoye;
+        public static event Action<Evenement> OnEvenementTermine;
+        public static void EvenementTermine(Evenement evenement)
+        {
+            OnEvenementTermine?.Invoke(evenement); // Notifie tous les abonnés que l'événement est terminé
+        }
+
+        
         
         public void AttacherObservateur(IObservateur observateur)
         {

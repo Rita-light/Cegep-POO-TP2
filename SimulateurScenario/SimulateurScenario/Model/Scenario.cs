@@ -20,7 +20,7 @@ namespace SimulateurScenario.Model
         private Dictionary<TypeEvenement, double> dernieresGenerations = new Dictionary<TypeEvenement, double>();
         
         
-        private static Random rnd = new Random();
+        private static readonly Random rnd = new Random();
         public Scenario()
         {
             m_aeroport = new List<Aeroport>();
@@ -130,6 +130,8 @@ namespace SimulateurScenario.Model
             }
             
             aeroport.EnvoyerAeronef(aeronef, evenement.position);
+            evenement.NotifierObservateurs();
+            FacadeSimulateur.EvenementTermine(evenement);
             return aeronef;
         }
 

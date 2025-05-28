@@ -34,9 +34,9 @@ namespace SimulateurScenario.Model
 
         //public Client CreerClient(){}
         public Client CreerClient(Evenement e)
-        {
+        {Console.WriteLine($"Type d'événement reçu: {e.typeEvenement}");
             switch (e.typeEvenement)
-            {
+            { 
                 case TypeEvenement.Passager:
                     return new Passager
                     {

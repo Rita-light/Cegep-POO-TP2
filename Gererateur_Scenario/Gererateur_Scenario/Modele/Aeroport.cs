@@ -35,7 +35,7 @@ namespace Gererateur_Scenario
             Aeronef aeronef = FabriqueAeronef.Instance.CreerAeronef(nom, type, vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien, etat);
             Aeronefs.Add(aeronef);
         }
-        public void ModifierAeronef(string ancienNom, string nouveauNom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
+        /*public void ModifierAeronef(string ancienNom, string nouveauNom, TypeAeronef type, double vitesse, double tempsEmbarquement, double tempsDebarquement, double capacite, double tempsEntretien)
         {
             var aeronef = Aeronefs.FirstOrDefault(a => a.Nom.Equals(ancienNom, StringComparison.OrdinalIgnoreCase));
             if (aeronef == null)
@@ -72,7 +72,7 @@ namespace Gererateur_Scenario
                 default:
                     throw new ArgumentException("Type d'aéronef inconnu");
             }
-        }
+        }*/
 
         public void SupprimerAeronef(String nomAeronef) { 
             var aeronef = Aeronefs.FirstOrDefault(a => a.Nom.Equals(nomAeronef, StringComparison.OrdinalIgnoreCase));

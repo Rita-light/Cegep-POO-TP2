@@ -32,6 +32,7 @@ namespace SimulateurScenario.Modele
 
             if (aeronefEnvoye != null)
             {
+                LancerAnimation(aeronefEnvoye);
                 OnAeronefEnvoye?.Invoke(aeronefEnvoye);
                 return true;
             }
@@ -48,10 +49,20 @@ namespace SimulateurScenario.Modele
 
                 if (EstArrive(aeronef))
                 {
+                    var position = aeronef.PositionActuelle;
+                    var clientsATraiter =
+                        scenario.GetClients().Where(c => c.position.Distance(position) < 0.1 && !c.estTermine()).ToList();
+
+                    foreach (var client in clientsATraiter)
+                    {
+                        client.Traiter(aeronef);
+                        Console.WriteLine($"Client traite par {aeronef.Nom} a {position.Latitude},{position.Longitude}");
+                    }
                     aeronef.ChangerEtat(TypeEtat.Vol);
                     timer.Stop();
                     timer.Dispose();
                     timersDeplacements.Remove(aeronef);
+                    
                     NotifierArrivee(aeronef);
                 }
             };
@@ -139,7 +150,7 @@ namespace SimulateurScenario.Modele
                 scenario.GenererEvenementsSelonFrequence();
                 Console.WriteLine("Avancer Etat");
                 scenario.AvancerEtatAeronefs(DureePas);
-                Console.WriteLine("fin Avancer Etat");
+                Console.WriteLine("Fin Avancer Etat");
             }
             catch (Exception e)
             {
@@ -194,7 +205,7 @@ namespace SimulateurScenario.Modele
                     if (aeronef.EtatActuel == null)
                     {
                         aeronef.EtatActuel = aeronef.CreerEtatDepuisType(aeronef.typeEtat, null, null);
-                        Console.WriteLine("etat changé");
+                        Console.WriteLine("etat change");
                     }
                 }
             }

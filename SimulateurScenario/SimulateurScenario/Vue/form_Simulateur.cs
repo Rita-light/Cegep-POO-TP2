@@ -11,7 +11,7 @@ public partial class form_Simulateur : Form, IObservateur
     private Dictionary<string, Aeroport> nomVersAeroport = new Dictionary<string, Aeroport>();
     private Dictionary<Aeronef, PictureBox> marqueurAeronef = new();
     private Dictionary<Aeronef, Timer> timerDeplacement = new();
-    private Dictionary<Aeroport, PictureBox> marqueurEvenement = new Dictionary<Aeroport, PictureBox>();
+    private Dictionary<Evenement, PictureBox> marqueurEvenement = new Dictionary<Evenement, PictureBox>();
 
 
     public form_Simulateur()
@@ -20,7 +20,6 @@ public partial class form_Simulateur : Form, IObservateur
         //FacadeSimulateur.EvenementTermine(evenement);
 
     }
-//Traitement des événements/////////////////////////////////////////////////////////////////////////////////////////////
     public PictureBox GetMarqueurAeronef(Aeronef aeronef)
     {
         return marqueurAeronef.ContainsKey(aeronef) ? marqueurAeronef[aeronef] : null;
@@ -62,19 +61,19 @@ public partial class form_Simulateur : Form, IObservateur
         timerDeplacement[aeronef] = timer;
         timer.Start();
     }
-    
-    // private void SupprimerIconeEvenement(Evenement e)
-    // {
-    //     if (marqueurEvenement.ContainsKey(e))
-    //     {
-    //         this.Invoke((Action)(() => {
-    //             this.Controls.Remove(marqueurEvenement[e]); // Supprime l’icône
-    //             marqueurEvenement.Remove(e);
-    //         }));
-    //     }
-    // }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
+    public void SupprimerMarqueurEvenement(Evenement evenement)
+    {
+        if (marqueurEvenement.TryGetValue(evenement, out PictureBox pic))
+        {
+            carte.Controls.Remove(pic);
+            pic.Dispose();
+            marqueurEvenement.Remove(evenement);
+            Console.WriteLine($"[Vue] Marqueur supprimé pour l'événement : {evenement.typeEvenement} à {evenement.position}");
+        }
+    }
+
+    
     public void SetControleur(ControleurSimulateur ctrl)
     {
         this.controleur = ctrl;
@@ -89,6 +88,12 @@ public partial class form_Simulateur : Form, IObservateur
         }
 
         if (e == null) return;
+
+        if (e.EstTermine)
+        {
+            SupprimerMarqueurEvenement(e);
+            return;
+        }
 
         switch (e.typeEvenement)
         {
@@ -200,7 +205,7 @@ public partial class form_Simulateur : Form, IObservateur
         carte.Controls.Add(marqueur);
         marqueur.BringToFront();
         
-        //marqueurEvenement[evenement] = marqueur;
+        marqueurEvenement[e] = marqueur;
     }
 
     private void form_Simulateur_Load(object sender, EventArgs e)

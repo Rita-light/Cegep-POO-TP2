@@ -17,6 +17,7 @@ namespace SimulateurScenario.Model
         public Aeroport? Destination;
         public List<Aeroport>? Aeroports { get; set; }
         public List<Aeronef>? Aeronefs {get;set;}
+        public bool EstTermine { get; set; } = false;
 
         public void NotifierObservateurs() { }
     }

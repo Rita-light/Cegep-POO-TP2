@@ -15,7 +15,8 @@ namespace SimulateurScenario
         Observation, 
         ChargementTermine,
         NouveauClient,
-        AfficherVol
+        AfficherVol,
+        EvenementTermine
         
         
     }

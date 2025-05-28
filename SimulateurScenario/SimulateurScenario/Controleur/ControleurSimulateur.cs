@@ -33,6 +33,8 @@ namespace SimulateurScenario.Controleur
         public void TraiterEvenement(Evenement evenement)
         {
             facade.TraiterEvenement(evenement);
+            evenement.EstTermine = true;
+            evenement.NotifierObservateurs();
         }
 
         public void LancerDeplacement(Aeronef aeronef)

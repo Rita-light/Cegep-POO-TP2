@@ -50,11 +50,11 @@ namespace SimulateurScenario.Model
                         Destination = e.Destination
                     };
                 case TypeEvenement.Secours:
-                    return new Secours(); // ou avec position
+                    return new Secours(e.position); 
                 case TypeEvenement.Incendie:
-                    return new Incendie { Intensite = e.Intensite ?? 5 };
+                    return new Incendie (e.position, e.Intensite ?? 5);
                 case TypeEvenement.Observation:
-                    return new Observation();
+                    return new Observation(e.position);
                 default:
                     throw new ArgumentException("Type d'événement non reconnu.");
             }

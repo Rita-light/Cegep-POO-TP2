@@ -26,7 +26,6 @@ namespace SimulateurScenario.Modele
 
             
         }
-//Traitement des événements/////////////////////////////////////////////////////////////////////////////////////////////
         public bool TraiterEvenement(Evenement evenement)
         {
             Aeronef aeronefEnvoye = scenario.TraiterEvenement(evenement);
@@ -59,6 +58,16 @@ namespace SimulateurScenario.Modele
                         client.Traiter(aeronef);
                         Console.WriteLine($"Client traite par {aeronef.Nom} a {position.Latitude},{position.Longitude}");
                     }
+
+                    var evenement = scenario.GetEvenements().FirstOrDefault(ev => ev.position.Distance(position) < 0.1 && !ev.EstTermine);
+                    if (evenement != null)
+                    {
+                        evenement.NotifierObservateurs();
+                        Console.WriteLine($"Evenement traite par {aeronef.Nom} a {position.Latitude},{position.Longitude}");
+                        evenement.EstTermine = true; // Marquer l'événement comme terminé
+                        FacadeSimulateur.EvenementTermine(evenement);
+                    }
+
                     aeronef.ChangerEtat(TypeEtat.Vol);
                     timer.Stop();
                     timer.Dispose();

@@ -26,9 +26,7 @@ namespace SimulateurScenario.Model
         public Position PositionDepart { get; set; }
         public Aeroport Destination { get; set; }
         public Position  PositionDestination{ get; set; }
-        
-        public Aeroport AeroportDepart { get; set; }
-        
+                
         public EtatAeronef EtatActuel { get; set; }
 
         public Aeronef() {}

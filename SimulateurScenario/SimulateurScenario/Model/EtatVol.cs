@@ -10,7 +10,7 @@ namespace SimulateurScenario.Model
     {
         public override void AvancerPas(double pas)
         {
-            Console.WriteLine($"[Vol] Aéronef en vol pendant {pas} pas.");
+            Console.WriteLine($"[Vol] Aeronef en vol pendant {pas} pas.");
         }
 
         public override TypeEtat GetTypeEtat()
@@ -20,15 +20,13 @@ namespace SimulateurScenario.Model
         
         public override void Avancer(double dureeMinutes, Aeronef aeronef, Scenario scenario)
 {
-    // ✅ Vérification de la destination avant tout
     if (aeronef.PositionDestination == null)
     {
-        Console.WriteLine($"❌ [ERREUR] {aeronef.Nom} n’a pas de position de destination définie.");
+        Console.WriteLine($"[ERREUR] {aeronef.Nom} n’a pas de position de destination definie.");
         aeronef.ChangerEtat(TypeEtat.Sol);
         return;
     }
 
-    // 🚀 Calcul du déplacement
     double distance = aeronef.Vitesse * (dureeMinutes / 60.0); // km/h * heures
     aeronef.PositionActuelle = Position.CalculerNouvellePosition(
         aeronef.PositionActuelle,
@@ -37,15 +35,13 @@ namespace SimulateurScenario.Model
 
     Console.WriteLine($"[Vol] {aeronef.Nom} avance. Nouvelle position : {aeronef.PositionActuelle}");
 
-    // 🎯 Vérification d’arrivée
     if (EstArrive(aeronef.PositionActuelle, aeronef.PositionDestination))
     {
         aeronef.PositionActuelle = aeronef.PositionDestination;
-        Console.WriteLine($"✅ [Vol] {aeronef.Nom} est arrivé à destination.");
+        Console.WriteLine($"[Vol] {aeronef.Nom} est arrive a destination.");
 
         if (aeronef.Destination != null)
         {
-            // ✈️ C’est un vol planifié (passager ou cargo)
             scenario.aeronefsAAjouter.Add(aeronef);
 
             if (aeronef is AeronefTransport transport)
@@ -60,11 +56,9 @@ namespace SimulateurScenario.Model
         }
         else if (aeronef.PositionDepart != null)
         {
-            // 🚨 Vol d’urgence : retour à la base
             Console.WriteLine($"[Urgence] {aeronef.Nom} retourne a la base ({aeronef.PositionDepart})");
 
             aeronef.PositionDestination = aeronef.PositionDepart;
-            aeronef.Destination = scenario.GetAeroportProche(aeronef.PositionDepart);
             aeronef.PositionDepart = null;
 
             aeronef.ChangerEtat(TypeEtat.Vol);
@@ -72,8 +66,7 @@ namespace SimulateurScenario.Model
         }
         else
         {
-            // 🟡 Aéronef sans destination claire : atterrissage d’urgence
-            Console.WriteLine($"⚠️ [Vol] {aeronef.Nom} n’a ni Destination ni PositionDepart définie.");
+            Console.WriteLine($"[Vol] {aeronef.Nom} n’a ni Destination ni PositionDepart definie.");
             aeronef.ChangerEtat(TypeEtat.Sol);
         }
     }

@@ -13,6 +13,7 @@ namespace SimulateurScenario.Model
         public List<FrequenceEvenement> m_frequence { get; set; } =  new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
         private List<Client> clientsEvenements = new List<Client>();
+        private List<Evenement> m_evenements = new List<Evenement>();
         public double HeureActuelle { get; set; } = 0;
         
         private Dictionary<TypeEvenement, double> dernieresGenerations = new Dictionary<TypeEvenement, double>();
@@ -128,7 +129,9 @@ namespace SimulateurScenario.Model
             return m_observateurs;
         }
         public List<Aeroport> GetAeroports() => m_aeroport;
-        
+
+        public List<Evenement> GetEvenements() => m_evenements;
+
         public Aeroport GetAeroportAleatoire()
         {
             if (m_aeroport == null || m_aeroport.Count == 0)

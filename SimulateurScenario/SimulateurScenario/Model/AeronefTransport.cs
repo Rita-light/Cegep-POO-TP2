@@ -20,6 +20,8 @@ namespace SimulateurScenario.Model
             TempsDebarquement = tempsDebarquement;
         }
 
+        public abstract double CalculerTempsDebarquementTotal();
+
         public override string ToString()
         {
             return $"{base.ToString()}, TempsEmbarquement: {TempsEmbarquement}, TempsDebarquement: {TempsDebarquement}";

@@ -13,12 +13,10 @@ namespace SimulateurScenario.Model
         public List<FrequenceEvenement> m_frequence { get; set; } =  new List<FrequenceEvenement>();
         private List<IObservateur> m_observateurs = new List<IObservateur>();
         private List<Client> clientsEvenements = new List<Client>();
-        
         public double HeureActuelle { get; set; } = 0;
         
-        // Garde la dernière heure de génération par type d'événement
         private Dictionary<TypeEvenement, double> dernieresGenerations = new Dictionary<TypeEvenement, double>();
-        
+        public List<Aeronef> aeronefsAAjouter = new();
         
         private static readonly Random rnd = new Random();
         public Scenario()
@@ -216,47 +214,59 @@ namespace SimulateurScenario.Model
         
         [SuppressMessage("ReSharper.DPA", "DPA0000: DPA issues")]
         public void GenererCargos()
-          {
-              Console.WriteLine("generer Cargo 1");
-              Random rnd = new Random();
+        {
+            Console.WriteLine("Début de la génération des cargaisons...");
+            Random rnd = new Random();
 
-              foreach (Aeroport depart in GetAeroports())
-              {
-                  double poidsTotalCible = rnd.Next((int)depart.MinCargaisons, (int)depart.MaxCargaisons + 1);
-                  double poidsTotalActuel = 0;
+            foreach (Aeroport depart in GetAeroports())
+            {
+                double poidsRestant = depart.MaxCargaisons - depart.GetPoidsActuel();
+                if (poidsRestant <= 0) continue; 
 
-                  while (poidsTotalActuel < poidsTotalCible)
-                  {
-                      // Générer un poids de cargaison entre 0.5 et 3.0 tonnes
-                      double poidsCargaison = Math.Round(2 + rnd.NextDouble() * 3, 2);
+                double poidsTotalCible = Math.Min(poidsRestant, rnd.Next((int)depart.MinCargaisons, (int)depart.MaxCargaisons + 1));
+                double poidsTotalActuel = 0;
 
-                      // Vérification pour ne pas dépasser le poids cible
-                      if (poidsTotalActuel + poidsCargaison > poidsTotalCible)
-                      {
-                          // Ajuster le dernier poids pour correspondre exactement au poids cible si possible
-                          poidsCargaison = Math.Round(poidsTotalCible - poidsTotalActuel, 2);
-                      }
+                while (poidsTotalActuel < poidsTotalCible)
+                {
+                    double poidsRestantBoucle = poidsTotalCible - poidsTotalActuel;
+                    if (poidsRestantBoucle < 0.5)
+                    {
+                        poidsTotalActuel = poidsTotalCible; // Forcer la sortie
+                        break;
+                    }
+                    
+                    // Générer un poids de cargaison entre 0.5 et 3.0 tonnes
+                    double poidsCargaison = Math.Round(0.5 + rnd.NextDouble() * 2.5, 2);
 
-                      Aeroport dest = GetAeroportAleatoireDifferent(depart);
+                    // Ajuster le dernier poids pour correspondre exactement au poids cible si nécessaire
+                    if (poidsCargaison > poidsRestantBoucle)
+                    {
+                        poidsCargaison = Math.Round(poidsRestantBoucle, 2);
+                    }
 
-                      Evenement e = new Evenement
-                      {
-                          typeEvenement = TypeEvenement.Cargaison,
-                          position = depart.Position,
-                          PoidsCargo = poidsCargaison,
-                          Destination = dest
-                      };
+                    Aeroport dest = GetAeroportAleatoireDifferent(depart);
 
-                      Client c = FabriqueClient.Instance.CreerClient(e);
-                      e = null;
-                      depart.AjouterClient(c);
+                    Evenement e = new Evenement
+                    {
+                        typeEvenement = TypeEvenement.Cargaison,
+                        position = depart.Position,
+                        PoidsCargo = poidsCargaison,
+                        Destination = dest
+                    };
 
-                      poidsTotalActuel += poidsCargaison;
-                  }
-              }
-              Console.WriteLine("fin generer Cargo 2");
-              
-          }
+                    Client c = FabriqueClient.Instance.CreerClient(e);
+                    depart.AjouterClient(c);
+                    poidsTotalActuel += poidsCargaison;
+
+                    // Nettoyage de l'événement après utilisation
+                    e = null;
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+                    
+                }
+            }
+            Console.WriteLine("Fin de la génération des cargaisons.");
+        }
         
         public void GenererEvenementPour(TypeEvenement type)
         {
@@ -344,22 +354,20 @@ namespace SimulateurScenario.Model
         
        public void VerifierEtDeclencherEmbarquement(List<Aeroport> aeroports)
         {
-            Console.WriteLine("Début vérification 2");
+            Console.WriteLine("Début vérification embarquqtion");
             
             try
             {
                 foreach (var aeroport in aeroports)
                 {
-                    Console.WriteLine("Début vérification aéroport");
-
                     foreach (var aeronef in aeroport.Aeronefs)
                     {
                         if (aeronef.EtatActuel.GetTypeEtat() != TypeEtat.Sol){
-                            Console.WriteLine($"[INFO] Aéronef ignoré car son état est : {aeronef.EtatActuel.GetTypeEtat()}, {aeronef.Nom}");
+                            //Console.WriteLine($"[INFO] Aéronef {aeronef.Nom}ignoré car son état est : {aeronef.EtatActuel.GetTypeEtat()}, {aeronef.Nom}");
                             continue;
                         }
 
-                        Console.WriteLine($"Vérification de l'aéronef {aeronef.Nom} au sol.");
+                        // Console.WriteLine($"Vérification de l'aéronef {aeronef.Nom} au sol.");
 
                         if (aeronef is AvionPassager avionPassager)
                         {
@@ -389,18 +397,20 @@ namespace SimulateurScenario.Model
 
                                     // Mise à jour des positions
                                     avionPassager.PositionActuelle = aeroport.Position;
-                                    avionPassager.PositionDestination = destinationAeroport.Position;
+                                    avionPassager.PositionDepart = aeroport.Position;
+                                    avionPassager.Destination = destinationAeroport;
 
 
                                     // Calcul du temps d'embarquement
+                                    avionPassager.nombreClientEmbarque = aEmbarquer.Count;
                                     double tempsTotal = aEmbarquer.Count * avionPassager.TempsEmbarquement;
 
-                                    Console.WriteLine(
-                                        $"Passagers prêts à embarquer pour {grp.Destination.Nom}. Temps total : {tempsTotal} minutes.");
+                                    Console.WriteLine($"Passagers prêts à embarquer pour {grp.Destination.Nom}. Temps total : {tempsTotal} minutes.");
 
                                     // Changement d'état
-                                    aeronef.CreerEtatDepuisType(TypeEtat.Embarquement,
+                                    aeronef.ChangerEtat(TypeEtat.Embarquement,
                                         tempsEmbarquementTotal: tempsTotal);
+                                    Console.WriteLine($"Aeronef changé{aeronef.Nom} : {aeronef.EtatActuel.GetTypeEtat()}");
                                     break;
                                 }
                             }
@@ -444,12 +454,14 @@ namespace SimulateurScenario.Model
 
                                     // Mise à jour des positions
                                     avionCargo.PositionActuelle = aeroport.Position;
-                                    avionCargo.PositionDestination = destinationAeroport.Position;
+                                    avionCargo.PositionDepart = aeroport.Position;
+                                    avionCargo.Destination = destinationAeroport;
 
 
                                     // Calcul du temps d’embarquement
                                     double tempsTotal = aEmbarquer.Sum(c => c.PoidsCargaison) *
                                                         avionCargo.TempsEmbarquement;
+                                    avionCargo.nombreTonneCharge = aEmbarquer.Sum(c => c.PoidsCargaison);
 
                                     Console.WriteLine(
                                         $"Cargo prêt à embarquer pour {grp.Destination.Nom}. Temps total : {tempsTotal} minutes.");
@@ -471,17 +483,51 @@ namespace SimulateurScenario.Model
             }
         }
        
-       
         public void AvancerEtatAeronefs(double dureePas)
         {
+            // Liste des changements d’aéroport à faire après
+            
+            
             foreach (var aeroport in m_aeroport)
             {
+                var aeronefs = aeroport.Aeronefs.ToList();
                 foreach (var aeronef in aeroport.Aeronefs)
                 {
-                    aeronef.EtatActuel.Avancer(dureePas, aeronef);
+                    Console.WriteLine($"Avancer Etat de {aeronef.Nom}");
+                    aeronef.EtatActuel.Avancer(dureePas, aeronef, this);
                 }
             }
+
+            foreach (var aeronef in aeronefsAAjouter)
+            {
+                ChangerAeroport(aeronef);
+               
+            }
+            aeronefsAAjouter.Clear();
+
+            var enVol = m_aeroport.SelectMany(a => a.Aeronefs).Where(a => a.EtatActuel is EtatVol).ToList();
+            
+            
         }
+        
+        
+        
+        public void ChangerAeroport(Aeronef aeronef)
+        {
+            Aeroport aeroportDestination = aeronef.Destination;
+            
+            Aeroport aeroportActuel = m_aeroport.FirstOrDefault(a => a.Aeronefs.Contains(aeronef));
+
+            if (aeroportActuel != null)
+            {
+                aeroportActuel.Aeronefs.Remove(aeronef);
+            }
+            
+            // Ajouter à l’aéroport de destination
+            aeroportDestination.AjouterAeronef(aeronef);
+            Console.WriteLine("Appartenance Aeroport changé");            
+        }
+
         
         
         public ScenarioMemento CreateMemento()

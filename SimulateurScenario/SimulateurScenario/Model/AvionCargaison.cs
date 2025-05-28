@@ -9,6 +9,7 @@ namespace SimulateurScenario.Model
     public class AvionCargaison : AeronefTransport
     {
         public double Capacite { get; set; }
+        public double nombreTonneCharge {get;set;}
 
         public AvionCargaison() : base() { }
 
@@ -17,6 +18,11 @@ namespace SimulateurScenario.Model
         {
             Capacite = capacite;
             type = TypeAeronef.Cargo;
+        }
+        
+        public override double CalculerTempsDebarquementTotal()
+        {
+            return nombreTonneCharge * TempsDebarquement;
         }
 
         public override string ToString()

@@ -14,6 +14,9 @@ namespace SimulateurScenario
         Incendie,
         Observation, 
         ChargementTermine,
-        NouveauClient
+        NouveauClient,
+        AfficherVol
+        
+        
     }
 }

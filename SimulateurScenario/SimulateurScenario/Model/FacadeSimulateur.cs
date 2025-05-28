@@ -67,11 +67,11 @@ namespace SimulateurScenario.Model
         public void AvancerUnPas() => simulateur.AvancerUnPas();
 
         public void AvancerPlusieursPas(int nbPas) => simulateur.AvancerPlusieursPas(nbPas);
-
-       /* public void TraiterEvenement(Evenement evenement)
-        {
-            simulateur.TraiterEvenement(evenement);
-        }*/
+       
+       public void Reinitialiserscenario()
+       {
+           simulateur.ReinitialiserScenario();
+       }
         
 
        

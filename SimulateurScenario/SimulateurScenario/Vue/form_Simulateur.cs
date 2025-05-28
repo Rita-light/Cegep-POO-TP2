@@ -396,4 +396,10 @@ public partial class form_Simulateur : Form, IObservateur
             MessageBox.Show("Veuillez entrer un nombre de pas valide.");
         }
     }
+
+    private void btn_redemarrer_Click(object sender, EventArgs e)
+    {
+        controleur.Reinitialiserscenario();
+        MessageBox.Show("Scenario remis à zéro");
+    }
 }

@@ -73,5 +73,10 @@ namespace SimulateurScenario.Controleur
             facade.ChargerScenario(cheminFichier);
             Initialiser();
         }
+        
+        public void Reinitialiserscenario()
+        {
+            facade.Reinitialiserscenario();
+        }
     }
 }

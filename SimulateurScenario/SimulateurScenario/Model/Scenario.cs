@@ -522,6 +522,10 @@ namespace SimulateurScenario.Model
         public void RestoreMemento(ScenarioMemento memento)
         {
             m_aeroport = memento.Aeroports.Select(a => a.Clone()).ToList();
+            m_aeroport = memento.Aeroports.Select(a => a.Clone()).ToList();
+            // Il peut être pertinent de réinitialiser les clientsEvenements, HeureActuelle, etc.
+            clientsEvenements.Clear();
+            HeureActuelle = 0;
         }
         
         

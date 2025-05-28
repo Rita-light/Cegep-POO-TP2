@@ -11,6 +11,9 @@ public class CaretakerScenario
 
     public void RestaurerEtatInitial(Scenario scenario)
     {
-        scenario.RestoreMemento(_mementoInitial);
+        if (_mementoInitial != null)
+        {
+            scenario.RestoreMemento(_mementoInitial);
+        }
     }
 }

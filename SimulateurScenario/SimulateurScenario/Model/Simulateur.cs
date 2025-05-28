@@ -9,6 +9,7 @@ namespace SimulateurScenario.Modele
     public class Simulateur
     {
         private Scenario scenario;
+        private CaretakerScenario caretaker = new CaretakerScenario();
         private Dictionary<Aeronef, Timer> timersDeplacements;
         
         private System.Timers.Timer simulationTimer;
@@ -209,7 +210,7 @@ namespace SimulateurScenario.Modele
                     }
                 }
             }
-            
+            caretaker.EnregistrerEtatInitial(scenario);
             // notifier la vue
             Evenement evt = new Evenement
             {
@@ -218,6 +219,23 @@ namespace SimulateurScenario.Modele
             };
             
             scenario.NotifierObservateur(evt);
+        }
+        
+        public void ReinitialiserScenario()
+        {
+            simulationEnCours = false;
+            simulationTimer?.Stop();
+            timersDeplacements.Clear();
+
+            caretaker.RestaurerEtatInitial(scenario);
+            Evenement evt = new Evenement
+            {
+                typeEvenement = TypeEvenement.NouveauClient,
+                Aeroports = scenario.m_aeroport
+            };
+            scenario.NotifierObservateur(evt);
+            Console.WriteLine("Scenario reinitialisé");
+           
         }
         
         

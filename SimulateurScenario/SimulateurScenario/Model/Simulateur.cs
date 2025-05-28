@@ -13,7 +13,7 @@ namespace SimulateurScenario.Modele
         
         private System.Timers.Timer simulationTimer;
         private bool simulationEnCours = false;
-        private double pas { get; set; } = 5;
+        private double DureePas { get; set; } = 5;
         
         
         
@@ -110,16 +110,13 @@ namespace SimulateurScenario.Modele
         public void DemarrerSimulation()
         {
             InitialiserClient();
-            Evenement evt = new Evenement
+            /*Evenement evt = new Evenement
             {
                 typeEvenement = TypeEvenement.NouveauClient,
                 Aeroports = scenario.m_aeroport
             };
-            scenario.NotifierObservateur(evt);
+            scenario.NotifierObservateur(evt);*/
             //test
-            scenario.GenererEvenementPour(TypeEvenement.Incendie);
-            scenario.GenererEvenementPour(TypeEvenement.Secours);
-            scenario.GenererEvenementPour(TypeEvenement.Observation);
             
         }
         
@@ -141,9 +138,21 @@ namespace SimulateurScenario.Modele
         
         public void AvancerUnPas()
         {
-            scenario.HeureActuelle += pas;
+            scenario.HeureActuelle += DureePas;
             // Génère les événement
-            scenario.GenererEvenementsSelonFrequence();
+            
+            try
+            {
+                Console.WriteLine("Generer Evenement");
+                scenario.GenererEvenementsSelonFrequence();
+                Console.WriteLine("Avancer Etat");
+                scenario.AvancerEtatAeronefs(DureePas);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
             
         }
 
@@ -159,7 +168,13 @@ namespace SimulateurScenario.Modele
         {
             scenario.GenererPassagers();
             scenario.GenererCargos();
-            scenario.VerifierEtDeclencherEmbarquement();
+            Evenement evt = new Evenement
+            {
+                typeEvenement = TypeEvenement.NouveauClient,
+                Aeroports = scenario.m_aeroport
+            };
+            scenario.NotifierObservateur(evt);
+            scenario.VerifierEtDeclencherEmbarquement(scenario.m_aeroport);
         }
 
         public void AfficherVols() { }
@@ -174,7 +189,24 @@ namespace SimulateurScenario.Modele
             }
 
             scenario = nouveauScenario;
-           //caretaker.EnregistrerEtatInitial(scenario);
+            foreach (var aeroport in scenario.m_aeroport)
+            {
+                foreach (var aeronef in aeroport.Aeronefs)
+                {
+                    // Si le type d’état est non défini, on met Sol par défaut
+                    if (!Enum.IsDefined(typeof(TypeEtat), aeronef.typeEtat))
+                    {
+                        aeronef.typeEtat = TypeEtat.Sol;
+                    }
+
+                    // Sécurité : si EtatActuel est null, on le crée
+                    if (aeronef.EtatActuel == null)
+                    {
+                        aeronef.EtatActuel = aeronef.CreerEtatDepuisType(aeronef.typeEtat, null, null);
+                        Console.WriteLine("etat changé");
+                    }
+                }
+            }
             
             // notifier la vue
             Evenement evt = new Evenement
@@ -188,7 +220,7 @@ namespace SimulateurScenario.Modele
         
         
 
-        public void GenererEvenementPour(TypeEvenement type)
+       /* public void GenererEvenementPour(TypeEvenement type)
         {
             Random rnd = new Random();
             Evenement e = new Evenement();
@@ -234,7 +266,7 @@ namespace SimulateurScenario.Modele
                 scenario.NotifierObservateur(e);
             }
 
-        }
+        }*/
         
         
         /*public void VerifierEtDeclencherEmbarquement()

@@ -62,6 +62,32 @@ namespace SimulateurScenario
             double deltay = Math.Pow(position.Latitude - this.Latitude, 2);
             return Math.Sqrt(deltax + deltay);
         }
+        
+        /// <summary>
+        /// Calcule une nouvelle position en se rapprochant de la destination selon la distance donnée.
+        /// Si la distance restante est inférieure ou égale à la distance à parcourir, la destination est atteinte.
+        /// </summary>
+        public static Position CalculerNouvellePosition(Position actuelle, Position destination, double distance)
+        {
+            double dx = destination.Longitude - actuelle.Longitude;
+            double dy = destination.Latitude - actuelle.Latitude;
+            double distanceTotale = Math.Sqrt(dx * dx + dy * dy);
+
+            if (distanceTotale == 0 || distance >= distanceTotale)
+            {
+                // Destination atteinte ou dépassée
+                return destination.Clone();
+            }
+
+            // Calcul du ratio pour se déplacer proportionnellement
+            double ratio = distance / distanceTotale;
+
+            double nouvelleLongitude = actuelle.Longitude + dx * ratio;
+            double nouvelleLatitude = actuelle.Latitude + dy * ratio;
+
+            return new Position(nouvelleLatitude, nouvelleLongitude);
+        }
+
 
         
 

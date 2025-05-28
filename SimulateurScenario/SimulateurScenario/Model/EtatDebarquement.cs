@@ -8,6 +8,12 @@ namespace SimulateurScenario.Model
 {
     class EtatDebarquement : EtatAeronef
     {
+        private double tempsRestant;
+        
+        public EtatDebarquement(double dureeDebarquement)
+        {
+            tempsRestant = dureeDebarquement;
+        }
         public override void AvancerPas(double pas)
         {
             Console.WriteLine($"[Démbarquement] Aéronef en embarquement pendant {pas} pas.");
@@ -16,6 +22,15 @@ namespace SimulateurScenario.Model
         public override TypeEtat GetTypeEtat()
         {
             return TypeEtat.Embarquement;
+        }
+        
+        public override void Avancer(double dureeMinutes, Aeronef aeronef)
+        {
+            tempsRestant -= dureeMinutes;
+            if (tempsRestant <= 0)
+            {
+                aeronef.ChangerEtat(TypeEtat.Entretien);
+            }
         }
     }
 }

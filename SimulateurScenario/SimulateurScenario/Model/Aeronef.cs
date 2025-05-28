@@ -35,21 +35,27 @@ namespace SimulateurScenario.Model
             Vitesse = vitesse;
             TempsEntretien = tempsEntretien;
             typeEtat = etat;
-            EtatActuel = CreerEtatDepuisType(typeEtat);
         }
         
-        private EtatAeronef CreerEtatDepuisType(TypeEtat type)
+        public EtatAeronef CreerEtatDepuisType(TypeEtat type, double? tempsEmbarquementTotal = null, double? tempsDebarquementTotal = null)
         {
             return type switch
             {
-                TypeEtat.Entretien => new EtatEntretien(),
+                TypeEtat.Entretien => new EtatEntretien(TempsEntretien),
                 TypeEtat.Vol => new EtatVol(),
                 TypeEtat.Sol => new EtatSol(),
-                TypeEtat.Embarquement => new EtatEmbarquement(),
-                TypeEtat.Debarquement => new EtatDebarquement(),
+                TypeEtat.Embarquement => tempsEmbarquementTotal.HasValue
+                    ? new EtatEmbarquement(tempsEmbarquementTotal.Value)
+                    : throw new ArgumentException("Le temps d'embarquement est requis pour l'état Embarquement."),
+
+                TypeEtat.Debarquement => tempsDebarquementTotal.HasValue
+                    ? new EtatDebarquement(tempsDebarquementTotal.Value)
+                    : throw new ArgumentException("Le temps de débarquement est requis pour l'état Débarquement."),
+
                 _ => throw new ArgumentException("Type d'état inconnu", nameof(type))
             };
         }
+
         
 
         public void Avancer(Position destination)

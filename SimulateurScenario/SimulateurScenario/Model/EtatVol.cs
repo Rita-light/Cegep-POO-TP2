@@ -17,5 +17,28 @@ namespace SimulateurScenario.Model
         {
             return TypeEtat.Vol;
         }
+        
+        public override void Avancer(double dureeMinutes, Aeronef aeronef)
+        {
+            double distance = aeronef.Vitesse * (dureeMinutes / 60.0); // Vitesse en km/h * durée en heures
+
+            aeronef.PositionActuelle = Position.CalculerNouvellePosition(
+                aeronef.PositionActuelle,
+                aeronef.PositionDestination,
+                distance);
+
+            if (EstArrive(aeronef.PositionActuelle, aeronef.PositionDestination))
+            {
+                aeronef.PositionActuelle = aeronef.PositionDestination;
+                aeronef.ChangerEtat(TypeEtat.Debarquement); 
+            }
+            
+            
+        }
+        
+        private bool EstArrive(Position pos1, Position pos2)
+        {
+            return pos1.Distance(pos2) < 1.0; 
+        }
     }
 }

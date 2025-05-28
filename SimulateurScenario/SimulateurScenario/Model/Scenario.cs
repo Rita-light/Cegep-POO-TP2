@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -184,6 +185,7 @@ namespace SimulateurScenario.Model
         
          public void GenererPassagers()
         {
+            Console.WriteLine("generer pasagers 1");
             Random rnd = new Random();
 
             foreach (Aeroport aeroportDepart in GetAeroports())
@@ -210,8 +212,10 @@ namespace SimulateurScenario.Model
             }
         }
         
+        [SuppressMessage("ReSharper.DPA", "DPA0000: DPA issues")]
         public void GenererCargos()
           {
+              Console.WriteLine("generer Cargo 1");
               Random rnd = new Random();
 
               foreach (Aeroport depart in GetAeroports())
@@ -222,7 +226,7 @@ namespace SimulateurScenario.Model
                   while (poidsTotalActuel < poidsTotalCible)
                   {
                       // Générer un poids de cargaison entre 0.5 et 3.0 tonnes
-                      double poidsCargaison = Math.Round(0.5 + rnd.NextDouble() * 2.5, 2);
+                      double poidsCargaison = Math.Round(2 + rnd.NextDouble() * 3, 2);
 
                       // Vérification pour ne pas dépasser le poids cible
                       if (poidsTotalActuel + poidsCargaison > poidsTotalCible)
@@ -242,11 +246,14 @@ namespace SimulateurScenario.Model
                       };
 
                       Client c = FabriqueClient.Instance.CreerClient(e);
+                      e = null;
                       depart.AjouterClient(c);
 
                       poidsTotalActuel += poidsCargaison;
                   }
               }
+              Console.WriteLine("fin generer Cargo 2");
+              
           }
         
         public void GenererEvenementPour(TypeEvenement type)
@@ -308,12 +315,10 @@ namespace SimulateurScenario.Model
                     {
                         case TypeEvenement.Passager:
                             GenererPassagers();
-                            VerifierEtDeclencherEmbarquement();
                             break;
 
                         case TypeEvenement.Cargaison:
                             GenererCargos();
-                            VerifierEtDeclencherEmbarquement();
                             break;
 
                         case TypeEvenement.Observation:
@@ -324,50 +329,99 @@ namespace SimulateurScenario.Model
                     }
                 }
             }
+            VerifierEtDeclencherEmbarquement(m_aeroport);
+            Console.WriteLine("Mettre à jours vue");
+            Evenement evt = new Evenement
+            {
+                typeEvenement = TypeEvenement.NouveauClient,
+                Aeroports = m_aeroport
+            };
+            NotifierObservateur(evt);
+            
         }
         
-        public void VerifierEtDeclencherEmbarquement()
+       public void VerifierEtDeclencherEmbarquement(List<Aeroport> aeroports)
         {
-            foreach (var aeroport in m_aeroport)
+            Console.WriteLine("Début vérification 2");
+            
+            try
             {
-                foreach (var aeronef in aeroport.Aeronefs)
+                foreach (var aeroport in aeroports)
                 {
-                    if (aeronef.EtatActuel.GetTypeEtat() == TypeEtat.Sol)
+                    Console.WriteLine("Début vérification aéroport");
+
+                    foreach (var aeronef in aeroport.Aeronefs)
                     {
+                        if (aeronef.EtatActuel.GetTypeEtat() != TypeEtat.Sol){
+                            Console.WriteLine($"[INFO] Aéronef ignoré car son état est : {aeronef.EtatActuel.GetTypeEtat()}, {aeronef.Nom}");
+                            continue;
+                        }
+
+                        Console.WriteLine($"Vérification de l'aéronef {aeronef.Nom} au sol.");
+
                         if (aeronef is AvionPassager avionPassager)
                         {
-                            var groupe = aeroport.Clients
+                            var groupes = aeroport.Clients
                                 .OfType<Passager>()
-                                .GroupBy(c => c.Destination)
-                                .Select(g => new { Destination = g.Key, Nombre = g.Count(), Clients = g.ToList() });
+                                .GroupBy(p => p.Destination)
+                                .Select(g => new
+                                {
+                                    Destination = g.Key,
+                                    Nombre = g.Count(),
+                                    Clients = g.ToList()
+                                });
 
-                            foreach (var grp in groupe)
+                            foreach (var grp in groupes)
                             {
                                 if (grp.Nombre >= 0.8 * avionPassager.Capacite)
                                 {
-                                    // Sélection des clients à embarquer
                                     var aEmbarquer = grp.Clients.Take(avionPassager.Capacite).ToList();
                                     aeroport.Clients.RemoveAll(c => aEmbarquer.Contains(c));
-                                    // Déclencher embarquement
-                                   // DemarrerEmbarquement(avionPassager, aEmbarquer, grp.Destination, aeroport);
-                                   Console.WriteLine("passager près à embarquer");
+
+                                    var destinationAeroport = grp.Destination;
+                                    if (destinationAeroport == null)
+                                    {
+                                        Console.WriteLine($"[Erreur] Destination {grp.Destination.Nom} introuvable !");
+                                        continue;
+                                    }
+
+                                    // Mise à jour des positions
+                                    avionPassager.PositionActuelle = aeroport.Position;
+                                    avionPassager.PositionDestination = destinationAeroport.Position;
+
+
+                                    // Calcul du temps d'embarquement
+                                    double tempsTotal = aEmbarquer.Count * avionPassager.TempsEmbarquement;
+
+                                    Console.WriteLine(
+                                        $"Passagers prêts à embarquer pour {grp.Destination.Nom}. Temps total : {tempsTotal} minutes.");
+
+                                    // Changement d'état
+                                    aeronef.CreerEtatDepuisType(TypeEtat.Embarquement,
+                                        tempsEmbarquementTotal: tempsTotal);
                                     break;
                                 }
                             }
                         }
                         else if (aeronef is AvionCargaison avionCargo)
                         {
-                            var groupe = aeroport.Clients
+                            var groupes = aeroport.Clients
                                 .OfType<Cargo>()
                                 .GroupBy(c => c.Destination)
-                                .Select(g => new { Destination = g.Key, TotalPoids = g.Sum(c => c.PoidsCargaison), Clients = g.ToList() });
+                                .Select(g => new
+                                {
+                                    Destination = g.Key,
+                                    TotalPoids = g.Sum(c => c.PoidsCargaison),
+                                    Clients = g.ToList()
+                                });
 
-                            foreach (var grp in groupe)
+                            foreach (var grp in groupes)
                             {
                                 if (grp.TotalPoids >= 0.8 * avionCargo.Capacite)
                                 {
                                     double poidsCumule = 0;
                                     var aEmbarquer = new List<Cargo>();
+
                                     foreach (var client in grp.Clients)
                                     {
                                         if (poidsCumule + client.PoidsCargaison <= avionCargo.Capacite)
@@ -378,8 +432,29 @@ namespace SimulateurScenario.Model
                                     }
 
                                     aeroport.Clients.RemoveAll(c => aEmbarquer.Contains(c));
-                                    Console.WriteLine("Cargo près à etre chargé");
-                                    //DemarrerEmbarquement(avionCargo, aEmbarquer, grp.Destination, aeroport);
+
+                                    var destinationAeroport = grp.Destination;
+                                    if (destinationAeroport == null)
+                                    {
+                                        Console.WriteLine($"[Erreur] Destination {grp.Destination.Nom} introuvable !");
+                                        continue;
+                                    }
+
+                                    // Mise à jour des positions
+                                    avionCargo.PositionActuelle = aeroport.Position;
+                                    avionCargo.PositionDestination = destinationAeroport.Position;
+
+
+                                    // Calcul du temps d’embarquement
+                                    double tempsTotal = aEmbarquer.Sum(c => c.PoidsCargaison) *
+                                                        avionCargo.TempsEmbarquement;
+
+                                    Console.WriteLine(
+                                        $"Cargo prêt à embarquer pour {grp.Destination.Nom}. Temps total : {tempsTotal} minutes.");
+
+                                    // Changement d'état
+                                    aeronef.CreerEtatDepuisType(TypeEtat.Embarquement,
+                                        tempsEmbarquementTotal: tempsTotal);
                                     break;
                                 }
                             }
@@ -387,13 +462,24 @@ namespace SimulateurScenario.Model
                     }
                 }
             }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
-        
-        
-        
-        
-        
-        
+       
+       
+        public void AvancerEtatAeronefs(double dureePas)
+        {
+            foreach (var aeroport in m_aeroport)
+            {
+                foreach (var aeronef in aeroport.Aeronefs)
+                {
+                    aeronef.EtatActuel.Avancer(dureePas, aeronef);
+                }
+            }
+        }
         
         
         public ScenarioMemento CreateMemento()

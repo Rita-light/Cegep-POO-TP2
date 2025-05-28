@@ -17,5 +17,10 @@ namespace SimulateurScenario.Model
         {
             return TypeEtat.Debarquement;
         }
+        
+        public override void Avancer(double dureeMinutes, Aeronef aeronef)
+        {
+            // Aucun changement d'état, il attend une affectation
+        }
     }
 }

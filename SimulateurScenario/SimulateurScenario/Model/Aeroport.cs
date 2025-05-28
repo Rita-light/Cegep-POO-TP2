@@ -68,10 +68,37 @@ namespace SimulateurScenario.Model
             if (Clients == null) Clients = new List<Client>();
             Clients.Add(c);
         }
+        
 
         
         
         public List<Client> GetClients() => Clients;
+        
+        public double GetPoidsActuel()
+        {
+            double poidsTotal = 0;
+
+            foreach (Client client in Clients)
+            {
+                if (client is Cargo cargo)
+                {
+                    poidsTotal += cargo.PoidsCargaison;
+                }
+            }
+
+            return poidsTotal;
+        }
+        
+        public void AjouterAeronef(Aeronef a)
+        {
+            Aeronefs.Add(a);
+        }
+
+        public void RetirerAeronef(Aeronef a)
+        {
+            Aeronefs.Remove(a);
+        }
+
         
         public Aeroport Clone()
         {

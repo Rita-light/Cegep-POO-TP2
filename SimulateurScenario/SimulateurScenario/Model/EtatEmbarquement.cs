@@ -23,11 +23,13 @@ namespace SimulateurScenario.Model
             return TypeEtat.Embarquement;
         }
         
-        public override void Avancer(double dureeMinutes, Aeronef aeronef)
+        public override void Avancer(double dureeMinutes, Aeronef aeronef , Scenario scenario)
         {
             tempsRestant -= dureeMinutes;
+            Console.WriteLine($"[Ebarquemment] : tems restant de {tempsRestant} minutes.");
             if (tempsRestant <= 0)
             {
+                Console.WriteLine("pret pour vol");
                 aeronef.ChangerEtat(TypeEtat.Vol); // état suivant logique
             }
         }

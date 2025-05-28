@@ -24,10 +24,10 @@ namespace SimulateurScenario.Model
             return TypeEtat.Entretien;
         }
         
-        public override void Avancer(double dureeMinutes, Aeronef aeronef)
+        public override void Avancer(double dureeMinutes, Aeronef aeronef , Scenario scenario)
         {
             tempsRestant -= dureeMinutes;
-            Console.WriteLine($"[Entretien] Aéronef en entretien pendant {tempsRestant} pas");
+            Console.WriteLine($"[Entretien] Aéronef en entretien pendant {tempsRestant} minutes");
             if (tempsRestant <= 0)
             {
                 aeronef.ChangerEtat(TypeEtat.Sol); 

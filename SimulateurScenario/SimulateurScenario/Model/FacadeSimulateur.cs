@@ -67,10 +67,7 @@ namespace SimulateurScenario.Model
         }*/
         
 
-        
-        public void CreerClient(Evenement evenement) { }
-        public void AjouterClient() { }
-        public void CreerAeronef() { }
+       
 
     }
 }

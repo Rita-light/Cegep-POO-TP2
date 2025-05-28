@@ -16,6 +16,7 @@ namespace SimulateurScenario.Model
         public double? Vitesse { get; set; }
         public Aeroport? Destination;
         public List<Aeroport>? Aeroports { get; set; }
+        public List<Aeronef>? Aeronefs {get;set;}
 
         public void NotifierObservateurs() { }
     }

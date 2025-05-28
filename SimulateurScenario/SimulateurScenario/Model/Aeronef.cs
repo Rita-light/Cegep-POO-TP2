@@ -23,7 +23,9 @@ namespace SimulateurScenario.Model
         public TypeAeronef type { get; set; }
         public TypeEtat typeEtat { get; set; }
         public Position PositionActuelle { get; set; }
-        public Position PositionDestination { get; set; }
+        public Position PositionDepart { get; set; }
+        public Aeroport Destination { get; set; }
+        public Position  PositionDestination{ get; set; }
         
         public EtatAeronef EtatActuel { get; set; }
 
@@ -39,6 +41,7 @@ namespace SimulateurScenario.Model
         
         public EtatAeronef CreerEtatDepuisType(TypeEtat type, double? tempsEmbarquementTotal = null, double? tempsDebarquementTotal = null)
         {
+            typeEtat = type;
             return type switch
             {
                 TypeEtat.Entretien => new EtatEntretien(TempsEntretien),
@@ -72,16 +75,12 @@ namespace SimulateurScenario.Model
             PositionActuelle = new Position(nouvelleLatitude, nouvelleLongitude);
         }
         
-        public void ChangerEtat(TypeEtat nouvelEtat)
+        public void ChangerEtat(TypeEtat nouvelEtat, double? tempsEmbarquementTotal = null, double? tempsDebarquementTotal = null)
         {
-            EtatActuel = CreerEtatDepuisType(nouvelEtat);
-            typeEtat = nouvelEtat;
+            // Met à jour l'état en passant correctement les paramètres
+            EtatActuel = CreerEtatDepuisType( nouvelEtat, tempsEmbarquementTotal, tempsDebarquementTotal);
         }
-
         
-
-
-
 
 
         public override string ToString()

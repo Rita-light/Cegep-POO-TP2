@@ -8,7 +8,8 @@ namespace SimulateurScenario.Model
 {
     public class AvionPassager : AeronefTransport
     {
-        public int Capacite { get; set; }
+        public int Capacite { get; set; } 
+        public int nombreClientEmbarque { get; set; }
 
         public AvionPassager(string nom, double vitesse, double tempsEntretien, int capacite, double tempsEmbarquement, double tempsDebarquement, TypeEtat etat)
             : base(nom, vitesse, tempsEntretien, tempsEmbarquement, tempsDebarquement, etat)
@@ -18,6 +19,11 @@ namespace SimulateurScenario.Model
         }
 
         public AvionPassager() { }
+        
+        public override double CalculerTempsDebarquementTotal()
+        {
+            return nombreClientEmbarque * TempsDebarquement;
+        }
 
         public override string ToString()
         {

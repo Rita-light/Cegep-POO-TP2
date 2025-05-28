@@ -110,14 +110,6 @@ namespace SimulateurScenario.Modele
         public void DemarrerSimulation()
         {
             InitialiserClient();
-            /*Evenement evt = new Evenement
-            {
-                typeEvenement = TypeEvenement.NouveauClient,
-                Aeroports = scenario.m_aeroport
-            };
-            scenario.NotifierObservateur(evt);*/
-            //test
-            
         }
         
         public void LancerSimulationAuto()
@@ -147,6 +139,7 @@ namespace SimulateurScenario.Modele
                 scenario.GenererEvenementsSelonFrequence();
                 Console.WriteLine("Avancer Etat");
                 scenario.AvancerEtatAeronefs(DureePas);
+                Console.WriteLine("fin Avancer Etat");
             }
             catch (Exception e)
             {
@@ -176,9 +169,7 @@ namespace SimulateurScenario.Modele
             scenario.NotifierObservateur(evt);
             scenario.VerifierEtDeclencherEmbarquement(scenario.m_aeroport);
         }
-
-        public void AfficherVols() { }
-
+        
         public void ChargerScenario(string nomFichier)
         {
             var nouveauScenario = GestionnaireFichierXML.Importer(nomFichier);
@@ -219,139 +210,7 @@ namespace SimulateurScenario.Modele
         }
         
         
-
-       /* public void GenererEvenementPour(TypeEvenement type)
-        {
-            Random rnd = new Random();
-            Evenement e = new Evenement();
-
-            // Spécificité selon le type
-            if (type == TypeEvenement.Secours)
-            {
-                e = new Evenement
-                {
-                    typeEvenement = TypeEvenement.Secours,
-                    position = Position.GenererPositionAleatoire()
-                };
-
-                Client client = FabriqueClient.Instance.CreerClient(e);
-                scenario.AjouterEvenementClient(client);
-                scenario.NotifierObservateur(e);
-            }
-            
-            if (type == TypeEvenement.Observation)
-            {
-                e = new Evenement
-                {
-                    typeEvenement = TypeEvenement.Observation,
-                    position = Position.GenererPositionAleatoire()
-                };
-
-                Client client = FabriqueClient.Instance.CreerClient(e);
-                scenario.AjouterEvenementClient(client);
-                scenario.NotifierObservateur(e);
-            }
-            
-            if (type == TypeEvenement.Incendie)
-            {
-                 e = new Evenement
-                {
-                    typeEvenement = TypeEvenement.Incendie,
-                    position = Position.GenererPositionAleatoire(),
-                    Intensite = rnd.Next(1, 3) // Intensité entre 1 et 10
-                };
-
-                Client client = FabriqueClient.Instance.CreerClient(e);
-                scenario.AjouterEvenementClient(client);
-                scenario.NotifierObservateur(e);
-            }
-
-        }*/
         
-        
-        /*public void VerifierEtDeclencherEmbarquement()
-        {
-            foreach (var aeroport in scenario.m_aeroport)
-            {
-                foreach (var aeronef in aeroport.Aeronefs)
-                {
-                    if (aeronef.EtatActuel == TypeEtat.Sol)
-                    {
-                        if (aeronef is AvionPassager avionPassager)
-                        {
-                            var groupe = aeroport.Clients
-                                .OfType<Passager>()
-                                .GroupBy(c => c.Destination)
-                                .Select(g => new { Destination = g.Key, Nombre = g.Count(), Clients = g.ToList() });
-
-                            foreach (var grp in groupe)
-                            {
-                                if (grp.Nombre >= 0.8 * avionPassager.Capacite)
-                                {
-                                    // Sélection des clients à embarquer
-                                    var aEmbarquer = grp.Clients.Take(avionPassager.Capacite).ToList();
-                                    aeroport.Clients.RemoveAll(c => aEmbarquer.Contains(c));
-                                    // Déclencher embarquement
-                                   // DemarrerEmbarquement(avionPassager, aEmbarquer, grp.Destination, aeroport);
-                                   Console.WriteLine("passager près à embarquer");
-                                    break;
-                                }
-                            }
-                        }
-                        else if (aeronef is AvionCargaison avionCargo)
-                        {
-                            var groupe = aeroport.Clients
-                                .OfType<Cargo>()
-                                .GroupBy(c => c.Destination)
-                                .Select(g => new { Destination = g.Key, TotalPoids = g.Sum(c => c.PoidsCargaison), Clients = g.ToList() });
-
-                            foreach (var grp in groupe)
-                            {
-                                if (grp.TotalPoids >= 0.8 * avionCargo.Capacite)
-                                {
-                                    double poidsCumule = 0;
-                                    var aEmbarquer = new List<Cargo>();
-                                    foreach (var client in grp.Clients)
-                                    {
-                                        if (poidsCumule + client.PoidsCargaison <= avionCargo.Capacite)
-                                        {
-                                            poidsCumule += client.PoidsCargaison;
-                                            aEmbarquer.Add(client);
-                                        }
-                                    }
-
-                                    aeroport.Clients.RemoveAll(c => aEmbarquer.Contains(c));
-                                    Console.WriteLine("Cargo près à etre chargé");
-                                    //DemarrerEmbarquement(avionCargo, aEmbarquer, grp.Destination, aeroport);
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }*/
-        
-        /*public void ReinitialiserScenario()
-        {
-            caretaker.RestaurerEtatInitial(scenario);
-            // notifier le form
-            Evenement evt = new Evenement
-            {
-                typeEvenement = TypeEvenement.ChargementTermine,
-                Aeroports = scenario.m_aeroport
-            };
-            scenario.NotifierObservateur(evt);
-        }*/
-        
-       
-
-
-
-
-
-
-
         
         
 

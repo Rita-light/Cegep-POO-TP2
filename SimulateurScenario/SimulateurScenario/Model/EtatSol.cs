@@ -18,7 +18,7 @@ namespace SimulateurScenario.Model
             return TypeEtat.Sol;
         }
 
-        public override void Avancer(double dureeMinutes, Aeronef aeronef)
+        public override void Avancer(double dureeMinutes, Aeronef aeronef , Scenario scenario)
         {
             // Aucun changement d'état, il attend une affectation
         }
@@ -64,7 +64,7 @@ namespace SimulateurScenario.Model
 
                                 // Mise à jour des positions
                                 avionPassager.PositionActuelle = aeroport.Position;
-                                avionPassager.PositionDestination = destinationAeroport.Position;
+                                avionPassager.Destination = destinationAeroport;
                                 
 
                                 // Calcul du temps d'embarquement
@@ -117,7 +117,7 @@ namespace SimulateurScenario.Model
 
                                 // Mise à jour des positions
                                 avionCargo.PositionActuelle = aeroport.Position;
-                                avionCargo.PositionDestination = destinationAeroport.Position;
+                                avionCargo.Destination = destinationAeroport;
                                 
 
                                 // Calcul du temps d’embarquement

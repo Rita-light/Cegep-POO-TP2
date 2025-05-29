@@ -139,7 +139,7 @@ namespace Gererateur_Scenario.Controle
             double tempsDebarquement = double.Parse(data["TempsDebarquement"]);
             double capacite = double.Parse(data["Capacite"]);
             double tempsEntretien = double.Parse(data["TempsEntretien"]);
-            TypeEtat etat = TypeEtat.Debarquement;//(TypeEtat)Enum.Parse(data["TypeEtat"], type, true);
+            TypeEtat etat = (TypeEtat)Enum.Parse(typeof(TypeEtat), data["typeEtat"]);
             var scenario = m_gestionnaire.GetScenario();
             scenario.AjouterAeronef(nomAeroport, nom, (TypeAeronef)Enum.Parse(typeof(TypeAeronef), type), vitesse, tempsEmbarquement, tempsDebarquement, capacite, tempsEntretien, etat);
 

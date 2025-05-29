@@ -8,11 +8,6 @@ namespace SimulateurScenario.Model
 {
     class EtatVol : EtatAeronef
     {
-        public override void AvancerPas(double pas)
-        {
-            Console.WriteLine($"[Vol] Aeronef en vol pendant {pas} pas.");
-        }
-
         public override TypeEtat GetTypeEtat()
         {
             return TypeEtat.Vol;
@@ -33,12 +28,12 @@ namespace SimulateurScenario.Model
         aeronef.PositionDestination,
         distance);
 
-    Console.WriteLine($"[Vol] {aeronef.Nom} avance. Nouvelle position : {aeronef.PositionActuelle}");
+    Console.WriteLine($"[Vol] {aeronef.Nom} avance. Nouvelle position : {aeronef.PositionActuelle.Latitude}, {aeronef.PositionActuelle.Longitude}");
 
     if (EstArrive(aeronef.PositionActuelle, aeronef.PositionDestination))
     {
         aeronef.PositionActuelle = aeronef.PositionDestination;
-        Console.WriteLine($"[Vol] {aeronef.Nom} est arrive a destination.");
+        Console.WriteLine($"[Vol] {aeronef.Nom} est arrive a destination");
 
         if (aeronef.Destination != null)
         {
@@ -56,7 +51,7 @@ namespace SimulateurScenario.Model
         }
         else if (aeronef.PositionDepart != null)
         {
-            Console.WriteLine($"[Urgence] {aeronef.Nom} retourne a la base ({aeronef.PositionDepart})");
+            Console.WriteLine($"[Urgence] {aeronef.Nom} retourne a la base ({aeronef.PositionDepart.Latitude}, {aeronef.PositionDepart.Longitude})");
 
             aeronef.PositionDestination = aeronef.PositionDepart;
             aeronef.PositionDepart = null;

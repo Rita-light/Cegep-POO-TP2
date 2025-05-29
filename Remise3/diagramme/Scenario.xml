@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <m_aeroport>
+    <Aeroport>
+      <Nom>Altas Airport</Nom>
+      <Position>
+        <Latitude>22</Latitude>
+        <Longitude>-45.78</Longitude>
+      </Position>
+      <MinPassagers>12</MinPassagers>
+      <MaxPassagers>27</MaxPassagers>
+      <MinCargaisons>1</MinCargaisons>
+      <MaxCargaisons>3</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Rapide Air</Nom>
+          <Vitesse>21</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>36</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCargaison">
+          <Nom>Air Rubir</Nom>
+          <Vitesse>123</Vitesse>
+          <TempsEntretien>45</TempsEntretien>
+          <type>Cargo</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>2</TempsEmbarquement>
+          <TempsDebarquement>2</TempsDebarquement>
+          <Capacite>3</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Help Aire</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>30</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>2</TempsEmbarquement>
+          <TempsDebarquement>1.5</TempsDebarquement>
+          <Capacite>25</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Candice</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>30</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>2</TempsEmbarquement>
+          <TempsDebarquement>2</TempsDebarquement>
+          <Capacite>25</Capacite>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+    <Aeroport>
+      <Nom>Balbiros</Nom>
+      <Position>
+        <Latitude>-14.09</Latitude>
+        <Longitude>28</Longitude>
+      </Position>
+      <MinPassagers>5</MinPassagers>
+      <MaxPassagers>15</MaxPassagers>
+      <MinCargaisons>0.8</MinCargaisons>
+      <MaxCargaisons>1.2</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="AvionCiterne">
+          <Nom>Fire Air</Nom>
+          <Vitesse>112</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Citerne</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCargaison">
+          <Nom>BiBi</Nom>
+          <Vitesse>112</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Cargo</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>10</Capacite>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+    <Aeroport>
+      <Nom>Digne Voyage</Nom>
+      <Position>
+        <Latitude>-12.785</Latitude>
+        <Longitude>-47.78</Longitude>
+      </Position>
+      <MinPassagers>25</MinPassagers>
+      <MaxPassagers>37</MaxPassagers>
+      <MinCargaisons>1</MinCargaisons>
+      <MaxCargaisons>3</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="Helicoptere">
+          <Nom>Vicky</Nom>
+          <Vitesse>112</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Helicoptere</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="AvionSecours">
+          <Nom>Isram</Nom>
+          <Vitesse>112</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Secours</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Kristal</Nom>
+          <Vitesse>136</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>0.86</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>18</Capacite>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+    <Aeroport>
+      <Nom>Trudeau</Nom>
+      <Position>
+        <Latitude>45.29</Latitude>
+        <Longitude>-73.44</Longitude>
+      </Position>
+      <MinPassagers>2</MinPassagers>
+      <MaxPassagers>22</MaxPassagers>
+      <MinCargaisons>4</MinCargaisons>
+      <MaxCargaisons>44</MaxCargaisons>
+      <Aeronefs />
+    </Aeroport>
+    <Aeroport>
+      <Nom>Nsimalen</Nom>
+      <Position>
+        <Latitude>3.7202</Latitude>
+        <Longitude>11.552</Longitude>
+      </Position>
+      <MinPassagers>45</MinPassagers>
+      <MaxPassagers>55</MaxPassagers>
+      <MinCargaisons>12</MinCargaisons>
+      <MaxCargaisons>23</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="AvionCiterne">
+          <Nom>VirM</Nom>
+          <Vitesse>122</Vitesse>
+          <TempsEntretien>12</TempsEntretien>
+          <type>Citerne</type>
+          <typeEtat>Sol</typeEtat>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+  </m_aeroport>
+  <m_frequence>
+    <FrequenceEvenement>
+      <Type>Passager</Type>
+      <Frequence>25</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Cargaison</Type>
+      <Frequence>15</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Observation</Type>
+      <Frequence>25</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Incendie</Type>
+      <Frequence>21</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Secours</Type>
+      <Frequence>25</Frequence>
+    </FrequenceEvenement>
+  </m_frequence>
+</Scenario>

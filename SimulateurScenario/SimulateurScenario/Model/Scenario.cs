@@ -278,7 +278,7 @@ namespace SimulateurScenario.Model
                 {
                     typeEvenement = TypeEvenement.Incendie,
                     position = Position.GenererPositionAleatoire(),
-                    Intensite = rnd.Next(1, 3) // Intensité entre 1 et 10
+                    Intensite = rnd.Next(1, 3) 
                 };
 
                 Client client = FabriqueClient.Instance.CreerClient(e);
@@ -341,12 +341,10 @@ namespace SimulateurScenario.Model
                     foreach (var aeronef in aeroport.Aeronefs)
                     {
                         if (aeronef.EtatActuel.GetTypeEtat() != TypeEtat.Sol){
-                            //Console.WriteLine($"[INFO] Aéronef {aeronef.Nom}ignoré car son état est : {aeronef.EtatActuel.GetTypeEtat()}, {aeronef.Nom}");
+                            
                             continue;
                         }
-
-                        // Console.WriteLine($"Vérification de l'aéronef {aeronef.Nom} au sol.");
-
+                        
                         if (aeronef is AvionPassager avionPassager)
                         {
                             var groupes = aeroport.Clients
@@ -514,8 +512,6 @@ namespace SimulateurScenario.Model
             // Ajouter à l’aéroport de destination
                         
         }
-
-        
         
         public ScenarioMemento CreateMemento()
         {

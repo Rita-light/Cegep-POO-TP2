@@ -239,10 +239,11 @@ namespace SimulateurScenario.Modele
             caretaker.RestaurerEtatInitial(scenario);
             Evenement evt = new Evenement
             {
-                typeEvenement = TypeEvenement.NouveauClient,
+                typeEvenement = TypeEvenement.ChargementTermine,
                 Aeroports = scenario.m_aeroport
             };
             scenario.NotifierObservateur(evt);
+            InitialiserClient();
             Console.WriteLine("Scenario reinitialisé");
            
         }

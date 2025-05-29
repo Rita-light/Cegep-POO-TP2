@@ -482,7 +482,8 @@ namespace Gererateur_Scenario.Vue
                 { "TempsEmbarquement", tempsEmbarquement.Text.Trim() },
                 { "TempsDebarquement", tempsDebarquement.Text.Trim() },
                 { "Capacite", capacite.Text.Trim() },
-                { "TempsEntretien", tempsEntretien.Text.Trim() }
+                { "TempsEntretien", tempsEntretien.Text.Trim() },
+                {"typeEtat", etat.Text}
             };
 
             try
@@ -607,7 +608,7 @@ namespace Gererateur_Scenario.Vue
 
         private void etat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            //Rien
         }
     }
 }

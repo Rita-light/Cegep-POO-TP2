@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <m_aeroport>
+    <Aeroport>
+      <Nom>Trudeau</Nom>
+      <Position>
+        <Latitude>45.4656</Latitude>
+        <Longitude>-73.74</Longitude>
+      </Position>
+      <MinPassagers>12</MinPassagers>
+      <MaxPassagers>35</MaxPassagers>
+      <MinCargaisons>1</MinCargaisons>
+      <MaxCargaisons>3</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Vicky</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>10</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Rapide air</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>12</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCargaison">
+          <Nom>Colis air</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Cargo</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>12</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCiterne">
+          <Nom>Fire</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Citerne</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="Helicoptere">
+          <Nom>Cx_14</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Helicoptere</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="AvionSecours">
+          <Nom>Digne</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Secours</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+    <Aeroport>
+      <Nom>Nsimalen</Nom>
+      <Position>
+        <Latitude>3.4337</Latitude>
+        <Longitude>11.3311</Longitude>
+      </Position>
+      <MinPassagers>10</MinPassagers>
+      <MaxPassagers>38</MaxPassagers>
+      <MinCargaisons>1</MinCargaisons>
+      <MaxCargaisons>3</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Altas</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>15</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCargaison">
+          <Nom>Vidal</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Cargo</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>0.87</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCiterne">
+          <Nom>Vidal</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Citerne</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="Helicoptere">
+          <Nom>Veille_Air</Nom>
+          <Vitesse>128</Vitesse>
+          <TempsEntretien>20</TempsEntretien>
+          <type>Helicoptere</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+    <Aeroport>
+      <Nom>Moscou</Nom>
+      <Position>
+        <Latitude>55.59</Latitude>
+        <Longitude>37.2672</Longitude>
+      </Position>
+      <MinPassagers>20</MinPassagers>
+      <MaxPassagers>45</MaxPassagers>
+      <MinCargaisons>1</MinCargaisons>
+      <MaxCargaisons>4</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="AvionCargaison">
+          <Nom>Barrix</Nom>
+          <Vitesse>128</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Cargo</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>1</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>John</Nom>
+          <Vitesse>128</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>17</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCiterne">
+          <Nom>Fax</Nom>
+          <Vitesse>128</Vitesse>
+          <TempsEntretien>35</TempsEntretien>
+          <type>Citerne</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="AvionSecours">
+          <Nom>Etoile</Nom>
+          <Vitesse>128</Vitesse>
+          <TempsEntretien>20</TempsEntretien>
+          <type>Secours</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+    <Aeroport>
+      <Nom>Guarulhos</Nom>
+      <Position>
+        <Latitude>-23.2546</Latitude>
+        <Longitude>-46.2802</Longitude>
+      </Position>
+      <MinPassagers>10</MinPassagers>
+      <MaxPassagers>30</MaxPassagers>
+      <MinCargaisons>1.2</MinCargaisons>
+      <MaxCargaisons>4</MaxCargaisons>
+      <Aeronefs>
+        <Aeronef xsi:type="Helicoptere">
+          <Nom>Vigile</Nom>
+          <Vitesse>125</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Helicoptere</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="AvionSecours">
+          <Nom>apable</Nom>
+          <Vitesse>135</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Secours</type>
+          <typeEtat>Entretien</typeEtat>
+        </Aeronef>
+        <Aeronef xsi:type="AvionPassager">
+          <Nom>Le Veteran</Nom>
+          <Vitesse>135</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Passager</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>13</Capacite>
+        </Aeronef>
+        <Aeronef xsi:type="AvionCargaison">
+          <Nom>Boost</Nom>
+          <Vitesse>111</Vitesse>
+          <TempsEntretien>25</TempsEntretien>
+          <type>Cargo</type>
+          <typeEtat>Entretien</typeEtat>
+          <TempsEmbarquement>1</TempsEmbarquement>
+          <TempsDebarquement>1</TempsDebarquement>
+          <Capacite>1</Capacite>
+        </Aeronef>
+      </Aeronefs>
+    </Aeroport>
+  </m_aeroport>
+  <m_frequence>
+    <FrequenceEvenement>
+      <Type>Passager</Type>
+      <Frequence>20</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Cargaison</Type>
+      <Frequence>18</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Secours</Type>
+      <Frequence>17</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Incendie</Type>
+      <Frequence>21</Frequence>
+    </FrequenceEvenement>
+    <FrequenceEvenement>
+      <Type>Observation</Type>
+      <Frequence>20</Frequence>
+    </FrequenceEvenement>
+  </m_frequence>
+</Scenario>

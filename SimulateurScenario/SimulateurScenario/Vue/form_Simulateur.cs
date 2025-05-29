@@ -136,9 +136,7 @@ public partial class form_Simulateur : Form, IObservateur
         {
             // Conversion des coordonnées
             Point positionPixel = Position.ConvertirCoordonneesEnPixels(aeroport.Position);
-            //Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées: {aeroport.Position.Latitude}, {aeroport.Position.Longitude}");
-            // Console.WriteLine($"Aéroport: {aeroport.Nom} - Coordonnées pixel: {positionPixel.X}, {positionPixel.Y}");
-
+            
             // Création du marqueur image
             PictureBox marqueur = new PictureBox
             {
@@ -200,8 +198,6 @@ public partial class form_Simulateur : Form, IObservateur
 
 
         // Ajout sur la carte
-        //ExecuterUI(carte, () => carte.Controls.Add(marqueur));
-        //ExecuterUI(carte, () => carte.Controls.Add(marqueur));
         carte.Controls.Add(marqueur);
         marqueur.BringToFront();
         
@@ -302,48 +298,7 @@ public partial class form_Simulateur : Form, IObservateur
             listClient.Items.Add($"{item.Value} {item.Key}");
         }
     }
-
-
-   /* public void LancerDeplacement(Aeronef aeronef)
-    {
-        if (!marqueurAeronef.ContainsKey(aeronef))
-        {
-            PictureBox pic = new PictureBox
-            {
-                Image = Image.FromFile("icone_aeronef.png"),
-                Size = new Size(30, 30),
-                BackColor = Color.Transparent,
-                SizeMode = PictureBoxSizeMode.StretchImage
-            };
-            carte.Controls.Add(pic);
-            marqueurAeronef[aeronef] = pic;
-        }
-
-        Timer timer = new Timer();
-        timer.Interval = 50;
-        double progression = 0;
-        const double vitesse = 0.01;
-
-        timer.Tick += (s, e) =>
-        {
-            progression += vitesse;
-            if (progression >= 1)
-            {
-                progression = 1;
-                timer.Stop();
-                aeronef.EtatActuel = TypeEtat.Sol;
-            }
-
-            aeronef.MettreAJourPosition(progression);
-            Point positionPixel = Position.ConvertirCoordonneesEnPixels(aeronef.PositionActuelle);
-            marqueurAeronef[aeronef].Location = positionPixel;
-        };
-        timerDeplacement[aeronef] = timer;
-        timer.Start();
-    }*/
-
     
-
 
     public static void ExecuterUI(Control control, Action action)
     {
@@ -352,8 +307,6 @@ public partial class form_Simulateur : Form, IObservateur
         else
             action();
     }
-
-
 
     private void listAeronef_SelectedIndexChanged(object sender, EventArgs e)
     {
@@ -399,7 +352,12 @@ public partial class form_Simulateur : Form, IObservateur
 
     private void btn_redemarrer_Click(object sender, EventArgs e)
     {
+        carte.Controls.Clear();
+        listAeronef.Items.Clear();
+        listClient.Items.Clear();
+        listAeroport.Items.Clear();
         controleur.Reinitialiserscenario();
         MessageBox.Show("Scenario remis à zéro");
+        
     }
 }

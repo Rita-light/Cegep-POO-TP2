@@ -6,7 +6,6 @@ public class ScenarioMemento
 
     public ScenarioMemento(List<Aeroport> aeroports)
     {
-        // Profonde copie si nécessaire
         Aeroports = aeroports.Select(a => a.Clone()).ToList();
     }
 }

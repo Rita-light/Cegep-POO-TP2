@@ -8,11 +8,6 @@ namespace SimulateurScenario.Model
 {
     class EtatSol : EtatAeronef
     {
-        public override void AvancerPas(double pas)
-        {
-            Console.WriteLine($"[Sol] Aéronef stationné pendant {pas} pas.");
-        }
-
         public override TypeEtat GetTypeEtat()
         {
             return TypeEtat.Sol;

@@ -14,10 +14,7 @@ namespace SimulateurScenario.Model
         {
             tempsRestant = dureeDebarquement;
         }
-        public override void AvancerPas(double pas)
-        {
-            Console.WriteLine($"[Démbarquement] Aéronef en embarquement pendant {pas} pas.");
-        }
+        
 
         public override TypeEtat GetTypeEtat()
         {

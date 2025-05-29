@@ -43,13 +43,13 @@ partial class form_Simulateur
         listClient = new System.Windows.Forms.ListBox();
         carte = new System.Windows.Forms.Panel();
         groupBox5 = new System.Windows.Forms.GroupBox();
+        btn_redemarrer = new System.Windows.Forms.Button();
         nombrePas = new System.Windows.Forms.TextBox();
         label1 = new System.Windows.Forms.Label();
         avancerPluspas = new System.Windows.Forms.Button();
         AvancerPas = new System.Windows.Forms.Button();
         btnStopAuto = new System.Windows.Forms.Button();
         btnStartAuto = new System.Windows.Forms.Button();
-        btn_redemarrer = new System.Windows.Forms.Button();
         groupBox1.SuspendLayout();
         groupBox2.SuspendLayout();
         groupBox4.SuspendLayout();
@@ -165,7 +165,16 @@ partial class form_Simulateur
         groupBox5.Size = new System.Drawing.Size(278, 668);
         groupBox5.TabIndex = 7;
         groupBox5.TabStop = false;
-        groupBox5.Text = "groupBox5";
+        // 
+        // btn_redemarrer
+        // 
+        btn_redemarrer.Location = new System.Drawing.Point(32, 561);
+        btn_redemarrer.Name = "btn_redemarrer";
+        btn_redemarrer.Size = new System.Drawing.Size(213, 69);
+        btn_redemarrer.TabIndex = 6;
+        btn_redemarrer.Text = "Redemarrer Scenario";
+        btn_redemarrer.UseVisualStyleBackColor = true;
+        btn_redemarrer.Click += btn_redemarrer_Click;
         // 
         // nombrePas
         // 
@@ -221,16 +230,6 @@ partial class form_Simulateur
         btnStartAuto.Text = "Demarer simulation auto";
         btnStartAuto.UseVisualStyleBackColor = true;
         btnStartAuto.Click += btnStartAuto_Click;
-        // 
-        // btn_redemarrer
-        // 
-        btn_redemarrer.Location = new System.Drawing.Point(32, 561);
-        btn_redemarrer.Name = "btn_redemarrer";
-        btn_redemarrer.Size = new System.Drawing.Size(213, 69);
-        btn_redemarrer.TabIndex = 6;
-        btn_redemarrer.Text = "Redemarrer Scenario";
-        btn_redemarrer.UseVisualStyleBackColor = true;
-        btn_redemarrer.Click += btn_redemarrer_Click;
         // 
         // form_Simulateur
         // 
